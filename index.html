@@ -1,114 +1,831 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Aryn M. Sparks - IT, Network & Software Development Consulting</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryn Sparks | Network Engineer & Polyglot Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ1CJ0O3bZy6k9R9p2aL1Lrj3sA2C7Cw0q5E25E9y+4XK7uj7SZ6fKx5wSQDq0P4Zx1wD8K3u5Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <style>
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+        :root {
+            --bg: #060b1a;
+            --card: rgba(13, 21, 41, 0.8);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #6c63ff;
+            --accent: #19d1c8;
+            --text: #f4f6ff;
+            --muted: rgba(244, 246, 255, 0.7);
+            --max-width: 1100px;
+            --shadow: 0 18px 45px rgba(8, 12, 31, 0.55);
         }
-        .header {
-            text-align: center;
-            padding: 20px;
-            background-color: #009688;
-            color: #fff;
-        }
-        .header h1, .header h3 {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-        }
-        .main {
-            margin: 0 auto;
-            padding: 20px;
-            width: 80%;
-            max-width: 800px;
+
+        * {
             box-sizing: border-box;
         }
-        .main h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: #009688;
-            border-bottom: 2px solid #009688;
+
+        html {
+            scroll-behavior: smooth;
         }
-        .main p, .main li {
-            margin-bottom: 10px;
-        }
-        .main li {
-            margin-left: 20px;
-        }
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #009688;
-            color: #fff;
-        }
-        .footer h4 {
-            font-family: 'Montserrat', sans-serif;
+
+        body {
             margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at 20% 20%, rgba(108, 99, 255, 0.12), transparent 45%),
+                        radial-gradient(circle at 80% 0%, rgba(25, 209, 200, 0.15), transparent 50%),
+                        var(--bg);
+            color: var(--text);
+            min-height: 100vh;
         }
+
         a {
-            color: #009688;
+            color: inherit;
             text-decoration: none;
         }
-        a:hover {
-            color: #00665c;
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(18px);
+            background: rgba(6, 11, 26, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            z-index: 999;
         }
-        .footer a {
-            color: #fff;
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            max-width: var(--max-width);
+            padding: 1rem 1.5rem;
         }
-        .footer a:hover {
-            color: #cceae7;
+
+        .brand {
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .brand i {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--text);
+        }
+
+        .nav-cta {
+            padding: 0.55rem 1.25rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #0a0f20;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 32px rgba(25, 209, 200, 0.35);
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(90px);
+            opacity: 0.8;
+            z-index: 0;
+        }
+
+        .hero::before {
+            width: 450px;
+            height: 450px;
+            background: rgba(108, 99, 255, 0.45);
+            top: -120px;
+            left: -180px;
+        }
+
+        .hero::after {
+            width: 500px;
+            height: 500px;
+            background: rgba(25, 209, 200, 0.35);
+            bottom: -200px;
+            right: -220px;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: var(--max-width);
+            width: 100%;
+            padding: 4rem 1.5rem 6rem;
+            display: grid;
+            gap: 3rem;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(108, 99, 255, 0.12);
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: clamp(2.75rem, 6vw, 3.75rem);
+            margin: 1.5rem 0 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            color: var(--muted);
+            line-height: 1.65;
+            max-width: 640px;
+        }
+
+        .hero-actions {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.8rem 1.6rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #061027;
+            box-shadow: 0 15px 35px rgba(108, 99, 255, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(25, 209, 200, 0.4);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(244, 246, 255, 0.4);
+            color: var(--text);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-outline:hover {
+            border-color: transparent;
+            background: rgba(244, 246, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            margin-top: 2.5rem;
+        }
+
+        .stat-card {
+            background: rgba(9, 16, 35, 0.75);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-card span {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .stat-card strong {
+            font-size: 1.3rem;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        section {
+            padding: clamp(4rem, 8vw, 6rem) 1.5rem;
+        }
+
+        .section-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            max-width: 720px;
+        }
+
+        .section-heading span {
+            font-size: 0.9rem;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin: 0.75rem 0 1rem;
+            font-size: clamp(2rem, 4.5vw, 2.8rem);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .cards-grid {
+            margin-top: 3rem;
+            display: grid;
+            gap: 1.75rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .card {
+            background: linear-gradient(145deg, rgba(11, 18, 38, 0.95), rgba(9, 14, 30, 0.85));
+            border: 1px solid var(--card-border);
+            border-radius: 22px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-header {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .card-header span {
+            font-size: 0.8rem;
+            color: var(--muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .bullets {
+            margin: 0;
+            padding-left: 1.1rem;
+            color: var(--muted);
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .bullets li {
+            list-style: none;
+            position: relative;
+            padding-left: 0.75rem;
+        }
+
+        .bullets li::before {
+            content: '\2022';
+            position: absolute;
+            left: -0.75rem;
+            color: var(--accent);
+        }
+
+        .timeline {
+            margin-top: 3rem;
+            display: grid;
+            gap: 1.75rem;
+        }
+
+        .timeline-card {
+            display: grid;
+            gap: 0.85rem;
+            padding: 1.75rem;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            background: rgba(10, 17, 35, 0.85);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-card header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+
+        .timeline-card h3 {
+            margin: 0;
+            font-size: 1.35rem;
+        }
+
+        .timeline-card .role {
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .timeline-card .period {
+            font-size: 0.9rem;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .tag-grid {
+            margin-top: 2rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .tag-card {
+            background: rgba(11, 19, 36, 0.75);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 1.4rem;
+            box-shadow: var(--shadow);
+        }
+
+        .tag-card h3 {
+            margin: 0 0 0.85rem;
+            font-size: 1.15rem;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+        }
+
+        .tag {
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(108, 99, 255, 0.18);
+            color: rgba(244, 246, 255, 0.9);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .projects-grid {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .project-card {
+            padding: 1.75rem;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            background: rgba(10, 17, 35, 0.9);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .project-card h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .project-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .project-meta a {
+            color: var(--accent);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .contact {
+            padding-bottom: 5rem;
+        }
+
+        .contact-grid {
+            margin-top: 3rem;
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .contact-card {
+            padding: 1.6rem;
+            border-radius: 18px;
+            border: 1px solid var(--card-border);
+            background: rgba(11, 18, 36, 0.78);
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 1.1rem;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: rgba(108, 99, 255, 0.2);
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .contact-card h3 {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        .contact-card p {
+            margin: 0.35rem 0 0;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 2rem 1.5rem 3rem;
+            text-align: center;
+            color: rgba(244, 246, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        footer .socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        footer .socials a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-inner {
+                padding-top: 6rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .stat-card {
+                text-align: center;
+            }
+
+            .card,
+            .timeline-card,
+            .project-card,
+            .contact-card {
+                padding: 1.4rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Aryn M. Sparks</h1>
-        <h3>Expert IT, Network & Software Development Consulting</h3>
-    </div>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <div class="brand">
+                <i class="fa-solid fa-wave-square"></i>
+                <span>Aryn Sparks</span>
+            </div>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#capabilities">Capabilities</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a class="nav-cta" href="mailto:aryn.sparks1987@gmail.com">Let's collaborate</a>
+        </div>
+    </header>
 
-    <div class="main">
-        <h2>About Me</h2>
-        <p>
-            Results-oriented networking specialist and software developer with expertise in building, testing, and securing
-            networks. Certified by Ubiquiti as a networking specialist and equipped with A+ certification. Skilled in utilizing
-            multiple copper, fiber, and wireless technologies. Known for the ability to quickly learn programming languages
-            and proficiently work with C, C++, Python, Java, and Kotlin. Currently studying computer electronics engineering
-            and soon to be proficient in Ada 2012. Seeking opportunities to contribute as a full-stack employee and drive
-            success as a future full-stack CEO.
-        </p>
+    <section class="hero" id="top">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-eyebrow"><i class="fa-solid fa-circle-notch"></i> Network Engineering Leader | Full-stack Technologist</span>
+                <h1>Designing resilient networks and the software that powers them.</h1>
+                <p>
+                    I build future-proof networks and the automation to keep them secure, observable, and fast. Since 2019 I've deployed industrial-grade fiber, copper, and wireless architectures across the Southwest, while coding in C, C++, Python, Java, and Kotlin to orchestrate and optimize the infrastructure.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Start a conversation</a>
+                    <a class="btn btn-outline" href="https://github.com/asparks1987" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Explore GitHub</a>
+                </div>
+                <div class="hero-stats">
+                    <article class="stat-card">
+                        <span>Years in network engineering</span>
+                        <strong>6+ | Ubiquiti Certified</strong>
+                    </article>
+                    <article class="stat-card">
+                        <span>Core languages</span>
+                        <strong>C | C++ | Python | Java | Kotlin</strong>
+                    </article>
+                    <article class="stat-card">
+                        <span>Mission</span>
+                        <strong>Deliver reliable connectivity & intelligent tooling</strong>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h2>Experience</h2>
-        <ul>
-            <li><b>Contractor, Inceed:</b> Oct 2022 - Jul 2023. Provided Tier 2 help desk support and assistance to users within the State of Oklahoma.</li>
-            <li><b>Computer Network Consultant, SparkNetUS:</b> Oct 2019 - Present. Offered freelance services as a computer programmer and provided extensive knowledge in computer systems infrastructure and networking.</li>
-            <li><b>Network Engineer, C&J Cable:</b> Jun 2019 - Dec 2021. Designed and implemented large-scale fiber optic and wireless computer networks.</li>
-            <li><b>System Administrator/Clerk, BOOMERS Gameroom:</b> Sep 2013 - Jun 2015. Managed systems administration for a small windows-based hub and spoke network-driven game room.</li>
-            <li><b>Systems Administrator, Account Control Technology, Inc.:</b> Sep 2009 - Nov 2010. Administered a fleet of over 200 PCs using active directory and proprietary software (CUBS).</li>
-        </ul>
+    <section id="about">
+        <div class="section-inner">
+            <div class="section-heading">
+                <span>Profile</span>
+                <h2>Hybrid technologist bridging fiber, wireless, and software.</h2>
+                <p>
+                    I'm a network engineer and software developer with a passion for marrying resilient infrastructure with clean code. My path started in systems administration and quickly scaled into architecting city-wide wireless backbones, building high-availability data center networks, and writing automation that keeps everything observable and secure. I pair hands-on field work with formal study in Computer Systems Networking and Telecommunications to stay on the leading edge of both hardware and software.
+                </p>
+            </div>
+        </div>
+    </section>
 
-        <h2>Education</h2>
-        <p>
-            Currently pursuing a Master of Computer Applications - MCA, Computer Systems Networking and Telecommunications at Angelo State University (Jan 2013 - Present). Previously attended Howard College for AS computer information systems, hardware, and networking (2008 - 2010).
-        </p>
+    <section id="experience">
+        <div class="section-inner">
+            <div class="section-heading">
+                <span>Experience</span>
+                <h2>Driving connectivity for enterprises, municipalities, and mission-critical teams.</h2>
+                <p>
+                    Recent highlights from a career spent translating intent into production-ready infrastructure and code.
+                </p>
+            </div>
+            <div class="timeline" role="list">
+                <article class="timeline-card" role="listitem">
+                    <header>
+                        <h3>C&amp;J Cable</h3>
+                        <span class="role">Network Engineer</span>
+                        <span class="period"><i class="fa-regular fa-calendar"></i> Aug 2019 - Present</span>
+                    </header>
+                    <p>Design, deploy, and secure large-scale fiber and wireless topologies delivering carrier-grade service quality.</p>
+                    <ul class="bullets">
+                        <li>Translate design intent into robust physical and logical architectures across metro, rural, and industrial footprints.</li>
+                        <li>Engineer custom automation for Ubiquiti platforms, streamlining provisioning, monitoring, and remediation.</li>
+                        <li>Champion end-to-end customer reliability with rapid troubleshooting, RF optimization, and cross-team coordination.</li>
+                    </ul>
+                </article>
+                <article class="timeline-card" role="listitem">
+                    <header>
+                        <h3>Office of Management and Enterprise Services</h3>
+                        <span class="role">Customer Success Consultant &amp; System Administrator</span>
+                        <span class="period"><i class="fa-regular fa-calendar"></i> Oct 2022 - Jul 2023</span>
+                    </header>
+                    <p>Supported statewide agencies with mission-critical services, bridging citizen-facing support and enterprise infrastructure.</p>
+                    <ul class="bullets">
+                        <li>Delivered Tier 2 support and incident resolution for agency stakeholders, maintaining SLAs and satisfaction scores.</li>
+                        <li>Administered Windows and Linux systems, managed identity services, and hardened environments against modern threats.</li>
+                        <li>Drove knowledge sharing and documentation to accelerate cross-functional onboarding and reduce repeat issues.</li>
+                    </ul>
+                </article>
+                <article class="timeline-card" role="listitem">
+                    <header>
+                        <h3>SparkNetUS</h3>
+                        <span class="role">Founder &amp; Consultant</span>
+                        <span class="period"><i class="fa-regular fa-calendar"></i> Oct 2019 - Nov 2022</span>
+                    </header>
+                    <p>Independent consultancy delivering turnkey network architecture, embedded development, and systems integration.</p>
+                    <ul class="bullets">
+                        <li>Built resilient SMB and municipal networks, pairing secure routing with intuitive observability dashboards.</li>
+                        <li>Developed bespoke software solutions spanning embedded controllers, cloud automation, and service tooling.</li>
+                        <li>Guided clients through regulatory compliance, vendor selection, and lifecycle planning.</li>
+                    </ul>
+                </article>
+                <article class="timeline-card" role="listitem">
+                    <header>
+                        <h3>Earlier Roles</h3>
+                        <span class="role">Systems Administrator &amp; Operations</span>
+                        <span class="period"><i class="fa-regular fa-calendar"></i> 2009 - 2015</span>
+                    </header>
+                    <p>Cut my teeth managing multi-site Windows environments, cloning fleets of endpoints, and keeping gamers online.</p>
+                    <ul class="bullets">
+                        <li>Administered Active Directory, imaging, and network racks for Account Control Technology (200+ endpoints).</li>
+                        <li>Led systems reliability and security for BOOMERS Gameroom with a 25-terminal Windows network.</li>
+                        <li>Developed a customer-first mindset while juggling security, infrastructure, and front-of-house operations.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
 
-        <h2>Skills</h2>
-        <p>
-            Customer Relationship Management (CRM), MPLS VPN, LAN-WAN, Cisco Networking, Ubiquiti Networks, Hardware, Help Desk Support, Microsoft Servers, Windows, Local Area Network (LAN).
-        </p>
-    </div>
+    <section id="capabilities">
+        <div class="section-inner">
+            <div class="section-heading">
+                <span>Capabilities</span>
+                <h2>From RF design to low-level code, I build systems that endure.</h2>
+                <p>
+                    An integrated toolkit spanning modern networking, software delivery, and customer success.
+                </p>
+            </div>
+            <div class="tag-grid">
+                <article class="tag-card">
+                    <h3><i class="fa-solid fa-network-wired"></i> Network Architecture</h3>
+                    <div class="tag-list">
+                        <span class="tag">Fiber &amp; Fixed Wireless Design</span>
+                        <span class="tag">Layer 2/3 Engineering</span>
+                        <span class="tag">Ubiquiti Ecosystem</span>
+                        <span class="tag">MPLS &amp; VPN</span>
+                        <span class="tag">RF Optimization</span>
+                        <span class="tag">Network Hardening</span>
+                    </div>
+                </article>
+                <article class="tag-card">
+                    <h3><i class="fa-solid fa-code"></i> Software &amp; Automation</h3>
+                    <div class="tag-list">
+                        <span class="tag">C / C++</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">Embedded Systems</span>
+                        <span class="tag">API Integrations</span>
+                        <span class="tag">Infrastructure as Code</span>
+                    </div>
+                </article>
+                <article class="tag-card">
+                    <h3><i class="fa-solid fa-shield-halved"></i> Operations &amp; Support</h3>
+                    <div class="tag-list">
+                        <span class="tag">Tier 2/3 Support</span>
+                        <span class="tag">Incident Response</span>
+                        <span class="tag">Customer Success</span>
+                        <span class="tag">Documentation &amp; Enablement</span>
+                        <span class="tag">Windows &amp; Linux Administration</span>
+                        <span class="tag">Continuous Improvement</span>
+                    </div>
+                </article>
+                <article class="tag-card">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Education &amp; Credentials</h3>
+                    <div class="tag-list">
+                        <span class="tag">Ubiquiti Certified Networking Specialist</span>
+                        <span class="tag">CompTIA A+</span>
+                        <span class="tag">MCA, Computer Systems Networking &amp; Telecommunications</span>
+                        <span class="tag">AS, Computer Information Systems</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-    <div class="footer">
-        <h4>Contact Me</h4>
-        <p>
-            <a href="https://www.linkedin.com/in/arynsparks/" target="_blank">LinkedIn</a> |
-            <a href="https://github.com/asparks1987/" target="_blank">GitHub</a> |
-            Email: <a href="mailto:aryn.sparks1987@gmail.com">aryn.sparks1987@gmail.com</a> |
-            Phone: <a href="tel:5803090168">5803090168</a>
-        </p>
-    </div>
+    <section id="projects">
+        <div class="section-inner">
+            <div class="section-heading">
+                <span>Selected Work</span>
+                <h2>Projects that blend connectivity, automation, and customer impact.</h2>
+                <p>
+                    A sampling of initiatives that showcase how I approach complex challenges with cross-disciplinary thinking.
+                </p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3>City-Wide Fixed Wireless Expansion</h3>
+                    <p>
+                        Led the design and rollout of a rural broadband upgrade using hybrid fiber backbones and wireless distribution, enabling high-availability service for residents and businesses across multiple counties.
+                    </p>
+                    <div class="project-meta">
+                        <span><i class="fa-solid fa-toolbox"></i> Ubiquiti | RF Planning | QoS</span>
+                        <a href="#contact">Discuss scope <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <h3>Automation Toolkit for Network Ops</h3>
+                    <p>
+                        Built Python and C-based utilities that automate provisioning, health checks, and device configuration drift detection for thousands of access points, shrinking onboarding time from days to hours.
+                    </p>
+                    <div class="project-meta">
+                        <span><i class="fa-solid fa-code-branch"></i> Python | REST APIs | CI/CD</span>
+                        <a href="https://github.com/asparks1987" target="_blank" rel="noopener">View repos <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <h3>State Agency Support Modernization</h3>
+                    <p>
+                        Created incident workflows, knowledge bases, and automation hooks that empowered Oklahoma agencies to resolve service tickets faster while boosting satisfaction metrics for thousands of users.
+                    </p>
+                    <div class="project-meta">
+                        <span><i class="fa-solid fa-headset"></i> ITSM | Knowledge Engineering</span>
+                        <a href="https://www.linkedin.com/in/arynsparks" target="_blank" rel="noopener">Connect on LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="section-inner">
+            <div class="section-heading">
+                <span>Contact</span>
+                <h2>Let's explore what we can build together.</h2>
+                <p>
+                    Ready to collaborate on your next network initiative, automation challenge, or full-stack build. Drop a line and I'll respond quickly.
+                </p>
+            </div>
+            <div class="contact-grid">
+                <article class="contact-card">
+                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:aryn.sparks1987@gmail.com">aryn.sparks1987@gmail.com</a></p>
+                    </div>
+                </article>
+                <article class="contact-card">
+                    <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <p><a href="https://www.linkedin.com/in/arynsparks" target="_blank" rel="noopener">linkedin.com/in/arynsparks</a></p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="socials">
+            <a href="mailto:aryn.sparks1987@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://github.com/asparks1987" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/arynsparks" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+        <p>&copy; <span id="year"></span> Aryn M. Sparks | Network Engineering &amp; Software Development</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
