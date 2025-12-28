@@ -249,7 +249,24 @@
         }
 
         section {
-            padding: clamp(4rem, 8vw, 6rem) 1.5rem;
+            padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+            position: relative;
+        }
+
+        section + section {
+            padding-top: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        section + section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(92%, var(--max-width));
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+            opacity: 0.85;
         }
 
         .section-inner {
