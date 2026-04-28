@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aryn Sparks | Network Engineer & Multiplatform Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ1CJ0O3bZy6k9R9p2aL1Lrj3sA2C7Cw0q5E25E9y+4XK7uj7SZ6fKx5wSQDq0P4Zx1wD8K3u5Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <meta name="description" content="Aryn Sparks provides IT consulting, web development, SaaS application development, Android apps, and network engineering for businesses that need reliable systems.">
+    <title>Aryn Sparks IT Consulting | Web, SaaS, Android & Network Engineering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         :root {
-            --bg: #060b1a;
-            --card: rgba(13, 21, 41, 0.8);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --primary: #6c63ff;
-            --accent: #19d1c8;
-            --text: #f4f6ff;
-            --muted: rgba(244, 246, 255, 0.7);
-            --max-width: 1100px;
-            --shadow: 0 18px 45px rgba(8, 12, 31, 0.55);
+            --ink: #08152d;
+            --ink-soft: #33435f;
+            --muted: #65718a;
+            --line: #dce3ee;
+            --line-strong: #c9d4e5;
+            --panel: #ffffff;
+            --surface: #f6f8fb;
+            --surface-strong: #eef3f8;
+            --blue: #115fd6;
+            --blue-strong: #0b46a3;
+            --green: #16875a;
+            --green-soft: #e9f7f1;
+            --shadow: 0 18px 50px rgba(24, 43, 77, 0.10);
+            --radius: 8px;
+            --max: 1180px;
         }
 
         * {
@@ -28,14 +37,11 @@
         }
 
         body {
-            
             margin: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: radial-gradient(circle at 20% 20%, rgba(108, 99, 255, 0.12), transparent 45%),
-                        radial-gradient(circle at 80% 0%, rgba(25, 209, 200, 0.15), transparent 50%),
-                        var(--bg);
-            color: var(--text);
-            min-height: 100vh;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--ink);
+            background: var(--surface);
+            line-height: 1.6;
         }
 
         a {
@@ -43,898 +49,1656 @@
             text-decoration: none;
         }
 
-        .navbar {
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(18px);
-            background: rgba(6, 11, 26, 0.85);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            z-index: 999;
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
         }
 
-        .navbar-inner {
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 8px 30px rgba(12, 31, 65, 0.05);
+        }
+
+        .nav {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0.95rem 1.25rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 0 auto;
-            max-width: var(--max-width);
-            padding: 1rem 1.5rem;
+            gap: 1.5rem;
         }
 
         .brand {
-            font-weight: 600;
-            letter-spacing: 0.05em;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.85rem;
+            min-width: max-content;
         }
 
-        .brand i {
-            color: var(--accent);
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            color: #fff;
+            background: linear-gradient(145deg, #0a1d3e, var(--blue));
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .brand-name {
+            display: grid;
+            gap: 0.05rem;
+            line-height: 1.1;
+        }
+
+        .brand-name strong {
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+        }
+
+        .brand-name span {
+            color: var(--blue);
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
         }
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
-            font-weight: 500;
+            align-items: center;
+            gap: 1.4rem;
+            color: var(--ink-soft);
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
         .nav-links a {
-            color: var(--muted);
-            transition: color 0.2s ease;
+            padding: 0.35rem 0;
+            border-bottom: 2px solid transparent;
         }
 
         .nav-links a:hover,
         .nav-links a:focus {
-            color: var(--text);
+            color: var(--blue);
+            border-color: var(--blue);
         }
 
-        .nav-cta {
-            padding: 0.55rem 1.25rem;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: #0a0f20;
-            font-weight: 600;
-            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.35);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 32px rgba(25, 209, 200, 0.35);
-        }
-
-        .hero {
-            min-height: 85vh;
+        .header-actions {
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before,
-        .hero::after {
-            content: "";
-            position: absolute;
-            border-radius: 999px;
-            filter: blur(90px);
-            opacity: 0.8;
-            z-index: 0;
-        }
-
-        .hero::before {
-            width: 450px;
-            height: 450px;
-            background: rgba(108, 99, 255, 0.45);
-            top: -120px;
-            left: -180px;
-        }
-
-        .hero::after {
-            width: 500px;
-            height: 500px;
-            background: rgba(25, 209, 200, 0.35);
-            bottom: -200px;
-            right: -220px;
-        }
-
-        .hero-inner {
-            position: relative;
-            z-index: 1;
-            max-width: var(--max-width);
-            width: 100%;
-            padding: 4rem 1.5rem 6rem;
-            display: grid;
-            gap: 3rem;
-        }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            padding: 0.35rem 0.85rem;
-            border-radius: 999px;
-            background: rgba(108, 99, 255, 0.12);
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-        }
-
-        h1 {
-            font-size: clamp(2.75rem, 6vw, 3.75rem);
-            margin: 1.5rem 0 1rem;
-            line-height: 1.1;
-        }
-
-        .hero-content p {
-            font-size: 1.05rem;
-            color: var(--muted);
-            line-height: 1.65;
-            max-width: 640px;
-        }
-
-        .hero-actions {
-            margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.7rem;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.65rem;
-            padding: 0.8rem 1.6rem;
-            border-radius: 999px;
-            font-weight: 600;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background 0.2s ease;
+            justify-content: center;
+            gap: 0.6rem;
+            min-height: 46px;
+            padding: 0.72rem 1.05rem;
+            border: 1px solid transparent;
+            border-radius: 7px;
+            font-weight: 700;
+            line-height: 1;
+            cursor: pointer;
+            transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            transform: translateY(-1px);
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: #061027;
-            box-shadow: 0 15px 35px rgba(108, 99, 255, 0.35);
+            color: #fff;
+            background: var(--blue);
+            box-shadow: 0 14px 28px rgba(17, 95, 214, 0.2);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(25, 209, 200, 0.4);
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background: var(--blue-strong);
+            box-shadow: 0 18px 34px rgba(17, 95, 214, 0.26);
         }
 
-        .btn-outline {
-            border: 1px solid rgba(244, 246, 255, 0.4);
-            color: var(--text);
-            backdrop-filter: blur(8px);
+        .btn-secondary {
+            color: var(--ink);
+            background: #fff;
+            border-color: var(--line-strong);
         }
 
-        .btn-outline:hover {
-            border-color: transparent;
-            background: rgba(244, 246, 255, 0.1);
-            transform: translateY(-3px);
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            border-color: var(--blue);
+            color: var(--blue);
         }
 
-        .hero-stats {
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            margin-top: 2.5rem;
+        .hero {
+            background:
+                linear-gradient(180deg, #ffffff 0%, #f8fbff 72%, var(--surface) 100%);
+            border-bottom: 1px solid var(--line);
         }
 
-        .stat-card {
-            background: rgba(9, 16, 35, 0.75);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 1.25rem 1.5rem;
-            box-shadow: var(--shadow);
-        }
-
-        .stat-card span {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--muted);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .stat-card strong {
-            font-size: 1.3rem;
-            display: block;
-            margin-top: 0.5rem;
-        }
-
-        section {
-            padding: clamp(3rem, 6vw, 5rem) 1.5rem;
-            position: relative;
-        }
-
-        section + section {
-            padding-top: clamp(2.5rem, 5vw, 4rem);
-        }
-
-        section + section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: min(92%, var(--max-width));
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
-            opacity: 0.85;
-        }
-
-        .section-inner {
-            max-width: var(--max-width);
+        .hero-inner {
+            max-width: var(--max);
             margin: 0 auto;
+            padding: clamp(3rem, 6vw, 5.5rem) 1.25rem 3.5rem;
+            display: grid;
+            grid-template-columns: minmax(0, 0.92fr) minmax(460px, 1.08fr);
+            gap: clamp(2.5rem, 5vw, 4.5rem);
+            align-items: center;
         }
 
-        .section-heading {
+        .eyebrow {
+            color: var(--blue);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1 {
             max-width: 720px;
+            margin-bottom: 1.2rem;
+            font-size: clamp(2.65rem, 6vw, 4.6rem);
+            line-height: 1.04;
+            letter-spacing: 0;
         }
 
-        .section-heading span {
-            font-size: 0.9rem;
-            color: var(--accent);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+        .hero-copy {
+            max-width: 620px;
+            color: var(--ink-soft);
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
         }
 
-        .section-heading h2 {
-            margin: 0.75rem 0 1rem;
-            font-size: clamp(2rem, 4.5vw, 2.8rem);
-        }
-
-        .section-heading p {
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .cards-grid {
-            margin-top: 3rem;
-            display: grid;
-            gap: 1.75rem;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        .card {
-            background: linear-gradient(145deg, rgba(11, 18, 38, 0.95), rgba(9, 14, 30, 0.85));
-            border: 1px solid var(--card-border);
-            border-radius: 22px;
-            padding: 1.75rem;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .card-header {
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-        }
-
-        .card-header span {
-            font-size: 0.8rem;
-            color: var(--muted);
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-        }
-
-        .card-header h3 {
-            margin: 0;
-            font-size: 1.4rem;
-        }
-
-        .card p {
-            color: var(--muted);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .bullets {
-            margin: 0;
-            padding-left: 1.1rem;
-            color: var(--muted);
-            display: grid;
-            gap: 0.6rem;
-        }
-
-        .bullets li {
-            list-style: none;
-            position: relative;
-            padding-left: 0.75rem;
-        }
-
-        .bullets li::before {
-            content: '\2022';
-            position: absolute;
-            left: -0.75rem;
-            color: var(--accent);
-        }
-
-        .timeline {
-            margin-top: 3rem;
-            display: grid;
-            gap: 1.75rem;
-        }
-
-        .timeline-card {
-            display: grid;
-            gap: 0.85rem;
-            padding: 1.75rem;
-            border-radius: 20px;
-            border: 1px solid var(--card-border);
-            background: rgba(10, 17, 35, 0.85);
-            box-shadow: var(--shadow);
-        }
-
-        .timeline-card header {
+        .hero-actions {
             display: flex;
             flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.85rem 0 1.7rem;
+        }
+
+        .trust-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1rem;
-            align-items: baseline;
-            justify-content: space-between;
+            max-width: 600px;
         }
 
-        .timeline-card h3 {
-            margin: 0;
-            font-size: 1.35rem;
-        }
-
-        .timeline-card .role {
-            font-weight: 500;
-            color: var(--accent);
-        }
-
-        .timeline-card .period {
-            font-size: 0.9rem;
-            color: var(--muted);
+        .trust-item {
             display: flex;
-            align-items: center;
-            gap: 0.4rem;
+            gap: 0.8rem;
+            align-items: flex-start;
+            padding: 0.85rem 0;
+            border-top: 1px solid var(--line);
         }
 
-        .tag-grid {
-            margin-top: 2rem;
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        }
-
-        .tag-card {
-            background: rgba(11, 19, 36, 0.75);
-            border: 1px solid var(--card-border);
-            border-radius: 18px;
-            padding: 1.4rem;
-            box-shadow: var(--shadow);
-        }
-
-        .tag-card h3 {
-            margin: 0 0 0.85rem;
-            font-size: 1.15rem;
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.55rem;
-        }
-
-        .tag {
-            padding: 0.35rem 0.75rem;
-            border-radius: 999px;
-            background: rgba(108, 99, 255, 0.18);
-            color: rgba(244, 246, 255, 0.9);
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .projects-grid {
-            margin-top: 3rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.75rem;
-        }
-
-        .project-card {
-            padding: 1.75rem;
-            border-radius: 20px;
-            border: 1px solid var(--card-border);
-            background: rgba(10, 17, 35, 0.9);
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .project-card h3 {
-            margin: 0;
-            font-size: 1.25rem;
-        }
-
-        .project-card p {
-            color: var(--muted);
-            line-height: 1.6;
-        }
-
-        .project-meta {
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--muted);
-            font-size: 0.85rem;
-        }
-
-        .project-meta a {
-            color: var(--accent);
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .contact {
-            padding-bottom: 5rem;
-        }
-
-        .contact-grid {
-            margin-top: 3rem;
-            display: grid;
-            gap: 1.5rem;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        }
-
-        .contact-card {
-            padding: 1.6rem;
-            border-radius: 18px;
-            border: 1px solid var(--card-border);
-            background: rgba(11, 18, 36, 0.78);
-            box-shadow: var(--shadow);
-            display: flex;
-            gap: 1.1rem;
-        }
-
-        .contact-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
+        .trust-item i {
+            width: 32px;
+            height: 32px;
             display: grid;
             place-items: center;
-            background: rgba(108, 99, 255, 0.2);
-            color: var(--accent);
-            font-size: 1.2rem;
+            color: var(--green);
+            background: var(--green-soft);
+            border-radius: 7px;
+            flex: 0 0 auto;
         }
 
-        .contact-card h3 {
-            margin: 0;
-            font-size: 1.05rem;
+        .trust-item strong {
+            display: block;
+            color: var(--ink);
+            line-height: 1.25;
         }
 
-        .contact-card p {
-            margin: 0.35rem 0 0;
+        .trust-item span {
+            display: block;
             color: var(--muted);
-            line-height: 1.6;
-        }
-
-        footer {
-            padding: 2rem 1.5rem 3rem;
-            text-align: center;
-            color: rgba(244, 246, 255, 0.6);
             font-size: 0.9rem;
+            line-height: 1.35;
         }
 
-        footer .socials {
+        .cert-strip {
             display: flex;
-            justify-content: center;
-            gap: 1.25rem;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .cert-strip span {
+            padding: 0.48rem 0.68rem;
+            color: var(--ink-soft);
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        .hero-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            margin-top: 1.05rem;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .hero-note i {
+            color: var(--green);
+        }
+
+        .ops-shell {
+            background: #fff;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .ops-top {
+            min-height: 46px;
+            padding: 0.75rem 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--line);
+            background: #fbfcfe;
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 0.35rem;
+        }
+
+        .window-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d4dce9;
+        }
+
+        .ops-status {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: var(--green);
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+
+        .ops-body {
+            display: grid;
+            grid-template-columns: 148px 1fr;
+            min-height: 520px;
+        }
+
+        .ops-sidebar {
+            padding: 1rem 0.85rem;
+            color: #dbe8fa;
+            background: #081d3d;
+        }
+
+        .ops-initials {
+            margin-bottom: 1rem;
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .ops-nav {
+            display: grid;
+            gap: 0.35rem;
+        }
+
+        .ops-nav span {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.62rem 0.7rem;
+            border-radius: 7px;
+            font-size: 0.86rem;
+        }
+
+        .ops-nav .active {
+            color: #fff;
+            background: var(--blue);
+        }
+
+        .ops-content {
+            padding: 1.35rem;
+        }
+
+        .ops-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
             margin-bottom: 1rem;
         }
 
-        footer .socials a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            color: var(--muted);
-            font-weight: 500;
+        .ops-heading h2 {
+            margin-bottom: 0.1rem;
+            font-size: 1.18rem;
         }
 
-        @media (max-width: 900px) {
+        .ops-heading p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .ops-filters {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .ops-filters span {
+            padding: 0.45rem 0.65rem;
+            color: var(--ink-soft);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.8rem;
+        }
+
+        .metric {
+            min-height: 124px;
+            padding: 0.85rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .metric-label {
+            color: var(--ink-soft);
+            font-size: 0.77rem;
+            font-weight: 800;
+        }
+
+        .metric-state {
+            color: var(--green);
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .metric-value {
+            margin: 0.35rem 0 0.25rem;
+            font-size: 1.9rem;
+            line-height: 1;
+            font-weight: 800;
+        }
+
+        .sparkline {
+            height: 34px;
+            margin-top: 0.45rem;
+            display: flex;
+            align-items: end;
+            gap: 4px;
+        }
+
+        .sparkline span {
+            width: 100%;
+            min-width: 4px;
+            border-radius: 2px 2px 0 0;
+            background: var(--blue);
+            opacity: 0.85;
+        }
+
+        .sparkline.green span {
+            background: var(--green);
+        }
+
+        .ops-lower {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr 1fr;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
+        }
+
+        .ops-panel {
+            padding: 0.95rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .ops-panel h3 {
+            margin-bottom: 0.8rem;
+            font-size: 0.92rem;
+        }
+
+        .check-list,
+        .ticket-list,
+        .service-list {
+            display: grid;
+            gap: 0.65rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: var(--ink-soft);
+            font-size: 0.82rem;
+        }
+
+        .check-list li,
+        .ticket-list li,
+        .service-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.7rem;
+        }
+
+        .check-list i,
+        .service-list i {
+            color: var(--green);
+        }
+
+        .status-pill {
+            color: var(--green);
+            font-size: 0.72rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        section {
+            padding: clamp(3.2rem, 6vw, 5rem) 1.25rem;
+        }
+
+        .section-inner {
+            max-width: var(--max);
+            margin: 0 auto;
+        }
+
+        .section-head {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.55fr);
+            gap: 2rem;
+            align-items: end;
+            margin-bottom: 2rem;
+        }
+
+        .section-head h2 {
+            max-width: 760px;
+            margin: 0.35rem 0 0;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.12;
+            letter-spacing: 0;
+        }
+
+        .section-head p {
+            margin-bottom: 0;
+            color: var(--ink-soft);
+        }
+
+        .services {
+            background: var(--surface);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .service-card {
+            min-height: 220px;
+            padding: 1.2rem;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: 0 10px 28px rgba(24, 43, 77, 0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(17, 95, 214, 0.35);
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            color: var(--blue);
+            background: #edf4ff;
+            border-radius: 8px;
+            font-size: 1.2rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 0;
+            font-size: 1.05rem;
+            line-height: 1.25;
+        }
+
+        .service-card p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        .service-card a {
+            margin-top: auto;
+            color: var(--blue);
+            font-size: 0.88rem;
+            font-weight: 800;
+        }
+
+        .proof-band {
+            background: #fff;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .proof-copy h2 {
+            max-width: 640px;
+            margin: 0.35rem 0 1rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.14;
+        }
+
+        .proof-copy p {
+            color: var(--ink-soft);
+        }
+
+        .credential-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.8rem;
+        }
+
+        .credential {
+            padding: 1rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        .credential strong {
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+
+        .credential span {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .offer-list {
+            display: grid;
+            gap: 0.85rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .offer-list li {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            padding: 1rem;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        .offer-list i {
+            margin-top: 0.2rem;
+            color: var(--green);
+        }
+
+        .offer-list strong {
+            display: block;
+            margin-bottom: 0.1rem;
+        }
+
+        .offer-list span {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            counter-reset: process;
+        }
+
+        .process-step {
+            position: relative;
+            min-height: 230px;
+            padding: 1.3rem;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        .process-step::before {
+            counter-increment: process;
+            content: "0" counter(process);
+            display: block;
+            margin-bottom: 1.2rem;
+            color: var(--blue);
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+        }
+
+        .process-step h3 {
+            margin-bottom: 0.55rem;
+            font-size: 1.08rem;
+        }
+
+        .process-step p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .project-showcase {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .featured-projects {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .work-card {
+            display: grid;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 10px 28px rgba(24, 43, 77, 0.05);
+        }
+
+        .work-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            color: var(--blue);
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+
+        .work-card h3 {
+            margin-bottom: 0;
+            font-size: 1.16rem;
+        }
+
+        .work-card p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .tech-tags span {
+            padding: 0.34rem 0.5rem;
+            color: var(--ink-soft);
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .project-index {
+            padding: 1.2rem;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 10px 28px rgba(24, 43, 77, 0.05);
+        }
+
+        .project-index h3 {
+            margin-bottom: 0.3rem;
+            font-size: 1.18rem;
+        }
+
+        .project-index p {
+            margin-bottom: 1rem;
+            color: var(--muted);
+        }
+
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.75rem;
+        }
+
+        .index-item {
+            min-height: 116px;
+            padding: 0.9rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        .index-item strong {
+            display: block;
+            margin-bottom: 0.2rem;
+            color: var(--ink);
+        }
+
+        .index-item span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+
+        .contact {
+            color: #fff;
+            background: #081d3d;
+        }
+
+        .contact .eyebrow,
+        .contact h2,
+        .contact p {
+            color: #fff;
+        }
+
+        .contact p {
+            opacity: 0.8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.88fr) minmax(360px, 1.12fr);
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .contact h2 {
+            margin: 0.35rem 0 1rem;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.1;
+        }
+
+        .contact-methods {
+            display: grid;
+            gap: 0.85rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-method {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            padding: 1rem;
+            color: #dbe8fa;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+        }
+
+        .contact-method i {
+            margin-top: 0.2rem;
+            color: #7ee0b3;
+        }
+
+        .contact-method strong {
+            display: block;
+            color: #fff;
+        }
+
+        .contact-method span {
+            color: #dbe8fa;
+            opacity: 0.82;
+            font-size: 0.94rem;
+        }
+
+        .inquiry {
+            padding: 1.25rem;
+            color: var(--ink);
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.85rem;
+        }
+
+        .field {
+            display: grid;
+            gap: 0.35rem;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            color: var(--ink-soft);
+            font-size: 0.84rem;
+            font-weight: 800;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            border: 1px solid var(--line-strong);
+            border-radius: 7px;
+            padding: 0.78rem 0.82rem;
+            color: var(--ink);
+            background: #fff;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 132px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(17, 95, 214, 0.12);
+        }
+
+        .form-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .form-note {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        footer {
+            padding: 1.4rem 1.25rem;
+            color: #dbe8fa;
+            background: #06152e;
+        }
+
+        .footer-inner {
+            max-width: var(--max);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            opacity: 0.82;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus {
+            opacity: 1;
+        }
+
+        @media (max-width: 1100px) {
+            .hero-inner,
+            .proof-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ops-shell {
+                max-width: 820px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .process-grid,
+            .featured-projects,
+            .index-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 860px) {
             .nav-links {
                 display: none;
             }
 
+            .header-actions .btn-secondary {
+                display: none;
+            }
+
             .hero-inner {
-                padding-top: 6rem;
+                padding-top: 2.5rem;
+            }
+
+            .section-head {
+                grid-template-columns: 1fr;
+                align-items: start;
+            }
+
+            .ops-body {
+                grid-template-columns: 1fr;
+            }
+
+            .ops-sidebar {
+                display: none;
+            }
+
+            .metric-grid,
+            .ops-lower {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
-        @media (max-width: 600px) {
-            .hero-content p {
-                font-size: 1rem;
+        @media (max-width: 620px) {
+            .nav {
+                padding: 0.85rem 1rem;
             }
 
-            .hero-actions {
-                flex-direction: column;
+            .brand-mark {
+                width: 38px;
+                height: 38px;
+            }
+
+            .brand-name strong {
+                font-size: 0.9rem;
+            }
+
+            .header-actions .btn-primary {
+                min-height: 40px;
+                padding: 0.65rem 0.72rem;
+                font-size: 0.86rem;
+            }
+
+            .hero-inner,
+            section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            h1 {
+                font-size: clamp(2.3rem, 13vw, 3.2rem);
+            }
+
+            .hero-actions,
+            .form-actions {
                 align-items: stretch;
+                flex-direction: column;
             }
 
-            .stat-card {
-                text-align: center;
+            .btn {
+                width: 100%;
             }
 
-            .card,
-            .timeline-card,
-            .project-card,
-            .contact-card {
-                padding: 1.4rem;
+            .trust-row,
+            .credential-grid,
+            .services-grid,
+            .process-grid,
+            .featured-projects,
+            .index-grid,
+            .form-grid,
+            .metric-grid,
+            .ops-lower {
+                grid-template-columns: 1fr;
+            }
+
+            .ops-filters {
+                display: none;
+            }
+
+            .ops-content {
+                padding: 1rem;
+            }
+
+            .metric {
+                min-height: 112px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
             }
         }
     </style>
 </head>
 <body>
-    <header class="navbar">
-        <div class="navbar-inner">
-            <div class="brand">
-                <i class="fa-solid fa-wave-square"></i>
-                <span>Aryn Sparks</span>
-            </div>
-            <nav class="nav-links" aria-label="Primary">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#capabilities">Capabilities</a>
-                <a href="#projects">Projects</a>
+    <header class="site-header">
+        <div class="nav">
+            <a class="brand" href="#top" aria-label="Aryn Sparks IT Consulting home">
+                <span class="brand-mark">AS</span>
+                <span class="brand-name">
+                    <strong>ARYN SPARKS</strong>
+                    <span>IT Consulting</span>
+                </span>
+            </a>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="#services">Services</a>
+                <a href="#trust">Trust</a>
+                <a href="#process">Process</a>
+                <a href="#work">Work</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <a class="nav-cta" href="mailto:aryn.sparks1987@gmail.com">Let's collaborate</a>
+            <div class="header-actions">
+                <a class="btn btn-secondary" href="https://github.com/asparks1987" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i>
+                    GitHub
+                </a>
+                <a class="btn btn-primary" href="#contact">
+                    <i class="fa-regular fa-calendar"></i>
+                    Consultation
+                </a>
+            </div>
         </div>
     </header>
 
-    <section class="hero" id="top">
-        <div class="hero-inner">
-            <div class="hero-content">
-                <span class="hero-eyebrow"><i class="fa-solid fa-circle-notch"></i> Network Engineering Leader | Multiplatform Developer</span>
-                <h1>Designing resilient networks, mobile apps, and web experiences.</h1>
-                <p>
-                    I build future-proof networks and the software that keeps them secure, observable, and fast—and I love pairing that infrastructure with user-facing products. I ship Android and Windows apps, prototype Swift/SwiftUI experiences for Apple platforms, and craft clean WordPress builds when a fast marketing site is the right tool. Since 2019 I've deployed industrial-grade fiber, copper, and wireless architectures across the Southwest while coding in C, C++, Python, Java, and Kotlin to orchestrate and optimize the infrastructure.
-                </p>
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Start a conversation</a>
-                    <a class="btn btn-outline" href="https://github.com/asparks1987" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Explore GitHub</a>
+    <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <div>
+                    <span class="eyebrow">IT consulting for serious business systems</span>
+                    <h1 id="hero-title">Reliable web, SaaS, Android, and network systems businesses can trust.</h1>
+                    <p class="hero-copy">
+                        I help small businesses, ISPs, professional offices, and technical teams turn technology needs into dependable systems: clean websites, custom SaaS applications, Android apps, automation, and production network engineering.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#contact">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Schedule a consultation
+                        </a>
+                        <a class="btn btn-secondary" href="#services">
+                            <i class="fa-solid fa-list-check"></i>
+                            View services
+                        </a>
+                    </div>
+                    <div class="trust-row" aria-label="Primary trust points">
+                        <div class="trust-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div>
+                                <strong>7 years</strong>
+                                <span>Network engineering experience</span>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <div>
+                                <strong>Associates degree</strong>
+                                <span>Information Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cert-strip" aria-label="Certifications">
+                        <span>CompTIA A+</span>
+                        <span>Ubiquiti Certified</span>
+                        <span>Dell Certified</span>
+                        <span>Xerox Certified</span>
+                        <span>MindShark Certified</span>
+                    </div>
+                    <span class="hero-note">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Practical advice. Clean delivery. Systems built for the long term.
+                    </span>
                 </div>
-                <div class="hero-stats">
-                    <article class="stat-card">
-                        <span>Years in network engineering</span>
-                        <strong>6+ | Ubiquiti Certified</strong>
+
+                <div class="ops-shell" aria-label="Operations dashboard illustration">
+                    <div class="ops-top">
+                        <div class="window-dots" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="ops-status">
+                            <i class="fa-solid fa-circle"></i>
+                            Systems healthy
+                        </div>
+                    </div>
+                    <div class="ops-body">
+                        <aside class="ops-sidebar" aria-hidden="true">
+                            <div class="ops-initials">AS</div>
+                            <div class="ops-nav">
+                                <span class="active"><i class="fa-solid fa-gauge"></i> Overview</span>
+                                <span><i class="fa-solid fa-network-wired"></i> Network</span>
+                                <span><i class="fa-solid fa-layer-group"></i> SaaS</span>
+                                <span><i class="fa-solid fa-mobile-screen"></i> Android</span>
+                                <span><i class="fa-solid fa-headset"></i> Support</span>
+                            </div>
+                        </aside>
+                        <div class="ops-content">
+                            <div class="ops-heading">
+                                <div>
+                                    <h2>Operations Overview</h2>
+                                    <p>Project delivery, service health, and support readiness.</p>
+                                </div>
+                                <div class="ops-filters" aria-hidden="true">
+                                    <span>All clients</span>
+                                    <span>Last 7 days</span>
+                                </div>
+                            </div>
+                            <div class="metric-grid">
+                                <div class="metric">
+                                    <div class="metric-label">Network Health</div>
+                                    <div class="metric-state">Healthy</div>
+                                    <div class="metric-value">98%</div>
+                                    <div class="sparkline green" aria-hidden="true">
+                                        <span style="height: 38%"></span><span style="height: 58%"></span><span style="height: 44%"></span><span style="height: 72%"></span><span style="height: 51%"></span><span style="height: 82%"></span>
+                                    </div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-label">SaaS Progress</div>
+                                    <div class="metric-state">On track</div>
+                                    <div class="metric-value">72%</div>
+                                    <div class="sparkline" aria-hidden="true">
+                                        <span style="height: 35%"></span><span style="height: 48%"></span><span style="height: 54%"></span><span style="height: 64%"></span><span style="height: 70%"></span><span style="height: 78%"></span>
+                                    </div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-label">Android Builds</div>
+                                    <div class="metric-state">Active</div>
+                                    <div class="metric-value">3</div>
+                                    <div class="sparkline" aria-hidden="true">
+                                        <span style="height: 42%"></span><span style="height: 56%"></span><span style="height: 49%"></span><span style="height: 66%"></span><span style="height: 38%"></span><span style="height: 50%"></span>
+                                    </div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-label">Response Target</div>
+                                    <div class="metric-state">Ready</div>
+                                    <div class="metric-value">1.6h</div>
+                                    <div class="sparkline green" aria-hidden="true">
+                                        <span style="height: 54%"></span><span style="height: 45%"></span><span style="height: 60%"></span><span style="height: 36%"></span><span style="height: 52%"></span><span style="height: 71%"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ops-lower">
+                                <div class="ops-panel">
+                                    <h3>Service Health</h3>
+                                    <ul class="service-list">
+                                        <li><span><i class="fa-solid fa-circle"></i> ISP core network</span><span class="status-pill">Online</span></li>
+                                        <li><span><i class="fa-solid fa-circle"></i> Office firewall</span><span class="status-pill">Protected</span></li>
+                                        <li><span><i class="fa-solid fa-circle"></i> WiFi infrastructure</span><span class="status-pill">Stable</span></li>
+                                        <li><span><i class="fa-solid fa-circle"></i> Remote sites</span><span class="status-pill">Synced</span></li>
+                                    </ul>
+                                </div>
+                                <div class="ops-panel">
+                                    <h3>SaaS Milestones</h3>
+                                    <ul class="check-list">
+                                        <li><span><i class="fa-solid fa-circle-check"></i> Requirements</span><span class="status-pill">Done</span></li>
+                                        <li><span><i class="fa-solid fa-circle-check"></i> MVP build</span><span class="status-pill">Active</span></li>
+                                        <li><span><i class="fa-regular fa-circle"></i> Integrations</span><span class="status-pill">Next</span></li>
+                                        <li><span><i class="fa-regular fa-circle"></i> Launch</span><span class="status-pill">Planned</span></li>
+                                    </ul>
+                                </div>
+                                <div class="ops-panel">
+                                    <h3>Support Activity</h3>
+                                    <ul class="ticket-list">
+                                        <li><span>VPN connectivity</span><span>32m</span></li>
+                                        <li><span>Email delivery</span><span>2h</span></li>
+                                        <li><span>WiFi tuning</span><span>Active</span></li>
+                                        <li><span>System access</span><span>Closed</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services" aria-labelledby="services-title">
+            <div class="section-inner">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow">Services</span>
+                        <h2 id="services-title">Solutions that keep your business connected, productive, and ready to grow.</h2>
+                    </div>
+                    <p>
+                        From strategy to implementation and ongoing support, I deliver systems that are secure, scalable, and built around your actual goals.
+                    </p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-display"></i></div>
+                        <h3>Business Websites</h3>
+                        <p>Modern web pages for service businesses, portfolios, landing pages, and content-managed sites that load fast and make the offer clear.</p>
+                        <a href="#contact">Start a website project</a>
                     </article>
-                    <article class="stat-card">
-                        <span>Core languages & platforms</span>
-                        <strong>C | C++ | Python | Java | Kotlin | Swift/SwiftUI</strong>
+                    <article class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <h3>SaaS Applications</h3>
+                        <p>Custom dashboards, portals, workflow tools, subscriptions, APIs, and admin systems designed for real business operations.</p>
+                        <a href="#contact">Plan a SaaS build</a>
                     </article>
-                    <article class="stat-card">
-                        <span>Shipping surfaces</span>
-                        <strong>Networks | Mobile (Android, Windows, Apple) | WordPress web</strong>
+                    <article class="service-card">
+                        <div class="service-icon"><i class="fa-brands fa-android"></i></div>
+                        <h3>Android Apps</h3>
+                        <p>Android applications for field teams, customers, technicians, and connected-device workflows using practical native development.</p>
+                        <a href="#contact">Discuss an app</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>Network Engineering</h3>
+                        <p>Design, deployment, troubleshooting, optimization, documentation, and support for wired, wireless, and Ubiquiti networks.</p>
+                        <a href="#contact">Review your network</a>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3>IT Consulting</h3>
+                        <p>Strategic support for systems, vendors, migrations, automation, security posture, and technology decisions that need clear ownership.</p>
+                        <a href="#contact">Get expert guidance</a>
                     </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about">
-        <div class="section-inner">
-            <div class="section-heading">
-                <span>Profile</span>
-                <h2>Hybrid technologist bridging fiber, wireless, software, and apps.</h2>
-                <p>
-                    I'm a network engineer and software developer with a passion for marrying resilient infrastructure with clean code and polished user experiences. My path started in systems administration and quickly scaled into architecting city-wide wireless backbones, building high-availability data center networks, and writing automation that keeps everything observable and secure. Along the way I've built Windows and Android apps, prototyped Swift/SwiftUI interfaces for Apple devices, and shipped numerous WordPress sites when clients need fast, maintainable web presence.
-                </p>
+        <section id="trust" class="proof-band" aria-labelledby="trust-title">
+            <div class="section-inner proof-grid">
+                <div class="proof-copy">
+                    <span class="eyebrow">Why clients can trust the work</span>
+                    <h2 id="trust-title">Software judgment backed by real infrastructure experience.</h2>
+                    <p>
+                        I am not only building screens. I understand the networks, devices, users, support workflows, and business constraints behind the software. That matters when you need a site, app, or SaaS platform that survives real operations.
+                    </p>
+                    <div class="credential-grid">
+                        <div class="credential">
+                            <strong>7 years</strong>
+                            <span>Network engineering across wireless, fiber, routing, support, and operations.</span>
+                        </div>
+                        <div class="credential">
+                            <strong>Associates in IT</strong>
+                            <span>Formal foundation in information technology and systems practice.</span>
+                        </div>
+                        <div class="credential">
+                            <strong>Certified</strong>
+                            <span>A+, Ubiquiti, Dell, Xerox, and MindShark credentials.</span>
+                        </div>
+                        <div class="credential">
+                            <strong>Multi-language</strong>
+                            <span>C, C++, Python, Java, Kotlin, JavaScript, HTML, CSS, and SQL.</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="offer-list">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <strong>Clear technical scope</strong>
+                            <span>You get plain-English requirements, tradeoffs, timelines, and delivery checkpoints before code or hardware spend starts.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <strong>Production-minded builds</strong>
+                            <span>Projects are planned around security, maintainability, support access, backups, monitoring, and future change.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <strong>One consultant across the stack</strong>
+                            <span>Web, SaaS, Android, network, support, and automation decisions can be handled as one connected system.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <strong>Respect for your business</strong>
+                            <span>No buzzword theatre. The goal is technology that helps you sell, operate, serve customers, and reduce friction.</span>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="timeline" role="list">
-        </div>
-    </section>
+        </section>
 
-    <section id="experience">
-        <div class="section-inner">
-            <div class="section-heading">
-                <span>Experience</span>
-                <h2>Driving connectivity for enterprises, municipalities, and mission-critical teams.</h2>
-                <p>
-                    Recent highlights from a career spent translating intent into production-ready infrastructure and code.
-                </p>
-            </div>
-            <div class="timeline" role="list">
-                <article class="timeline-card" role="listitem">
-                    <header>
-                        <h3>Independent Consultant</h3>
-                        <span class="role">Network &amp; Software Contractor</span>
-                        <span class="period"><i class="fa-regular fa-calendar"></i> 2023 - Present</span>
-                    </header>
-                    <p>Partner with multiple tech companies and public agencies across Texas on on-demand network engineering and software automation engagements, including long-term advisory work for C&amp;J Cable since 2019.</p>
-                    <ul class="bullets">
-                        <li>Deliver turnkey wireless and fiber builds, owning assessment, design, activation, and stabilization.</li>
-                        <li>Develop automation toolchains in Python, C, Java, and Kotlin to streamline configuration and observability.</li>
-                        <li>Design cross-platform apps for Android and Windows, prototype Swift/SwiftUI flows, and roll out WordPress sites to surface the underlying services.</li>
-                        <li>Operate as a recurring consultant for C&amp;J Cable, aligning their network expansion and tooling efforts with broader client work.</li>
-                        <li>Provide escalation support, executive reporting, and roadmap guidance for hybrid infrastructure teams.</li>
-                    </ul>
-                </article>
-                <article class="timeline-card" role="listitem">
-                    <header>
-                        <h3>C&amp;J Cable</h3>
-                        <span class="role">Network Engineer &amp; Consulting Partner</span>
-                        <span class="period"><i class="fa-regular fa-calendar"></i> Aug 2019 - Present (ongoing consultant)</span>
-                    </header>
-                    <p>Design, deploy, and secure large-scale fiber and wireless topologies delivering carrier-grade service quality as part of a long-running consulting engagement integrated with my independent practice.</p>
-                    <ul class="bullets">
-                        <li>Translate design intent into robust physical and logical architectures across metro, rural, and industrial footprints.</li>
-                        <li>Engineer custom automation for Ubiquiti platforms, streamlining provisioning, monitoring, and remediation.</li>
-                        <li>Transitioned from full-time lead to an as-needed contract partner providing escalation coverage and project delivery across Texas while remaining their primary external consultant.</li>
-                        <li>Champion end-to-end customer reliability with rapid troubleshooting, RF optimization, and cross-team coordination.</li>
-                    </ul>
-                </article>
-                <article class="timeline-card" role="listitem">
-                    <header>
-                        <h3>Office of Management and Enterprise Services</h3>
-                        <span class="role">Customer Success Consultant &amp; System Administrator</span>
-                        <span class="period"><i class="fa-regular fa-calendar"></i> Oct 2022 - Jul 2023</span>
-                    </header>
-                    <p>Supported statewide agencies with mission-critical services, bridging citizen-facing support and enterprise infrastructure.</p>
-                    <ul class="bullets">
-                        <li>Delivered Tier 2 support and incident resolution for agency stakeholders, maintaining SLAs and satisfaction scores.</li>
-                        <li>Administered Windows and Linux systems, managed identity services, and hardened environments against modern threats.</li>
-                        <li>Drove knowledge sharing and documentation to accelerate cross-functional onboarding and reduce repeat issues.</li>
-                    </ul>
-                </article>
-                <article class="timeline-card" role="listitem">
-                    <header>
-                        <h3>SparkNetUS</h3>
-                        <span class="role">Founder &amp; Consultant</span>
-                        <span class="period"><i class="fa-regular fa-calendar"></i> Oct 2019 - Nov 2022</span>
-                    </header>
-                    <p>Independent consultancy delivering turnkey network architecture, embedded development, and systems integration.</p>
-                    <ul class="bullets">
-                        <li>Built resilient SMB and municipal networks, pairing secure routing with intuitive observability dashboards.</li>
-                        <li>Developed bespoke software solutions spanning embedded controllers, cloud automation, and service tooling.</li>
-                        <li>Guided clients through regulatory compliance, vendor selection, and lifecycle planning.</li>
-                    </ul>
-                </article>
-                <article class="timeline-card" role="listitem">
-                    <header>
-                        <h3>Earlier Roles</h3>
-                        <span class="role">Systems Administrator &amp; Operations</span>
-                        <span class="period"><i class="fa-regular fa-calendar"></i> 2009 - 2015</span>
-                    </header>
-                    <p>Cut my teeth managing multi-site Windows environments, cloning fleets of endpoints, and keeping gamers online.</p>
-                    <ul class="bullets">
-                        <li>Administered Active Directory, imaging, and network racks for Account Control Technology (200+ endpoints).</li>
-                        <li>Led systems reliability and security for BOOMERS Gameroom with a 25-terminal Windows network.</li>
-                        <li>Developed a customer-first mindset while juggling security, infrastructure, and front-of-house operations.</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="capabilities">
-        <div class="section-inner">
-            <div class="section-heading">
-                <span>Capabilities</span>
-                <h2>From RF design to low-level code, I build systems that endure.</h2>
-                <p>
-                    An integrated toolkit spanning modern networking, software delivery, and customer success.
-                </p>
-            </div>
-            <div class="timeline" role="list">
-            <div class="tag-grid">
-                <article class="tag-card">
-                    <h3><i class="fa-solid fa-network-wired"></i> Network Architecture</h3>
-                    <div class="tag-list">
-                        <span class="tag">Fiber &amp; Fixed Wireless Design</span>
-                        <span class="tag">Layer 2/3 Engineering</span>
-                        <span class="tag">Ubiquiti Ecosystem</span>
-                        <span class="tag">MPLS &amp; VPN</span>
-                        <span class="tag">RF Optimization</span>
-                        <span class="tag">Network Hardening</span>
-                    </div>
-                </article>
-                <article class="tag-card">
-                    <h3><i class="fa-solid fa-code"></i> Software &amp; Automation</h3>
-                    <div class="tag-list">
-                        <span class="tag">C / C++</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Java</span>
-                        <span class="tag">Kotlin</span>
-                        <span class="tag">Embedded Systems</span>
-                        <span class="tag">API Integrations</span>
-                        <span class="tag">Infrastructure as Code</span>
-                    </div>
-                </article>
-                <article class="tag-card">
-                    <h3><i class="fa-solid fa-mobile-screen-button"></i> Mobile &amp; Web Experiences</h3>
-                    <div class="tag-list">
-                        <span class="tag">Android (Kotlin/Java)</span>
-                        <span class="tag">Windows apps</span>
-                        <span class="tag">Swift &amp; SwiftUI prototypes</span>
-                        <span class="tag">WordPress &amp; Elementor</span>
-                        <span class="tag">Performance &amp; accessibility</span>
-                        <span class="tag">API-driven content</span>
-                    </div>
-                </article>
-                <article class="tag-card">
-                    <h3><i class="fa-solid fa-shield-halved"></i> Operations &amp; Support</h3>
-                    <div class="tag-list">
-                        <span class="tag">Tier 2/3 Support</span>
-                        <span class="tag">Incident Response</span>
-                        <span class="tag">Customer Success</span>
-                        <span class="tag">Documentation &amp; Enablement</span>
-                        <span class="tag">Windows &amp; Linux Administration</span>
-                        <span class="tag">Continuous Improvement</span>
-                    </div>
-                </article>
-                <article class="tag-card">
-                    <h3><i class="fa-solid fa-graduation-cap"></i> Education &amp; Credentials</h3>
-                    <div class="tag-list">
-                        <span class="tag">Ubiquiti Certified Networking Specialist</span>
-                        <span class="tag">CompTIA A+</span>
-                        <span class="tag">Graduate coursework toward Master's in Computer Systems Networking &amp; Telecommunications (not completed)</span>
-                        <span class="tag">AS, Computer Information Systems (completed)</span>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="section-inner">
-            <div class="section-heading">
-                <span>Selected Work</span>
-                <h2>Projects that blend connectivity, automation, and customer impact.</h2>
-                <p>
-                    A sampling of initiatives that showcase how I approach complex challenges with cross-disciplinary thinking, including recent product builds.
-                </p>
-            </div>
-            <div class="timeline" role="list">
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h3>homAI Home Automation Suite</h3>
-                    <p>
-                        Building an application framework that unifies smart-home device discovery, automation workflows, and real-time status monitoring. The goal is to deliver secure, low-latency control for mixed vendor environments while keeping the UX approachable for homeowners and technicians.
-                    </p>
-                    <div class="project-meta">
-                        <span><i class="fa-solid fa-house-signal"></i> IoT orchestration | Automation rules | Secure APIs</span>
-                        <a href="#contact">Share requirements <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <h3>LanScannerPro</h3>
-                    <p>
-                        A network device scanning and information-gathering tool that surfaces topology insights, device fingerprints, and actionable inventory reports for IT teams. Built to accelerate onboarding, audits, and troubleshooting in multi-vendor environments.
-                    </p>
-                    <div class="project-meta">
-                        <span><i class="fa-solid fa-magnifying-glass-chart"></i> Discovery | Reporting | Security posture</span>
-                        <a href="#contact">Request a demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <h3>UISP-NOC + Android Companion</h3>
-                    <p>
-                        Developing a NOC dashboard for monitoring Ubiquiti UISP networks alongside a companion Android client. The experience focuses on fast incident triage, SLA visibility, and dispatch-ready diagnostics in the field.
-                    </p>
-                    <div class="project-meta">
-                        <span><i class="fa-solid fa-tower-broadcast"></i> NOC workflows | Android | Observability</span>
-                        <a href="#contact">Discuss rollout <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <h3>CJCABLE LLC ISP App</h3>
-                    <p>
-                        Building a customer-facing ISP experience that pairs billing, outage updates, and support ticketing with self-service device management. Designed to reduce support volume while improving transparency for subscribers.
-                    </p>
-                    <div class="project-meta">
-                        <span><i class="fa-solid fa-user-gear"></i> Customer portal | Billing integrations | Support tooling</span>
-                        <a href="#contact">Explore features <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <h3>City-Wide Fixed Wireless Expansion</h3>
-                    <p>
-                        Led the design and rollout of a rural broadband upgrade using hybrid fiber backbones and wireless distribution, enabling high-availability service for residents and businesses across multiple counties.
-                    </p>
-                    <div class="project-meta">
-                        <span><i class="fa-solid fa-toolbox"></i> Ubiquiti | RF Planning | QoS</span>
-                        <a href="#contact">Discuss scope <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <h3>Automation Toolkit for Network Ops</h3>
-                    <p>
-                        Built Python and C-based utilities that automate provisioning, health checks, and device configuration drift detection for thousands of access points, shrinking onboarding time from days to hours.
-                    </p>
-                    <div class="project-meta">
-                        <span><i class="fa-solid fa-code-branch"></i> Python | REST APIs | CI/CD</span>
-                        <a href="https://github.com/asparks1987" target="_blank" rel="noopener">View repos <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <h3>Cross-Platform Field Toolkit</h3>
-                    <p>
-                        Created a Windows and Android app suite that pairs RF surveys, asset checklists, and offline notes with fast sync back to central dashboards. Prototyped companion SwiftUI flows to validate Apple UX before full release.
-                    </p>
-                    <div class="project-meta">
-                        <span><i class="fa-solid fa-mobile-screen-button"></i> Kotlin | Win32 | SwiftUI prototypes</span>
-                        <a href="https://github.com/asparks1987" target="_blank" rel="noopener">Code samples <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <h3>Performance-First WordPress Sites</h3>
-                    <p>
-                        Delivered SEO-friendly WordPress builds for small businesses using lean themes, accessibility audits, and lightweight animations. Handled hosting hardening, caching, and training so non-technical teams can self-manage content.
-                    </p>
-                    <div class="project-meta">
-                        <span><i class="fa-solid fa-globe"></i> WordPress | Elementor | Lighthouse tuning</span>
-                        <a href="#contact">Request a walkthrough <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <h3>State Agency Support Modernization</h3>
-                    <p>
-                        Created incident workflows, knowledge bases, and automation hooks that empowered Oklahoma agencies to resolve service tickets faster while boosting satisfaction metrics for thousands of users.
-                    </p>
-                    <div class="project-meta">
-                        <span><i class="fa-solid fa-headset"></i> ITSM | Knowledge Engineering</span>
-                        <a href="https://www.linkedin.com/in/arynsparks" target="_blank" rel="noopener">Connect on LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="section-inner">
-            <div class="section-heading">
-                <span>Contact</span>
-                <h2>Let's explore what we can build together.</h2>
-                <p>
-                    Ready to collaborate on your next network initiative, automation challenge, or full-stack build. Drop a line and I'll respond quickly.
-                </p>
-            </div>
-            <div class="timeline" role="list">
-            <div class="contact-grid">
-                <article class="contact-card">
-                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+        <section id="process" aria-labelledby="process-title">
+            <div class="section-inner">
+                <div class="section-head">
                     <div>
-                        <h3>Email</h3>
-                        <p><a href="mailto:aryn.sparks1987@gmail.com">aryn.sparks1987@gmail.com</a></p>
+                        <span class="eyebrow">Delivery process</span>
+                        <h2 id="process-title">A practical path from rough idea to working system.</h2>
                     </div>
-                </article>
-                <article class="contact-card">
-                    <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
-                    <div>
-                        <h3>LinkedIn</h3>
-                        <p><a href="https://www.linkedin.com/in/arynsparks" target="_blank" rel="noopener">linkedin.com/in/arynsparks</a></p>
-                    </div>
-                </article>
+                    <p>
+                        Every engagement starts with clarity: what problem the system solves, who uses it, what it must connect to, and how success will be measured.
+                    </p>
+                </div>
+                <div class="process-grid">
+                    <article class="process-step">
+                        <h3>Discovery</h3>
+                        <p>We map goals, users, current systems, pain points, constraints, budget, and launch priorities.</p>
+                    </article>
+                    <article class="process-step">
+                        <h3>Architecture</h3>
+                        <p>I define the stack, integrations, data flow, hosting, security needs, and delivery plan before build work starts.</p>
+                    </article>
+                    <article class="process-step">
+                        <h3>Build</h3>
+                        <p>Web pages, SaaS features, Android app screens, APIs, automations, or network changes are delivered in clear increments.</p>
+                    </article>
+                    <article class="process-step">
+                        <h3>Support</h3>
+                        <p>After launch, I can help with training, fixes, performance tuning, monitoring, documentation, and the next phase.</p>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="work" class="proof-band" aria-labelledby="work-title">
+            <div class="section-inner">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow">Project highlights</span>
+                        <h2 id="work-title">Products, apps, and utilities that show the range.</h2>
+                    </div>
+                    <p>
+                        The portfolio spans client-ready SaaS ideas, Android and web products, creative brand work, network tools, and smaller libraries that make delivery faster.
+                    </p>
+                </div>
+                <div class="project-showcase">
+                <div class="featured-projects">
+                    <article class="work-card">
+                        <div class="work-top">
+                            <span>Network Discovery</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <h3>LANScannerPRO</h3>
+                        <p>A professional network scanning and reporting product for inventory, discovery, device details, and fast troubleshooting across mixed environments.</p>
+                        <div class="tech-tags">
+                            <span>Network tools</span><span>Discovery</span><span>Reporting</span><span>Security</span>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-top">
+                            <span>ISP SaaS</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <h3>myWISP</h3>
+                        <p>A WISP-focused operations platform concept for customer visibility, outage communication, support workflows, billing touchpoints, and device management.</p>
+                        <div class="tech-tags">
+                            <span>SaaS</span><span>Portal</span><span>ISP ops</span><span>Support</span>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-top">
+                            <span>NOC Display</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <h3>NOCWALL</h3>
+                        <p>A network operations wallboard concept for surfacing service health, alerts, ticket activity, uptime signals, and escalation context at a glance.</p>
+                        <div class="tech-tags">
+                            <span>Dashboard</span><span>Monitoring</span><span>Alerts</span><span>NOC</span>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-top">
+                            <span>Home Automation</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <h3>HOME-ai</h3>
+                        <p>A smart-home automation suite for device discovery, secure control, real-time status, automation rules, and homeowner-friendly technician support.</p>
+                        <div class="tech-tags">
+                            <span>IoT</span><span>Automation</span><span>APIs</span><span>UX</span>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-top">
+                            <span>App / Game</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <h3>AlphaRunner</h3>
+                        <p>A product-style app project that demonstrates interactive UI, app structure, state handling, and the ability to turn an idea into a playable or usable experience.</p>
+                        <div class="tech-tags">
+                            <span>App design</span><span>UI logic</span><span>Interaction</span><span>Launch</span>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-top">
+                            <span>Creative Web</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <h3>The band ArynWylde</h3>
+                        <p>A creative brand and web presence project that shows how design, content structure, media, and audience-focused presentation work together.</p>
+                        <div class="tech-tags">
+                            <span>Brand site</span><span>Media</span><span>Content</span><span>Web</span>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-top">
+                            <span>Frontend Toolkit</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <h3>Stage-kit</h3>
+                        <p>A reusable project kit for building polished front-end experiences faster, with structure for layouts, interaction states, and clean presentation.</p>
+                        <div class="tech-tags">
+                            <span>Frontend</span><span>Components</span><span>Workflow</span><span>Reusable</span>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-top">
+                            <span>Network Utility</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <h3>wanScanner</h3>
+                        <p>A focused utility for scanning and inspecting wide-area network targets, useful for audits, visibility, troubleshooting, and validation work.</p>
+                        <div class="tech-tags">
+                            <span>WAN</span><span>Scanning</span><span>Python</span><span>Ops</span>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-top">
+                            <span>Network Engineering</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <h3>Wireless and fiber operations</h3>
+                        <p>Planning, deployment, monitoring, RF tuning, troubleshooting, and automation for business and ISP networks.</p>
+                        <div class="tech-tags">
+                            <span>Ubiquiti</span><span>Fiber</span><span>RF</span><span>Automation</span>
+                        </div>
+                    </article>
+                </div>
+                <div class="project-index">
+                    <h3>Smaller tools and libraries</h3>
+                    <p>Compact utilities and code libraries that show the practical side of the work: logging, imaging, networking, randomization, address generation, and data mapping.</p>
+                    <div class="index-grid">
+                        <div class="index-item">
+                            <strong>libLogit</strong>
+                            <span>Lightweight logging support for cleaner diagnostics and application visibility.</span>
+                        </div>
+                        <div class="index-item">
+                            <strong>img2numpy</strong>
+                            <span>Image conversion tooling for turning visual assets into NumPy-ready data.</span>
+                        </div>
+                        <div class="index-item">
+                            <strong>libRandomizer</strong>
+                            <span>Reusable randomization helpers for test data, simulations, and utility workflows.</span>
+                        </div>
+                        <div class="index-item">
+                            <strong>libSimpleNet</strong>
+                            <span>Simple networking abstractions for faster prototyping and connectivity tasks.</span>
+                        </div>
+                        <div class="index-item">
+                            <strong>linPairGenerator</strong>
+                            <span>Pair-generation tooling for structured combinations and repeatable data workflows.</span>
+                        </div>
+                        <div class="index-item">
+                            <strong>libRangeMap</strong>
+                            <span>Range mapping helpers for translating values, spans, and rule-based boundaries.</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="section-inner contact-grid">
+                <div>
+                    <span class="eyebrow">Start the conversation</span>
+                    <h2 id="contact-title">Tell me what you need built, fixed, or made easier.</h2>
+                    <p>
+                        Share the goal, the pain point, and what is already in place. I will respond with next steps and the right level of technical detail for your project.
+                    </p>
+                    <div class="contact-methods">
+                        <a class="contact-method" href="mailto:aryn.sparks1987@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>
+                                <strong>Email</strong>
+                                <span>aryn.sparks1987@gmail.com</span>
+                            </span>
+                        </a>
+                        <a class="contact-method" href="https://www.linkedin.com/in/arynsparks" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>
+                                <strong>LinkedIn</strong>
+                                <span>linkedin.com/in/arynsparks</span>
+                            </span>
+                        </a>
+                        <a class="contact-method" href="https://github.com/asparks1987" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                            <span>
+                                <strong>GitHub</strong>
+                                <span>github.com/asparks1987</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <form class="inquiry" id="inquiry-form">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="company">Company</label>
+                            <input id="company" name="company" type="text" autocomplete="organization">
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" autocomplete="email" required>
+                        </div>
+                        <div class="field">
+                            <label for="service">What do you need?</label>
+                            <select id="service" name="service">
+                                <option>Website or landing page</option>
+                                <option>SaaS application</option>
+                                <option>Android app</option>
+                                <option>Network engineering</option>
+                                <option>IT consulting and support</option>
+                                <option>Not sure yet</option>
+                            </select>
+                        </div>
+                        <div class="field full">
+                            <label for="message">Project details</label>
+                            <textarea id="message" name="message" placeholder="Briefly describe the goal, timeline, current system, or issue." required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Send inquiry
+                        </button>
+                        <p class="form-note">This opens your email client so you can review the message before sending.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <div class="socials">
-            <a href="mailto:aryn.sparks1987@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-            <a href="https://github.com/asparks1987" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/arynsparks" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <div class="footer-inner">
+            <span>&copy; <span id="year"></span> Aryn Sparks IT Consulting. All rights reserved.</span>
+            <div class="footer-links">
+                <a href="mailto:aryn.sparks1987@gmail.com">Email</a>
+                <a href="https://github.com/asparks1987" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/arynsparks" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="privacypolicy.html">Privacy Policy</a>
+            </div>
         </div>
-        <p>&copy; <span id="year"></span> Aryn M. Sparks | Network Engineering &amp; Software Development</p>
     </footer>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        document.getElementById("inquiry-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const form = new FormData(event.currentTarget);
+            const name = form.get("name") || "";
+            const company = form.get("company") || "";
+            const email = form.get("email") || "";
+            const service = form.get("service") || "";
+            const message = form.get("message") || "";
+            const subject = encodeURIComponent("Consulting inquiry: " + service);
+            const body = encodeURIComponent(
+                "Name: " + name + "\n" +
+                "Company: " + company + "\n" +
+                "Email: " + email + "\n" +
+                "Service: " + service + "\n\n" +
+                "Project details:\n" + message
+            );
+
+            window.location.href = "mailto:aryn.sparks1987@gmail.com?subject=" + subject + "&body=" + body;
+        });
     </script>
 </body>
 </html>
