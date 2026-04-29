@@ -11,19 +11,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         :root {
-            --ink: #08152d;
-            --ink-soft: #33435f;
-            --muted: #65718a;
-            --line: #dce3ee;
-            --line-strong: #c9d4e5;
-            --panel: #ffffff;
-            --surface: #f6f8fb;
-            --surface-strong: #eef3f8;
-            --blue: #115fd6;
-            --blue-strong: #0b46a3;
-            --green: #16875a;
-            --green-soft: #e9f7f1;
-            --shadow: 0 18px 50px rgba(24, 43, 77, 0.10);
+            color-scheme: dark;
+            --ink: #f4f7fb;
+            --ink-soft: #c9d4e6;
+            --muted: #94a5bf;
+            --line: rgba(159, 178, 212, 0.18);
+            --line-strong: rgba(159, 178, 212, 0.34);
+            --panel: #101a2d;
+            --panel-strong: #14233b;
+            --surface: #08111f;
+            --surface-strong: #0c1728;
+            --blue: #67a5ff;
+            --blue-strong: #3d82e8;
+            --green: #47d998;
+            --green-soft: rgba(71, 217, 152, 0.13);
+            --shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
             --radius: 8px;
             --max: 1180px;
         }
@@ -60,10 +62,10 @@
             position: sticky;
             top: 0;
             z-index: 20;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(8, 17, 31, 0.92);
             border-bottom: 1px solid var(--line);
             backdrop-filter: blur(18px);
-            box-shadow: 0 8px 30px rgba(12, 31, 65, 0.05);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
         }
 
         .nav {
@@ -174,7 +176,7 @@
 
         .btn-secondary {
             color: var(--ink);
-            background: #fff;
+            background: var(--panel);
             border-color: var(--line-strong);
         }
 
@@ -186,14 +188,14 @@
 
         .hero {
             background:
-                linear-gradient(180deg, #ffffff 0%, #f8fbff 72%, var(--surface) 100%);
+                linear-gradient(180deg, #0c1626 0%, #0a1423 72%, var(--surface) 100%);
             border-bottom: 1px solid var(--line);
         }
 
         .hero-inner {
             max-width: var(--max);
             margin: 0 auto;
-            padding: clamp(3rem, 6vw, 5.5rem) 1.25rem 3.5rem;
+            padding: clamp(2.3rem, 5vw, 4rem) 1.25rem 3.25rem;
             display: grid;
             grid-template-columns: minmax(0, 0.92fr) minmax(460px, 1.08fr);
             gap: clamp(2.5rem, 5vw, 4.5rem);
@@ -218,7 +220,7 @@
         h1 {
             max-width: 720px;
             margin-bottom: 1.2rem;
-            font-size: clamp(2.65rem, 6vw, 4.6rem);
+            font-size: clamp(2.45rem, 5vw, 3.85rem);
             line-height: 1.04;
             letter-spacing: 0;
         }
@@ -238,9 +240,9 @@
 
         .trust-row {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1rem;
-            max-width: 600px;
+            max-width: 760px;
         }
 
         .trust-item {
@@ -285,7 +287,7 @@
         .cert-strip span {
             padding: 0.48rem 0.68rem;
             color: var(--ink-soft);
-            background: #fff;
+            background: var(--panel);
             border: 1px solid var(--line);
             border-radius: 6px;
             font-size: 0.88rem;
@@ -306,7 +308,7 @@
         }
 
         .ops-shell {
-            background: #fff;
+            background: var(--panel);
             border: 1px solid var(--line-strong);
             border-radius: 8px;
             box-shadow: var(--shadow);
@@ -320,7 +322,7 @@
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid var(--line);
-            background: #fbfcfe;
+            background: var(--panel-strong);
         }
 
         .window-dots {
@@ -352,8 +354,8 @@
 
         .ops-sidebar {
             padding: 1rem 0.85rem;
-            color: #dbe8fa;
-            background: #081d3d;
+            color: var(--ink-soft);
+            background: #061126;
         }
 
         .ops-initials {
@@ -422,7 +424,7 @@
 
         .metric-grid {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 0.8rem;
         }
 
@@ -431,7 +433,7 @@
             padding: 0.85rem;
             border: 1px solid var(--line);
             border-radius: 8px;
-            background: #fff;
+            background: var(--surface-strong);
         }
 
         .metric-label {
@@ -475,7 +477,7 @@
 
         .ops-lower {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 0.8rem;
             margin-top: 0.8rem;
         }
@@ -484,7 +486,7 @@
             padding: 0.95rem;
             border: 1px solid var(--line);
             border-radius: 8px;
-            background: #fff;
+            background: var(--surface-strong);
         }
 
         .ops-panel h3 {
@@ -568,10 +570,10 @@
         .service-card {
             min-height: 220px;
             padding: 1.2rem;
-            background: #fff;
+            background: var(--panel);
             border: 1px solid var(--line);
             border-radius: var(--radius);
-            box-shadow: 0 10px 28px rgba(24, 43, 77, 0.06);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
             display: flex;
             flex-direction: column;
             gap: 0.85rem;
@@ -590,7 +592,7 @@
             display: grid;
             place-items: center;
             color: var(--blue);
-            background: #edf4ff;
+            background: rgba(103, 165, 255, 0.12);
             border-radius: 8px;
             font-size: 1.2rem;
         }
@@ -615,7 +617,7 @@
         }
 
         .proof-band {
-            background: #fff;
+            background: var(--surface-strong);
             border-top: 1px solid var(--line);
             border-bottom: 1px solid var(--line);
         }
@@ -706,7 +708,7 @@
             position: relative;
             min-height: 230px;
             padding: 1.3rem;
-            background: #fff;
+            background: var(--panel);
             border: 1px solid var(--line);
             border-radius: 8px;
         }
@@ -748,10 +750,10 @@
             display: grid;
             gap: 1rem;
             padding: 1.2rem;
-            background: #fff;
+            background: var(--panel);
             border: 1px solid var(--line);
             border-radius: 8px;
-            box-shadow: 0 10px 28px rgba(24, 43, 77, 0.05);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
         }
 
         .work-top {
@@ -784,19 +786,79 @@
         .tech-tags span {
             padding: 0.34rem 0.5rem;
             color: var(--ink-soft);
-            background: var(--surface);
+            background: var(--surface-strong);
             border: 1px solid var(--line);
             border-radius: 6px;
             font-size: 0.78rem;
             font-weight: 700;
         }
 
-        .project-index {
-            padding: 1.2rem;
-            background: #fff;
+        .project-shot {
+            position: relative;
+            min-height: 132px;
+            aspect-ratio: 16 / 9;
+            padding: 0.9rem;
+            display: grid;
+            align-content: end;
+            gap: 0.25rem;
+            overflow: hidden;
             border: 1px solid var(--line);
             border-radius: 8px;
-            box-shadow: 0 10px 28px rgba(24, 43, 77, 0.05);
+            background:
+                linear-gradient(135deg, rgba(103, 165, 255, 0.22), rgba(71, 217, 152, 0.11)),
+                linear-gradient(180deg, #14233b, #0b1424);
+        }
+
+        .project-shot::before {
+            content: "";
+            position: absolute;
+            inset: 0.8rem;
+            border: 1px solid rgba(244, 247, 251, 0.12);
+            border-radius: 6px;
+            background:
+                linear-gradient(90deg, rgba(244, 247, 251, 0.16) 0 28%, transparent 28% 100%),
+                repeating-linear-gradient(0deg, rgba(244, 247, 251, 0.08) 0 1px, transparent 1px 18px);
+            opacity: 0.65;
+        }
+
+        .project-shot::after {
+            content: "";
+            position: absolute;
+            right: 1.1rem;
+            top: 1.1rem;
+            width: 34%;
+            height: 42%;
+            border-radius: 6px;
+            background:
+                linear-gradient(180deg, rgba(71, 217, 152, 0.45), rgba(103, 165, 255, 0.16));
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+        }
+
+        .project-shot span,
+        .project-shot strong {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-shot span {
+            color: var(--muted);
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .project-shot strong {
+            color: var(--ink);
+            font-size: 1rem;
+        }
+
+        .project-index {
+            padding: 1.2rem;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
         }
 
         .project-index h3 {
@@ -820,7 +882,7 @@
             padding: 0.9rem;
             border: 1px solid var(--line);
             border-radius: 8px;
-            background: var(--surface);
+            background: var(--surface-strong);
         }
 
         .index-item strong {
@@ -838,7 +900,7 @@
 
         .contact {
             color: #fff;
-            background: #081d3d;
+            background: #061126;
         }
 
         .contact .eyebrow,
@@ -900,7 +962,7 @@
         .inquiry {
             padding: 1.25rem;
             color: var(--ink);
-            background: #fff;
+            background: var(--panel);
             border-radius: 8px;
             box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
         }
@@ -934,7 +996,7 @@
             border-radius: 7px;
             padding: 0.78rem 0.82rem;
             color: var(--ink);
-            background: #fff;
+            background: var(--surface-strong);
             outline: none;
         }
 
@@ -966,8 +1028,8 @@
 
         footer {
             padding: 1.4rem 1.25rem;
-            color: #dbe8fa;
-            background: #06152e;
+            color: var(--ink-soft);
+            background: #040b18;
         }
 
         .footer-inner {
@@ -1033,6 +1095,10 @@
             .section-head {
                 grid-template-columns: 1fr;
                 align-items: start;
+            }
+
+            .trust-row {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .ops-body {
@@ -1161,7 +1227,7 @@
                     <span class="eyebrow">IT consulting for serious business systems</span>
                     <h1 id="hero-title">Reliable web, SaaS, Android, and network systems businesses can trust.</h1>
                     <p class="hero-copy">
-                        I help small businesses, ISPs, professional offices, and technical teams turn technology needs into dependable systems: clean websites, custom SaaS applications, Android apps, automation, and production network engineering.
+                        I help small businesses, ISPs, professional offices, and technical teams turn technology needs into dependable systems: clean websites, custom SaaS applications, Android apps, automation, and production network engineering. I have been developing software since 2015 and bring 7 years of hands-on network engineering experience to every build.
                     </p>
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="#contact">
@@ -1179,6 +1245,13 @@
                             <div>
                                 <strong>7 years</strong>
                                 <span>Network engineering experience</span>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fa-solid fa-code"></i>
+                            <div>
+                                <strong>Since 2015</strong>
+                                <span>Software development experience</span>
                             </div>
                         </div>
                         <div class="trust-item">
@@ -1365,6 +1438,10 @@
                             <span>Network engineering across wireless, fiber, routing, support, and operations.</span>
                         </div>
                         <div class="credential">
+                            <strong>Software since 2015</strong>
+                            <span>Long-running hands-on development across apps, automation, utilities, web pages, and SaaS concepts.</span>
+                        </div>
+                        <div class="credential">
                             <strong>Associates in IT</strong>
                             <span>Formal foundation in information technology and systems practice.</span>
                         </div>
@@ -1447,16 +1524,20 @@
             <div class="section-inner">
                 <div class="section-head">
                     <div>
-                        <span class="eyebrow">Project highlights</span>
-                        <h2 id="work-title">Products, apps, and utilities that show the range.</h2>
+                        <span class="eyebrow">Software stack</span>
+                        <h2 id="work-title">Project highlights, product screenshots, and reusable tools.</h2>
                     </div>
                     <p>
-                        The portfolio spans client-ready SaaS ideas, Android and web products, creative brand work, network tools, and smaller libraries that make delivery faster.
+                        The portfolio spans client-ready SaaS ideas, Android and web products, creative brand work, network tools, and smaller libraries that make delivery faster. Screenshot placeholders are included here so real product shots can replace them cleanly later.
                     </p>
                 </div>
                 <div class="project-showcase">
                 <div class="featured-projects">
                     <article class="work-card">
+                        <div class="project-shot" aria-label="Screenshot placeholder for LANScannerPRO">
+                            <span>Screenshot placeholder</span>
+                            <strong>LANScannerPRO</strong>
+                        </div>
                         <div class="work-top">
                             <span>Network Discovery</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -1468,6 +1549,10 @@
                         </div>
                     </article>
                     <article class="work-card">
+                        <div class="project-shot" aria-label="Screenshot placeholder for myWISP">
+                            <span>Screenshot placeholder</span>
+                            <strong>myWISP</strong>
+                        </div>
                         <div class="work-top">
                             <span>ISP SaaS</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -1479,6 +1564,10 @@
                         </div>
                     </article>
                     <article class="work-card">
+                        <div class="project-shot" aria-label="Screenshot placeholder for NOCWALL">
+                            <span>Screenshot placeholder</span>
+                            <strong>NOCWALL</strong>
+                        </div>
                         <div class="work-top">
                             <span>NOC Display</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -1490,6 +1579,10 @@
                         </div>
                     </article>
                     <article class="work-card">
+                        <div class="project-shot" aria-label="Screenshot placeholder for HOME-ai">
+                            <span>Screenshot placeholder</span>
+                            <strong>HOME-ai</strong>
+                        </div>
                         <div class="work-top">
                             <span>Home Automation</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -1501,6 +1594,10 @@
                         </div>
                     </article>
                     <article class="work-card">
+                        <div class="project-shot" aria-label="Screenshot placeholder for AlphaRunner">
+                            <span>Screenshot placeholder</span>
+                            <strong>AlphaRunner</strong>
+                        </div>
                         <div class="work-top">
                             <span>Finance Analytics</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -1512,6 +1609,10 @@
                         </div>
                     </article>
                     <article class="work-card">
+                        <div class="project-shot" aria-label="Screenshot placeholder for The band ArynWylde">
+                            <span>Screenshot placeholder</span>
+                            <strong>ArynWylde</strong>
+                        </div>
                         <div class="work-top">
                             <span>Creative Web</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -1523,6 +1624,10 @@
                         </div>
                     </article>
                     <article class="work-card">
+                        <div class="project-shot" aria-label="Screenshot placeholder for Stage-kit">
+                            <span>Screenshot placeholder</span>
+                            <strong>Stage-kit</strong>
+                        </div>
                         <div class="work-top">
                             <span>Social Media SaaS</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -1534,6 +1639,10 @@
                         </div>
                     </article>
                     <article class="work-card">
+                        <div class="project-shot" aria-label="Screenshot placeholder for wanScanner">
+                            <span>Screenshot placeholder</span>
+                            <strong>wanScanner</strong>
+                        </div>
                         <div class="work-top">
                             <span>Network Utility</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -1545,6 +1654,10 @@
                         </div>
                     </article>
                     <article class="work-card">
+                        <div class="project-shot" aria-label="Screenshot placeholder for wireless and fiber operations">
+                            <span>Screenshot placeholder</span>
+                            <strong>Network Ops</strong>
+                        </div>
                         <div class="work-top">
                             <span>Network Engineering</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
