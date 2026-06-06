@@ -863,6 +863,41 @@
             align-items: start;
         }
 
+        .booking-panel {
+            padding: 1.25rem;
+            border-radius: 28px;
+            border: 1px solid var(--line);
+            background: linear-gradient(180deg, rgba(16, 33, 53, 0.95), rgba(10, 18, 29, 0.92));
+            box-shadow: var(--shadow);
+        }
+
+        .booking-panel h2 {
+            margin: 0.4rem 0 0.75rem;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            line-height: 1.05;
+        }
+
+        .booking-panel p {
+            color: var(--text-soft);
+        }
+
+        .booking-frame {
+            width: 100%;
+            min-height: 780px;
+            border: 1px solid rgba(176, 194, 219, 0.14);
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(4, 11, 18, 0.8);
+        }
+
+        .booking-frame iframe {
+            width: 100%;
+            height: 780px;
+            border: 0;
+            display: block;
+            background: #fff;
+        }
+
         .contact-card {
             padding: 1.25rem;
             border-radius: 28px;
@@ -1593,7 +1628,7 @@
                     <span class="eyebrow">Contact</span>
                     <h2 style="margin: 0.4rem 0 0.75rem; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.05;">If you need help with infrastructure, software, or operations, let’s talk.</h2>
                     <p>
-                        Tell me what you’re trying to improve, what’s already in place, and what outcome matters most. I’ll respond with a practical next step instead of generic advice.
+                        Tell me what you’re trying to improve, what’s already in place, and what outcome matters most. If you already know you want time on the calendar, use the booking link and Google Calendar will handle the appointment and availability for you.
                     </p>
                     <div class="contact-methods">
                         <a class="contact-method" href="mailto:aryn.sparks1987@gmail.com">
@@ -1619,44 +1654,26 @@
                         </a>
                     </div>
                 </div>
-                <form class="inquiry reveal" id="inquiry-form">
-                    <div class="form-grid">
-                        <div class="field">
-                            <label for="name">Name</label>
-                            <input id="name" name="name" type="text" autocomplete="name" required>
-                        </div>
-                        <div class="field">
-                            <label for="company">Company</label>
-                            <input id="company" name="company" type="text" autocomplete="organization">
-                        </div>
-                        <div class="field">
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="email" autocomplete="email" required>
-                        </div>
-                        <div class="field">
-                            <label for="service">What do you need?</label>
-                            <select id="service" name="service">
-                                <option>Network engineering</option>
-                                <option>Software or SaaS build</option>
-                                <option>Automation or tooling</option>
-                                <option>Android or Windows app</option>
-                                <option>Consulting and support</option>
-                                <option>Not sure yet</option>
-                            </select>
-                        </div>
-                        <div class="field full">
-                            <label for="message">Project details</label>
-                            <textarea id="message" name="message" placeholder="Share the goal, timeline, existing system, or pain point." required></textarea>
-                        </div>
+                <div class="booking-panel reveal" aria-label="Appointment booking">
+                    <span class="eyebrow">Appointment booking</span>
+                    <h2>Schedule a consultation directly in my Google Calendar.</h2>
+                    <p>
+                        Choose an open time slot below. Google Calendar handles availability, booking confirmations, and change notifications automatically.
+                    </p>
+                    <div class="hero-actions" style="margin-top: 1rem;">
+                        <a class="btn btn-primary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Open booking page
+                        </a>
+                        <a class="btn btn-secondary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            Open in new tab
+                        </a>
                     </div>
-                    <div class="form-actions">
-                        <button class="btn btn-primary" type="submit">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            Send inquiry
-                        </button>
-                        <p class="form-note">This opens your email client so you can review the message before sending.</p>
+                    <div class="booking-frame" aria-label="Google Calendar booking embed">
+                        <iframe src="https://calendar.app.google/kZMEh2chy1fspj8Z7" title="Google Calendar appointment booking page" loading="lazy"></iframe>
                     </div>
-                </form>
+                </div>
             </div>
         </section>
     </main>
@@ -1685,27 +1702,6 @@
         }, { threshold: 0.15 });
 
         document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-
-        document.getElementById("inquiry-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            const form = new FormData(event.currentTarget);
-            const name = form.get("name") || "";
-            const company = form.get("company") || "";
-            const email = form.get("email") || "";
-            const service = form.get("service") || "";
-            const message = form.get("message") || "";
-            const subject = encodeURIComponent("Consulting inquiry: " + service);
-            const body = encodeURIComponent(
-                "Name: " + name + "\n" +
-                "Company: " + company + "\n" +
-                "Email: " + email + "\n" +
-                "Service: " + service + "\n\n" +
-                "Project details:\n" + message
-            );
-
-            window.location.href = "mailto:aryn.sparks1987@gmail.com?subject=" + subject + "&body=" + body;
-        });
     </script>
 </body>
 </html>
