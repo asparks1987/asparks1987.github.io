@@ -636,6 +636,12 @@
             gap: 1rem;
         }
 
+        .site-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
         .work-card {
             padding: 1.1rem;
             border-radius: 24px;
@@ -648,6 +654,30 @@
         .work-card:hover {
             transform: translateY(-4px);
             border-color: rgba(110, 231, 255, 0.26);
+        }
+
+        .site-card {
+            display: grid;
+            gap: 0.95rem;
+            padding: 1.1rem;
+            border-radius: 24px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .site-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(110, 231, 255, 0.26);
+            box-shadow: var(--shadow);
+        }
+
+        .featured-site {
+            min-height: 100%;
+            background:
+                linear-gradient(180deg, rgba(16, 33, 53, 0.92), rgba(10, 18, 29, 0.94)),
+                radial-gradient(circle at top right, rgba(110, 231, 255, 0.12), transparent 34%);
         }
 
         .work-top {
@@ -1089,10 +1119,13 @@
             }
 
             .service-grid,
-            .work-grid,
             .process-grid,
             .index-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .site-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1127,7 +1160,7 @@
             .metric-grid,
             .stats-grid,
             .service-grid,
-            .work-grid,
+            .site-grid,
             .process-grid,
             .index-grid,
             .form-grid {
@@ -1229,13 +1262,14 @@
                             </div>
                         </div>
                         <div class="hero-meta">
-                            <div class="meta-strip">
-                                <span>Ubiquiti Certified Networking Specialist</span>
-                                <span>Python / C / Java / Kotlin</span>
-                                <span>Android / Windows / WordPress</span>
-                                <span>Consulting, support, and delivery</span>
-                            </div>
+                        <div class="meta-strip">
+                            <span>Ubiquiti Certified Networking Specialist</span>
+                            <span>Python / C / Java / Kotlin</span>
+                            <span>Android / Windows / WordPress</span>
+                            <span>Consulting, support, and delivery</span>
+                            <span>GitHub Pages project sites</span>
                         </div>
+                    </div>
                     </div>
                     <aside class="profile-card" aria-label="Consulting snapshot">
                         <div class="profile-top">
@@ -1394,121 +1428,125 @@
             <div class="section-inner">
                 <div class="section-head reveal">
                     <div>
-                        <span class="eyebrow">GitHub-backed projects</span>
-                        <h2>Selected projects that show what I build and how I think.</h2>
+                        <span class="eyebrow">GitHub Pages sites</span>
+                        <h2>Live project websites that show what I build and how I think.</h2>
                     </div>
                     <p>
-                        These are the kinds of projects I want the page to talk about: network tools, operations software, automation utilities, product concepts, and creative web work that show consulting breadth instead of a single narrow specialty.
+                        These are the real project websites behind the work: each one is being presented as its own GitHub-hosted page so visitors can see the product, the use case, and the implementation style before they ever look at the source.
                     </p>
                 </div>
-                <div class="work-grid">
-                    <article class="work-card reveal">
+                <div class="site-grid">
+                    <a class="site-card reveal featured-site" href="https://asparks1987.github.io/img2Numpy/" target="_blank" rel="noopener">
+                        <div class="project-mark">
+                            <div>
+                                <strong>img2numpy</strong>
+                                <span>Open-source Python SDK</span>
+                            </div>
+                            <i class="fa-solid fa-image"></i>
+                        </div>
+                        <div class="work-top">
+                            <span>Live site</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <p>Convert images into NumPy arrays with one import. Built for computer vision, ML preprocessing, notebooks, and batch pipelines.</p>
+                        <div class="tech-tags">
+                            <span>Python</span><span>NumPy</span><span>Computer vision</span><span>Data pipelines</span>
+                        </div>
+                    </a>
+                    <a class="site-card reveal" href="https://asparks1987.github.io/LANScannerPRO/" target="_blank" rel="noopener">
                         <div class="project-mark">
                             <div>
                                 <strong>LANScannerPRO</strong>
-                                <span>Network discovery and reporting</span>
+                                <span>Network discovery site</span>
                             </div>
                             <i class="fa-solid fa-network-wired"></i>
                         </div>
                         <div class="work-top">
-                            <span>Infrastructure visibility</span>
+                            <span>Project site</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>A professional scanning and reporting tool for inventory, device detail gathering, and faster troubleshooting across mixed environments.</p>
+                        <p>Live project website for network discovery, inventory, and reporting work aimed at operational visibility.</p>
                         <div class="tech-tags">
-                            <span>Discovery</span><span>Reporting</span><span>Ops</span><span>Security</span>
+                            <span>Discovery</span><span>Reporting</span><span>Operations</span><span>Security</span>
                         </div>
-                    </article>
-                    <article class="work-card reveal">
+                    </a>
+                    <a class="site-card reveal" href="https://asparks1987.github.io/myWISP/" target="_blank" rel="noopener">
                         <div class="project-mark">
                             <div>
                                 <strong>myWISP</strong>
-                                <span>ISP operations concept</span>
+                                <span>ISP operations site</span>
                             </div>
                             <i class="fa-solid fa-tower-cell"></i>
                         </div>
                         <div class="work-top">
-                            <span>Client-facing portal</span>
+                            <span>Project site</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>An operations platform concept for customer visibility, outage communication, billing touchpoints, and support workflows for WISP teams.</p>
+                        <p>Customer-facing operations and support concept for WISP teams, billed as a usable product instead of a repo.</p>
                         <div class="tech-tags">
                             <span>SaaS</span><span>Portal</span><span>Support</span><span>Automation</span>
                         </div>
-                    </article>
-                    <article class="work-card reveal">
+                    </a>
+                    <a class="site-card reveal" href="https://asparks1987.github.io/NOCWALL-CE/" target="_blank" rel="noopener">
                         <div class="project-mark">
                             <div>
                                 <strong>NOCWALL</strong>
-                                <span>Operations wallboard</span>
+                                <span>Operations wallboard site</span>
                             </div>
                             <i class="fa-solid fa-display"></i>
                         </div>
                         <div class="work-top">
-                            <span>Monitoring and triage</span>
+                            <span>Project site</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>A wallboard concept for surfacing alerts, ticket activity, uptime signals, and escalation context for teams that live in the NOC.</p>
+                        <p>A wallboard and monitoring presence for alerts, tickets, uptime, and escalation context at a glance.</p>
                         <div class="tech-tags">
                             <span>Dashboard</span><span>Monitoring</span><span>Alerts</span><span>NOC</span>
                         </div>
-                    </article>
-                    <article class="work-card reveal">
+                    </a>
+                    <a class="site-card reveal" href="https://asparks1987.github.io/Home-AI/" target="_blank" rel="noopener">
                         <div class="project-mark">
                             <div>
                                 <strong>HOME-ai</strong>
-                                <span>Home automation suite</span>
+                                <span>Automation site</span>
                             </div>
                             <i class="fa-solid fa-house-signal"></i>
                         </div>
                         <div class="work-top">
-                            <span>Connected systems</span>
+                            <span>Project site</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>A smart-home automation project for device discovery, secure control, live state, rules, and technician-friendly support.</p>
+                        <p>A smart-home automation site focused on device discovery, secure control, live state, rules, and support.</p>
                         <div class="tech-tags">
                             <span>IoT</span><span>APIs</span><span>Automation</span><span>UX</span>
                         </div>
-                    </article>
-                    <article class="work-card reveal">
+                    </a>
+                    <a class="site-card reveal" href="https://asparks1987.github.io/AlphaRunner/" target="_blank" rel="noopener">
                         <div class="project-mark">
                             <div>
                                 <strong>AlphaRunner</strong>
-                                <span>Finance analytics app</span>
+                                <span>Finance analytics site</span>
                             </div>
                             <i class="fa-solid fa-chart-line"></i>
                         </div>
                         <div class="work-top">
-                            <span>Analysis and forecasting</span>
+                            <span>Project site</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>A market analysis and prediction application focused on statistics, forecasting signals, and practical decision-support metrics.</p>
+                        <p>A market analysis and forecasting product site centered on statistics, decision support, and practical data work.</p>
                         <div class="tech-tags">
                             <span>Data</span><span>Forecasting</span><span>Analytics</span><span>Research</span>
                         </div>
-                    </article>
-                    <article class="work-card reveal">
-                        <div class="project-mark">
-                            <div>
-                                <strong>Stage-kit</strong>
-                                <span>Content automation SaaS</span>
-                            </div>
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
-                        <div class="work-top">
-                            <span>Multi-platform publishing</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <p>A social media toolkit concept that turns one prompt into generated content and distributes it across connected platforms.</p>
-                        <div class="tech-tags">
-                            <span>Content</span><span>Automation</span><span>SaaS</span><span>Distribution</span>
-                        </div>
-                    </article>
+                    </a>
                 </div>
                 <div class="project-index reveal">
                     <h3>Additional tools and smaller projects</h3>
-                    <p>These are the practical utility projects that back up the bigger portfolio pieces. They show the implementation habits that matter in consulting work: small tools, reusable code, and systems that solve specific problems well.</p>
+                    <p>These utility projects are still part of the portfolio and can be surfaced with their own hosted pages as they are published.</p>
                     <div class="index-grid">
+                        <div class="index-item">
+                            <strong>Stagekit</strong>
+                            <span>Content automation SaaS and multi-platform publishing concept.</span>
+                        </div>
                         <div class="index-item">
                             <strong>wanScanner</strong>
                             <span>Focused utility for scanning and inspecting wide-area network targets.</span>
@@ -1516,10 +1554,6 @@
                         <div class="index-item">
                             <strong>libLogit</strong>
                             <span>Lightweight logging support for better diagnostics and application visibility.</span>
-                        </div>
-                        <div class="index-item">
-                            <strong>img2numpy</strong>
-                            <span>Image conversion tooling for data workflows and experimentation.</span>
                         </div>
                         <div class="index-item">
                             <strong>libRandomizer</strong>
