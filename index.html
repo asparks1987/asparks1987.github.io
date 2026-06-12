@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aryn Sparks is a network and software consultant who helps businesses simplify infrastructure, automate operations, and ship dependable products across web, mobile, and network stacks.">
-    <title>Aryn Sparks | Consulting for Networks, Software, and Operations</title>
+    <meta name="description" content="Aryn Sparks is a software developer and network automation engineer with public open-source projects across Python libraries, tooling, networking utilities, web, mobile, and operations software.">
+    <title>Aryn Sparks | Software Developer & Open Source Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -642,6 +642,31 @@
             gap: 1rem;
         }
 
+        .oss-proof {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .oss-proof-item {
+            padding: 1rem;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .oss-proof-item strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 1.25rem;
+        }
+
+        .oss-proof-item span {
+            color: var(--text-soft);
+            font-size: 0.92rem;
+        }
+
         .work-card {
             padding: 1.1rem;
             border-radius: 24px;
@@ -1133,6 +1158,7 @@
             }
 
             .service-grid,
+            .oss-proof,
             .process-grid,
             .index-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1174,6 +1200,7 @@
             .metric-grid,
             .stats-grid,
             .service-grid,
+            .oss-proof,
             .site-grid,
             .process-grid,
             .index-grid,
@@ -1214,11 +1241,11 @@
                 <span class="brand-mark">AS</span>
                 <span class="brand-name">
                     <strong>Aryn Sparks</strong>
-                    <span>Consulting</span>
+                    <span>Developer Portfolio</span>
                 </span>
             </a>
             <div class="nav-links">
-                <a href="#services">Services</a>
+                <a href="#services">Strengths</a>
                 <a href="#capabilities">Capabilities</a>
                 <a href="#work">Projects</a>
                 <a href="#process">Process</a>
@@ -1231,7 +1258,7 @@
                 </a>
                 <a class="btn btn-primary" href="#contact">
                     <i class="fa-solid fa-calendar-check"></i>
-                    Start a conversation
+                    Schedule a call
                 </a>
             </div>
         </nav>
@@ -1242,19 +1269,19 @@
             <div class="hero-shell reveal">
                 <div class="hero-grid">
                     <div>
-                        <span class="eyebrow">Consulting-oriented portfolio</span>
-                        <h1>I help businesses turn network complexity into systems they can trust.</h1>
+                        <span class="eyebrow">Software developer resume</span>
+                        <h1>Open-source projects, practical tools, and software that solves real problems.</h1>
                         <p class="hero-copy">
-                            I’m Aryn Sparks, a network engineering leader and multiplatform developer. My work sits at the intersection of infrastructure, software, and operations, which means I can design the stack, build the tooling, and stay with the project through launch and support.
+                            I’m Aryn Sparks, a developer with a network engineering background and a growing open-source portfolio. I build Python libraries, network utilities, automation tools, web experiences, Android and Windows apps, and the public project sites that explain them.
                         </p>
                         <div class="hero-actions">
-                            <a class="btn btn-primary" href="mailto:aryn.sparks1987@gmail.com?subject=Consulting%20conversation%20with%20Aryn%20Sparks">
-                                <i class="fa-solid fa-envelope"></i>
-                                Email me
-                            </a>
                             <a class="btn btn-primary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
                                 <i class="fa-solid fa-calendar-check"></i>
-                                Book a consult
+                                Schedule a call
+                            </a>
+                            <a class="btn btn-primary" href="#work">
+                                <i class="fa-brands fa-github"></i>
+                                View open source
                             </a>
                             <a class="btn btn-secondary" href="https://github.com/asparks1987" target="_blank" rel="noopener">
                                 <i class="fa-brands fa-github"></i>
@@ -1267,56 +1294,57 @@
                         </div>
                         <div class="hero-highlights">
                             <div class="highlight">
-                                <strong>Strategy + build</strong>
-                                <span>Planning, architecture, delivery, and stabilization in one continuous engagement.</span>
+                                <strong>Open-source proof</strong>
+                                <span>Six live public repo sites show code, tooling, documentation, and follow-through.</span>
                             </div>
                             <div class="highlight">
-                                <strong>Network + software</strong>
-                                <span>Fiber, wireless, automation, APIs, dashboards, portals, and desktop/mobile apps.</span>
+                                <strong>Programming range</strong>
+                                <span>Python, C/C++, Java, Kotlin, SwiftUI, APIs, web, desktop, mobile, and automation.</span>
                             </div>
                             <div class="highlight">
-                                <strong>Business-ready support</strong>
-                                <span>Documentation, escalation, reporting, and practical recommendations for non-technical stakeholders.</span>
+                                <strong>Operations mindset</strong>
+                                <span>I build software with supportability, debugging, documentation, and real users in mind.</span>
                             </div>
                         </div>
                         <div class="hero-meta">
                         <div class="meta-strip">
+                            <span>Open-source author</span>
+                            <span>6 live public project sites</span>
                             <span>Ubiquiti Certified Networking Specialist</span>
                             <span>Python / C / Java / Kotlin</span>
                             <span>Android / Windows / WordPress</span>
-                            <span>Consulting, support, and delivery</span>
                             <span>GitHub Pages project sites</span>
                         </div>
                     </div>
                     </div>
-                    <aside class="profile-card" aria-label="Consulting snapshot">
+                    <aside class="profile-card" aria-label="Developer snapshot">
                         <div class="profile-top">
                             <div>
                                 <div class="eyebrow">Current focus</div>
-                                <h2 style="margin: 0.35rem 0 0; font-size: 1.45rem;">Practical consulting for teams that need dependable outcomes.</h2>
+                                <h2 style="margin: 0.35rem 0 0; font-size: 1.45rem;">Programming roles where shipping, debugging, and ownership matter.</h2>
                             </div>
-                            <span class="status-pill"><i class="fa-solid fa-circle"></i> Available for consulting</span>
+                            <span class="status-pill"><i class="fa-solid fa-circle"></i> Open to programming roles</span>
                         </div>
                         <div class="profile-grid">
                             <div class="metric-grid">
                                 <div class="metric">
-                                    <div class="metric-label">Experience</div>
-                                    <div class="metric-value">6+</div>
-                                    <div class="metric-note">Years in network engineering, operations, and software delivery.</div>
+                                    <div class="metric-label">Public projects</div>
+                                    <div class="metric-value">6</div>
+                                    <div class="metric-note">Live GitHub Pages sites tied to public repos I author.</div>
                                 </div>
                                 <div class="metric">
-                                    <div class="metric-label">Focus</div>
-                                    <div class="metric-value">4</div>
-                                    <div class="metric-note">Core lanes: networks, software, automation, and support.</div>
+                                    <div class="metric-label">Languages</div>
+                                    <div class="metric-value">5+</div>
+                                    <div class="metric-note">Python, C/C++, Java, Kotlin, SwiftUI, JavaScript, and web delivery.</div>
                                 </div>
                             </div>
                             <div class="callout">
-                                <strong>How I work</strong>
-                                <span>I look at the whole system, not just the symptom. That means infrastructure decisions, application design, and operational processes stay aligned instead of drifting apart.</span>
+                                <strong>What the repos show</strong>
+                                <span>I do more than write code locally. I package ideas, document them, publish public sites, and make projects easier for other people to understand.</span>
                             </div>
                             <div class="callout">
-                                <strong>What clients get</strong>
-                                <span>A single person who can translate business goals into implementation details, then explain the tradeoffs clearly when priorities shift.</span>
+                                <strong>Where I fit</strong>
+                                <span>Software teams that need a practical developer who understands automation, tooling, support, infrastructure, and user-facing delivery.</span>
                             </div>
                         </div>
                     </aside>
@@ -1328,44 +1356,44 @@
             <div class="section-inner">
                 <div class="section-head reveal">
                     <div>
-                        <span class="eyebrow">Services</span>
-                        <h2>Consulting that covers the stack from planning to support.</h2>
+                        <span class="eyebrow">Developer strengths</span>
+                        <h2>Software capabilities backed by real projects, not just resume keywords.</h2>
                     </div>
                     <p>
-                        If a project touches infrastructure, application logic, user experience, or day-to-day operations, I can help scope it, build it, and keep it stable after launch.
+                        My background gives me range: I can build application features, write utilities, automate operational work, troubleshoot production problems, and explain the system clearly.
                     </p>
                 </div>
                 <div class="service-grid">
                     <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-                        <h3>Network engineering</h3>
-                        <p>Fiber, wireless, copper, RF planning, Layer 2/3 design, troubleshooting, hardening, and rollout support for businesses that need the network to just work.</p>
+                        <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Application development</h3>
+                        <p>Web, Android, Windows, API-driven tools, and project websites built with practical architecture and clean delivery habits.</p>
                         <div class="service-tags">
-                            <span>Ubiquiti</span><span>RF</span><span>Design</span><span>Hardening</span>
+                            <span>Web</span><span>Android</span><span>Windows</span><span>APIs</span>
                         </div>
                     </article>
                     <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-                        <h3>Software delivery</h3>
-                        <p>Android, Windows, web, and API-driven software built with practical architecture and a bias toward maintainability over complexity.</p>
+                        <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
+                        <h3>Open-source packaging</h3>
+                        <p>Public libraries and tools that include a repo, a usable story, and a live project page so the work can be evaluated quickly.</p>
                         <div class="service-tags">
-                            <span>Android</span><span>Windows</span><span>APIs</span><span>WordPress</span>
+                            <span>Libraries</span><span>Docs</span><span>GitHub Pages</span><span>Portfolio</span>
                         </div>
                     </article>
                     <article class="service-card reveal">
                         <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
                         <h3>Automation and tooling</h3>
-                        <p>Scripts, utilities, and workflow improvements that reduce manual steps, improve visibility, and make it easier to operate at scale.</p>
+                        <p>Scripts, utilities, and workflow improvements that reduce manual steps, improve visibility, and make systems easier to operate.</p>
                         <div class="service-tags">
                             <span>Python</span><span>C</span><span>Java</span><span>Kotlin</span>
                         </div>
                     </article>
                     <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-user-shield"></i></div>
-                        <h3>Support and operations</h3>
-                        <p>Escalation handling, documentation, customer communication, systems administration, and practical support that helps teams stay calm and effective.</p>
+                        <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>Network-aware software</h3>
+                        <p>Tools and applications shaped by hands-on networking, observability, troubleshooting, and support experience.</p>
                         <div class="service-tags">
-                            <span>Support</span><span>Ops</span><span>Documentation</span><span>Monitoring</span>
+                            <span>Networking</span><span>Ops</span><span>Monitoring</span><span>Diagnostics</span>
                         </div>
                     </article>
                 </div>
@@ -1377,42 +1405,42 @@
                 <div class="section-head reveal">
                     <div>
                         <span class="eyebrow">Capabilities</span>
-                        <h2>What I’m capable of when a project needs more than one discipline.</h2>
+                        <h2>Why the open-source work matters to hiring teams.</h2>
                     </div>
                     <p>
-                        The resume update points to a broad skill set, so the page now speaks to that directly: not just “developer” or “engineer,” but someone who can connect infrastructure, software, and business execution.
+                        The public repos are the portfolio: they show initiative, follow-through, technical curiosity, documentation effort, and the ability to publish work where other people can inspect it.
                     </p>
                 </div>
                 <div class="capability-grid">
                     <div class="capability-panel reveal">
-                        <h3>How I add value</h3>
+                        <h3>What employers can see</h3>
                         <ul class="bullet-list">
                             <li>
                                 <i class="fa-solid fa-circle-check"></i>
                                 <div>
-                                    <strong>Think across the whole environment</strong>
-                                    <span>I’m comfortable moving from network architecture to application flows to the operational steps people need after launch.</span>
+                                    <strong>I finish and publish work</strong>
+                                    <span>Each public project has a live page, so the work is visible, documented, and easier to evaluate than a private code sample.</span>
                                 </div>
                             </li>
                             <li>
                                 <i class="fa-solid fa-circle-check"></i>
                                 <div>
-                                    <strong>Explain technical tradeoffs in plain language</strong>
-                                    <span>That makes it easier for stakeholders to make decisions, set priorities, and understand what success looks like.</span>
+                                    <strong>I build useful tools</strong>
+                                    <span>The portfolio includes image processing, logging, randomization, range mapping, network scanning, and project branding work.</span>
                                 </div>
                             </li>
                             <li>
                                 <i class="fa-solid fa-circle-check"></i>
                                 <div>
-                                    <strong>Ship practical systems, not just ideas</strong>
-                                    <span>From prototypes to production systems, I focus on something useful, stable, and maintainable.</span>
+                                    <strong>I bridge software and infrastructure</strong>
+                                    <span>That combination is valuable on teams building internal tools, automation, developer utilities, and operational platforms.</span>
                                 </div>
                             </li>
                             <li>
                                 <i class="fa-solid fa-circle-check"></i>
                                 <div>
-                                    <strong>Stay useful after go-live</strong>
-                                    <span>Support, documentation, monitoring, and iteration matter just as much as the first launch.</span>
+                                    <strong>I communicate the work</strong>
+                                    <span>The project sites show that I can present technical work clearly to developers, managers, recruiters, and non-specialists.</span>
                                 </div>
                             </li>
                         </ul>
@@ -1447,11 +1475,25 @@
                 <div class="section-head reveal">
                     <div>
                         <span class="eyebrow">Open source work</span>
-                        <h2>Public project websites that show the range of what I contribute to the community.</h2>
+                        <h2>Six live public repositories, each packaged as a project someone can actually evaluate.</h2>
                     </div>
                     <p>
-                        These are the public GitHub repositories I author and maintain, each with its own live website so people can see the project, the use case, and the implementation style before they ever look at the source. Employers usually want breadth, and this section is meant to make that breadth obvious.
+                        This is the portfolio layer of the resume. These projects show that I do not just write code in isolation: I publish it, explain it, host it, and keep building a body of work that hiring teams can inspect.
                     </p>
+                </div>
+                <div class="oss-proof reveal">
+                    <div class="oss-proof-item">
+                        <strong>6 live sites</strong>
+                        <span>Every public repo listed here has a dedicated GitHub Pages website.</span>
+                    </div>
+                    <div class="oss-proof-item">
+                        <strong>Tooling focus</strong>
+                        <span>Libraries, automation helpers, image processing, logging, network scanning, and data utilities.</span>
+                    </div>
+                    <div class="oss-proof-item">
+                        <strong>Community signal</strong>
+                        <span>Open repos make the work reviewable, reusable, and easier for other developers to understand.</span>
+                    </div>
                 </div>
                 <div class="site-grid">
                     <a class="site-card reveal featured-site" href="https://asparks1987.github.io/img2Numpy/" target="_blank" rel="noopener">
@@ -1463,10 +1505,10 @@
                             <i class="fa-solid fa-image"></i>
                         </div>
                         <div class="work-top">
-                            <span>Live site</span>
+                            <span>Open source library</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>Convert images into NumPy arrays with one import. Built for computer vision, ML preprocessing, notebooks, and batch pipelines.</p>
+                        <p>A Python SDK that turns images into NumPy arrays for computer vision, ML preprocessing, notebooks, and batch pipelines.</p>
                         <div class="tech-tags">
                             <span>Python</span><span>NumPy</span><span>Computer vision</span><span>Data pipelines</span>
                         </div>
@@ -1480,12 +1522,12 @@
                             <i class="fa-solid fa-broadcast-tower"></i>
                         </div>
                         <div class="work-top">
-                            <span>Live site</span>
+                            <span>Public project</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>Public-facing project site for the Callsign brand and related work.</p>
+                        <p>A public project site that shows brand development, web presentation, and the ability to package a project for an outside audience.</p>
                         <div class="tech-tags">
-                            <span>Public</span><span>Brand</span><span>Website</span><span>GitHub Pages</span>
+                            <span>Brand</span><span>Website</span><span>Documentation</span><span>GitHub Pages</span>
                         </div>
                     </a>
                     <a class="site-card reveal" href="https://asparks1987.github.io/libRangeMap/" target="_blank" rel="noopener">
@@ -1497,12 +1539,12 @@
                             <i class="fa-solid fa-ruler-horizontal"></i>
                         </div>
                         <div class="work-top">
-                            <span>Live site</span>
+                            <span>Open source library</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>Library website for mapping values into a chosen numeric range for utilities and data workflows.</p>
+                        <p>A reusable utility library for mapping input values into target numeric ranges, useful in data, graphics, and normalization workflows.</p>
                         <div class="tech-tags">
-                            <span>Library</span><span>Utilities</span><span>Data</span><span>GitHub Pages</span>
+                            <span>Library</span><span>Utilities</span><span>Data mapping</span><span>Normalization</span>
                         </div>
                     </a>
                     <a class="site-card reveal" href="https://asparks1987.github.io/wanScanner/" target="_blank" rel="noopener">
@@ -1514,12 +1556,12 @@
                             <i class="fa-solid fa-network-wired"></i>
                         </div>
                         <div class="work-top">
-                            <span>Live site</span>
+                            <span>Network utility</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>Web presence for a wide-area network scanning utility built for visibility and troubleshooting.</p>
+                        <p>A public WAN scanning utility that connects my networking background with software tooling, visibility, and troubleshooting workflows.</p>
                         <div class="tech-tags">
-                            <span>Network</span><span>Scanning</span><span>Ops</span><span>GitHub Pages</span>
+                            <span>Network</span><span>Scanning</span><span>Diagnostics</span><span>Operations</span>
                         </div>
                     </a>
                     <a class="site-card reveal" href="https://asparks1987.github.io/libRandomizer/" target="_blank" rel="noopener">
@@ -1531,10 +1573,10 @@
                             <i class="fa-solid fa-dice"></i>
                         </div>
                         <div class="work-top">
-                            <span>Live site</span>
+                            <span>Open source library</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>Library site for reusable randomization helpers used in simulations, test data, and utility workflows.</p>
+                        <p>A helper library for randomization workflows, useful for test data, simulations, small utilities, and repeatable development experiments.</p>
                         <div class="tech-tags">
                             <span>Library</span><span>Simulation</span><span>Testing</span><span>GitHub Pages</span>
                         </div>
@@ -1548,10 +1590,10 @@
                             <i class="fa-solid fa-clipboard-list"></i>
                         </div>
                         <div class="work-top">
-                            <span>Live site</span>
+                            <span>Open source library</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>Lightweight logging support presented as a public project site for diagnostics and visibility.</p>
+                        <p>A lightweight logging library that reflects the operational side of software: diagnostics, visibility, and maintainable troubleshooting.</p>
                         <div class="tech-tags">
                             <span>Logging</span><span>Diagnostics</span><span>Library</span><span>GitHub Pages</span>
                         </div>
@@ -1564,64 +1606,64 @@
             <div class="section-inner">
                 <div class="section-head reveal">
                     <div>
-                        <span class="eyebrow">Engagement model</span>
-                        <h2>How I work when the goal is a dependable result, not just a deliverable.</h2>
+                        <span class="eyebrow">Developer workflow</span>
+                        <h2>How I approach software work when reliability and clarity matter.</h2>
                     </div>
                     <p>
-                        This is the consulting story the page should tell: clear discovery, practical architecture, focused build work, and support that keeps the system healthy after launch.
+                        The open-source projects show the same habits I bring to a team: understand the problem, choose a practical design, build in visible increments, and leave the work easier to support.
                     </p>
                 </div>
                 <div class="proof-grid">
                     <div class="proof-panel reveal">
-                        <h3>Delivery process</h3>
+                        <h3>Build process</h3>
                         <div class="process-grid">
                             <article class="process-step">
-                                <h3>Discover</h3>
-                                <p>We map the problem, current systems, constraints, stakeholders, and what success needs to look like.</p>
+                                <h3>Understand</h3>
+                                <p>I map the problem, inputs, users, constraints, and the behavior the software needs to support.</p>
                             </article>
                             <article class="process-step">
                                 <h3>Design</h3>
-                                <p>I define the stack, integrations, hosting, operational risks, and a plan that fits the actual business need.</p>
+                                <p>I choose a practical stack, define the data flow, identify operational risks, and keep the design understandable.</p>
                             </article>
                             <article class="process-step">
                                 <h3>Build</h3>
-                                <p>Development happens in increments so you can see progress and steer the project before it drifts.</p>
+                                <p>I implement in clear increments, with attention to debugging, usability, maintainability, and documentation.</p>
                             </article>
                             <article class="process-step">
-                                <h3>Support</h3>
-                                <p>After launch I can help with documentation, handoff, monitoring, tuning, fixes, and the next phase.</p>
+                                <h3>Improve</h3>
+                                <p>I treat iteration, cleanup, observability, and handoff as part of the engineering work.</p>
                             </article>
                         </div>
                     </div>
                     <div class="proof-panel reveal">
-                        <h3>Why clients hire me</h3>
+                        <h3>Why teams hire me</h3>
                         <ul class="offer-list">
                             <li>
                                 <i class="fa-solid fa-circle-check"></i>
                                 <div>
-                                    <strong>One person across the stack</strong>
-                                    <span>Network, software, and operations decisions stay connected instead of being handled in silos.</span>
+                                    <strong>Open-source initiative</strong>
+                                    <span>I build projects outside assigned work because I like learning in public and turning ideas into usable artifacts.</span>
                                 </div>
                             </li>
                             <li>
                                 <i class="fa-solid fa-circle-check"></i>
                                 <div>
-                                    <strong>Technical depth with business context</strong>
-                                    <span>I can speak to leadership, customers, and technical teams without losing the thread.</span>
+                                    <strong>Practical engineering range</strong>
+                                    <span>I can work across libraries, tooling, web pages, automation, networking, support workflows, and user-facing applications.</span>
                                 </div>
                             </li>
                             <li>
                                 <i class="fa-solid fa-circle-check"></i>
                                 <div>
-                                    <strong>Practical implementation habits</strong>
-                                    <span>The work is meant to run in the real world, not just look good in a portfolio.</span>
+                                    <strong>Operational instincts</strong>
+                                    <span>My network and support background makes me think about logs, failure modes, handoff, troubleshooting, and maintainability.</span>
                                 </div>
                             </li>
                             <li>
                                 <i class="fa-solid fa-circle-check"></i>
                                 <div>
-                                    <strong>Support that continues after launch</strong>
-                                    <span>Documentation, escalation, and iterative improvement are part of the service, not an afterthought.</span>
+                                    <strong>Clear communication</strong>
+                                    <span>I explain technical work clearly enough for developers, managers, recruiters, and users to understand what the project does.</span>
                                 </div>
                             </li>
                         </ul>
@@ -1647,8 +1689,8 @@
         <section id="contact" class="contact">
             <div class="section-inner contact-grid">
                 <div class="booking-panel reveal" aria-label="Appointment booking">
-                    <span class="eyebrow">Appointment booking</span>
-                    <h2>Schedule a consultation directly in my Google Calendar.</h2>
+                    <span class="eyebrow">Interview and project conversations</span>
+                    <h2>Schedule time to talk about programming roles, contract work, or the open-source portfolio.</h2>
                     <p>
                         Choose an open time slot below. Google Calendar handles availability, booking confirmations, and change notifications automatically.
                     </p>
@@ -1668,9 +1710,9 @@
                 </div>
                 <div class="contact-card reveal">
                     <span class="eyebrow">Contact</span>
-                    <h2 style="margin: 0.4rem 0 0.75rem; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.05;">If you need help with infrastructure, software, or operations, let’s talk.</h2>
+                    <h2 style="margin: 0.4rem 0 0.75rem; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.05;">If you are hiring for software, automation, tooling, or network-aware development, let's talk.</h2>
                     <p>
-                        Tell me what you’re trying to improve, what’s already in place, and what outcome matters most. If you already know you want time on the calendar, use the booking panel above and Google Calendar will handle the appointment and availability for you.
+                        I am especially interested in roles where practical programming, public project work, debugging, documentation, and operations experience all matter. The calendar above is the fastest way to set up a conversation.
                     </p>
                     <div class="contact-methods">
                         <a class="contact-method" href="mailto:aryn.sparks1987@gmail.com">
@@ -1702,7 +1744,7 @@
 
     <footer>
         <div class="footer-inner">
-            <span>&copy; <span id="year"></span> Aryn Sparks Consulting. All rights reserved.</span>
+            <span>&copy; <span id="year"></span> Aryn Sparks Developer Portfolio. All rights reserved.</span>
             <div class="footer-links">
                 <a href="mailto:aryn.sparks1987@gmail.com">Email</a>
                 <a href="https://github.com/asparks1987" target="_blank" rel="noopener">GitHub</a>
