@@ -888,22 +888,35 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
+            grid-template-columns: 1fr;
             gap: 1rem;
             align-items: start;
         }
 
         .booking-panel {
-            padding: 1.25rem;
-            border-radius: 28px;
+            padding: 1.5rem;
+            border-radius: 32px;
             border: 1px solid var(--line);
-            background: linear-gradient(180deg, rgba(16, 33, 53, 0.95), rgba(10, 18, 29, 0.92));
+            background:
+                radial-gradient(circle at top right, rgba(110, 231, 255, 0.14), transparent 28%),
+                linear-gradient(180deg, rgba(16, 33, 53, 0.97), rgba(10, 18, 29, 0.95));
             box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            border: 1px solid rgba(110, 231, 255, 0.14);
+            pointer-events: none;
         }
 
         .booking-panel h2 {
             margin: 0.4rem 0 0.75rem;
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-size: clamp(1.9rem, 3.6vw, 2.75rem);
             line-height: 1.05;
         }
 
@@ -913,16 +926,17 @@
 
         .booking-frame {
             width: 100%;
-            min-height: 780px;
+            min-height: 920px;
+            margin-top: 1rem;
             border: 1px solid rgba(176, 194, 219, 0.14);
-            border-radius: 24px;
+            border-radius: 28px;
             overflow: hidden;
             background: rgba(4, 11, 18, 0.8);
         }
 
         .booking-frame iframe {
             width: 100%;
-            height: 780px;
+            height: 920px;
             border: 0;
             display: block;
             background: #fff;
@@ -1238,6 +1252,10 @@
                                 <i class="fa-solid fa-envelope"></i>
                                 Email me
                             </a>
+                            <a class="btn btn-primary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                Book a consult
+                            </a>
                             <a class="btn btn-secondary" href="https://github.com/asparks1987" target="_blank" rel="noopener">
                                 <i class="fa-brands fa-github"></i>
                                 View GitHub
@@ -1453,119 +1471,68 @@
                             <span>Python</span><span>NumPy</span><span>Computer vision</span><span>Data pipelines</span>
                         </div>
                     </a>
-                    <a class="site-card reveal" href="https://asparks1987.github.io/LANScannerPRO/" target="_blank" rel="noopener">
+                    <div class="site-card reveal">
                         <div class="project-mark">
                             <div>
-                                <strong>LANScannerPRO</strong>
-                                <span>Network discovery site</span>
+                                <strong>Callsign</strong>
+                                <span>Public repo, page pending</span>
                             </div>
-                            <i class="fa-solid fa-network-wired"></i>
+                            <i class="fa-solid fa-broadcast-tower"></i>
                         </div>
                         <div class="work-top">
-                            <span>Project site</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span>Public repo</span>
+                            <i class="fa-solid fa-lock-open"></i>
                         </div>
-                        <p>Live project website for network discovery, inventory, and reporting work aimed at operational visibility.</p>
+                        <p>This project is public, but it does not have a published web page yet.</p>
                         <div class="tech-tags">
-                            <span>Discovery</span><span>Reporting</span><span>Operations</span><span>Security</span>
+                            <span>Public repo</span><span>Brand</span><span>Pending page</span><span>GitHub</span>
                         </div>
-                    </a>
-                    <a class="site-card reveal" href="https://asparks1987.github.io/myWISP/" target="_blank" rel="noopener">
+                    </div>
+                    <a class="site-card reveal" href="https://asparks1987.github.io/" target="_blank" rel="noopener">
                         <div class="project-mark">
                             <div>
-                                <strong>myWISP</strong>
-                                <span>ISP operations site</span>
+                                <strong>Portfolio site</strong>
+                                <span>Main GitHub Pages site</span>
                             </div>
-                            <i class="fa-solid fa-tower-cell"></i>
+                            <i class="fa-solid fa-globe"></i>
                         </div>
                         <div class="work-top">
-                            <span>Project site</span>
+                            <span>Live site</span>
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </div>
-                        <p>Customer-facing operations and support concept for WISP teams, billed as a usable product instead of a repo.</p>
+                        <p>The main portfolio hub that ties the consulting story together and points visitors to the public project websites.</p>
                         <div class="tech-tags">
-                            <span>SaaS</span><span>Portal</span><span>Support</span><span>Automation</span>
-                        </div>
-                    </a>
-                    <a class="site-card reveal" href="https://asparks1987.github.io/NOCWALL-CE/" target="_blank" rel="noopener">
-                        <div class="project-mark">
-                            <div>
-                                <strong>NOCWALL</strong>
-                                <span>Operations wallboard site</span>
-                            </div>
-                            <i class="fa-solid fa-display"></i>
-                        </div>
-                        <div class="work-top">
-                            <span>Project site</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <p>A wallboard and monitoring presence for alerts, tickets, uptime, and escalation context at a glance.</p>
-                        <div class="tech-tags">
-                            <span>Dashboard</span><span>Monitoring</span><span>Alerts</span><span>NOC</span>
-                        </div>
-                    </a>
-                    <a class="site-card reveal" href="https://asparks1987.github.io/Home-AI/" target="_blank" rel="noopener">
-                        <div class="project-mark">
-                            <div>
-                                <strong>HOME-ai</strong>
-                                <span>Automation site</span>
-                            </div>
-                            <i class="fa-solid fa-house-signal"></i>
-                        </div>
-                        <div class="work-top">
-                            <span>Project site</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <p>A smart-home automation site focused on device discovery, secure control, live state, rules, and support.</p>
-                        <div class="tech-tags">
-                            <span>IoT</span><span>APIs</span><span>Automation</span><span>UX</span>
-                        </div>
-                    </a>
-                    <a class="site-card reveal" href="https://asparks1987.github.io/AlphaRunner/" target="_blank" rel="noopener">
-                        <div class="project-mark">
-                            <div>
-                                <strong>AlphaRunner</strong>
-                                <span>Finance analytics site</span>
-                            </div>
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                        <div class="work-top">
-                            <span>Project site</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <p>A market analysis and forecasting product site centered on statistics, decision support, and practical data work.</p>
-                        <div class="tech-tags">
-                            <span>Data</span><span>Forecasting</span><span>Analytics</span><span>Research</span>
+                            <span>Portfolio</span><span>Public</span><span>GitHub Pages</span><span>Consulting</span>
                         </div>
                     </a>
                 </div>
                 <div class="project-index reveal">
-                    <h3>Additional tools and smaller projects</h3>
-                    <p>These utility projects are still part of the portfolio and can be surfaced with their own hosted pages as they are published.</p>
+                    <h3>Public repo projects</h3>
+                    <p>Only public repositories with live pages are linked here. Private repos stay off this section until they’re ready to be published as public sites.</p>
                     <div class="index-grid">
                         <div class="index-item">
-                            <strong>Stagekit</strong>
-                            <span>Content automation SaaS and multi-platform publishing concept.</span>
+                            <strong>img2numpy</strong>
+                            <span>Public SDK site for image-to-NumPy conversion.</span>
                         </div>
                         <div class="index-item">
-                            <strong>wanScanner</strong>
-                            <span>Focused utility for scanning and inspecting wide-area network targets.</span>
+                            <strong>Callsign</strong>
+                            <span>Public project site for the Callsign brand.</span>
                         </div>
                         <div class="index-item">
-                            <strong>libLogit</strong>
-                            <span>Lightweight logging support for better diagnostics and application visibility.</span>
+                            <strong>asparks1987.github.io</strong>
+                            <span>Main GitHub Pages portfolio site.</span>
                         </div>
                         <div class="index-item">
-                            <strong>libRandomizer</strong>
-                            <span>Reusable randomization helpers for simulations, test data, and utilities.</span>
+                            <strong>Public libraries</strong>
+                            <span>libLogit, libRangeMap, and related public utilities remain listed as code projects, not web pages.</span>
                         </div>
                         <div class="index-item">
-                            <strong>libSimpleNet</strong>
-                            <span>Tiny reusable neural networking library for compact models and learning exercises.</span>
+                            <strong>Private repos</strong>
+                            <span>LANScannerPRO, myWISP, NOCWALL-CE, AlphaRunner, and other private repos are kept out of the live web section.</span>
                         </div>
                         <div class="index-item">
-                            <strong>libRangeMap</strong>
-                            <span>Maps numbers, letters, pixels, or other inputs into a chosen numeric range.</span>
+                            <strong>Next pages</strong>
+                            <span>As you publish more public sites, they can be added here in the same format.</span>
                         </div>
                     </div>
                 </div>
@@ -1658,11 +1625,31 @@
 
         <section id="contact" class="contact">
             <div class="section-inner contact-grid">
+                <div class="booking-panel reveal" aria-label="Appointment booking">
+                    <span class="eyebrow">Appointment booking</span>
+                    <h2>Schedule a consultation directly in my Google Calendar.</h2>
+                    <p>
+                        Choose an open time slot below. Google Calendar handles availability, booking confirmations, and change notifications automatically.
+                    </p>
+                    <div class="hero-actions" style="margin-top: 1rem;">
+                        <a class="btn btn-primary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Open booking page
+                        </a>
+                        <a class="btn btn-secondary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            Open in new tab
+                        </a>
+                    </div>
+                    <div class="booking-frame" aria-label="Google Calendar booking embed">
+                        <iframe src="https://calendar.app.google/kZMEh2chy1fspj8Z7" title="Google Calendar appointment booking page" loading="lazy"></iframe>
+                    </div>
+                </div>
                 <div class="contact-card reveal">
                     <span class="eyebrow">Contact</span>
                     <h2 style="margin: 0.4rem 0 0.75rem; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.05;">If you need help with infrastructure, software, or operations, let’s talk.</h2>
                     <p>
-                        Tell me what you’re trying to improve, what’s already in place, and what outcome matters most. If you already know you want time on the calendar, use the booking link and Google Calendar will handle the appointment and availability for you.
+                        Tell me what you’re trying to improve, what’s already in place, and what outcome matters most. If you already know you want time on the calendar, use the booking panel above and Google Calendar will handle the appointment and availability for you.
                     </p>
                     <div class="contact-methods">
                         <a class="contact-method" href="mailto:aryn.sparks1987@gmail.com">
@@ -1686,26 +1673,6 @@
                                 <span>github.com/asparks1987</span>
                             </span>
                         </a>
-                    </div>
-                </div>
-                <div class="booking-panel reveal" aria-label="Appointment booking">
-                    <span class="eyebrow">Appointment booking</span>
-                    <h2>Schedule a consultation directly in my Google Calendar.</h2>
-                    <p>
-                        Choose an open time slot below. Google Calendar handles availability, booking confirmations, and change notifications automatically.
-                    </p>
-                    <div class="hero-actions" style="margin-top: 1rem;">
-                        <a class="btn btn-primary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            Open booking page
-                        </a>
-                        <a class="btn btn-secondary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            Open in new tab
-                        </a>
-                    </div>
-                    <div class="booking-frame" aria-label="Google Calendar booking embed">
-                        <iframe src="https://calendar.app.google/kZMEh2chy1fspj8Z7" title="Google Calendar appointment booking page" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
