@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aryn Sparks is a software developer and network automation engineer with public open-source projects across Python libraries, tooling, networking utilities, web, mobile, and operations software.">
+    <meta name="description" content="Aryn Sparks builds responsive web apps, business websites, SaaS applications, neural networking tools, automation, and practical software for real business needs.">
     <title>Aryn Sparks | Software Developer & Open Source Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -444,6 +444,39 @@
             padding: clamp(3rem, 6vw, 5rem) 1.25rem;
         }
 
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero {
+            order: 1;
+        }
+
+        .paid-services {
+            order: 2;
+        }
+
+        .work {
+            order: 3;
+        }
+
+        .strengths {
+            order: 4;
+        }
+
+        .capabilities {
+            order: 5;
+        }
+
+        .proof {
+            order: 6;
+        }
+
+        .contact {
+            order: 7;
+        }
+
         .section-inner {
             max-width: var(--max);
             margin: 0 auto;
@@ -474,9 +507,21 @@
             background: linear-gradient(180deg, rgba(5, 12, 20, 0.2), rgba(5, 12, 20, 0.6));
         }
 
+        .paid-services {
+            background:
+                linear-gradient(180deg, rgba(10, 102, 194, 0.08), rgba(5, 12, 20, 0.55)),
+                rgba(5, 12, 20, 0.5);
+        }
+
         .service-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1rem;
         }
 
@@ -533,6 +578,43 @@
             background: rgba(255, 255, 255, 0.03);
             font-size: 0.78rem;
             font-weight: 700;
+        }
+
+        .price-line {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-top: 0.1rem;
+            color: var(--warm);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(1.45rem, 3vw, 2rem);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .price-line span {
+            color: var(--muted);
+            font-family: "Manrope", system-ui, sans-serif;
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .service-cta {
+            width: 100%;
+            min-height: 42px;
+            margin-top: 0.15rem;
+        }
+
+        .pricing-note {
+            margin: 1rem 0 0;
+            padding: 1rem;
+            color: var(--text-soft);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.03);
+            font-size: 0.94rem;
         }
 
         .capabilities {
@@ -1144,6 +1226,7 @@
             }
 
             .service-grid,
+            .pricing-grid,
             .oss-proof,
             .process-grid,
             .index-grid {
@@ -1186,6 +1269,7 @@
             .metric-grid,
             .stats-grid,
             .service-grid,
+            .pricing-grid,
             .oss-proof,
             .site-grid,
             .process-grid,
@@ -1231,7 +1315,8 @@
                 </span>
             </a>
             <div class="nav-links">
-                <a href="#services">Strengths</a>
+                <a href="#services">Services</a>
+                <a href="#strengths">Strengths</a>
                 <a href="#capabilities">Capabilities</a>
                 <a href="#work">Projects</a>
                 <a href="#process">Process</a>
@@ -1255,10 +1340,10 @@
             <div class="hero-shell reveal">
                 <div class="hero-grid">
                     <div>
-                        <span class="eyebrow">Developer and entrepreneur resume</span>
-                        <h1>Open-source projects, practical tools, and product work that solves real problems.</h1>
+                        <span class="eyebrow">Responsive web apps, business sites, and SaaS applications</span>
+                        <h1>Web development for businesses that need useful software, not just a pretty page.</h1>
                         <p class="hero-copy">
-                            I’m Aryn Sparks, a developer and builder with a network engineering background, a growing open-source portfolio, and closed-source product work. I build Python libraries, network utilities, automation tools, web experiences, Android and Windows apps, and the public project sites that explain them.
+                            I build responsive web applications, business websites, SaaS products, customer portals, dashboards, and automation tools that help companies present their services clearly, capture leads, support users, and run more efficiently.
                         </p>
                         <div class="hero-actions">
                             <a class="btn btn-primary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
@@ -1281,15 +1366,15 @@
                         <div class="hero-highlights">
                             <div class="highlight">
                                 <strong>Open-source proof</strong>
-                                <span>Six live public repo sites show code, tooling, documentation, and follow-through.</span>
+                                <span>Eight public MIT-licensed repos show code, tooling, documentation, and follow-through.</span>
                             </div>
                             <div class="highlight">
-                                <strong>Programming range</strong>
-                                <span>Python, C/C++, Java, Kotlin, SwiftUI, APIs, web, desktop, mobile, and automation.</span>
+                                <strong>Web applications</strong>
+                                <span>Responsive interfaces, business workflows, SaaS dashboards, landing pages, and customer-facing tools.</span>
                             </div>
                             <div class="highlight">
-                                <strong>Operations mindset</strong>
-                                <span>I build software with supportability, debugging, documentation, and real users in mind.</span>
+                                <strong>Neural networking</strong>
+                                <span>I connect software delivery with AI, data workflows, model-assisted tools, and practical automation.</span>
                             </div>
                             <div class="highlight">
                                 <strong>Entrepreneurial product work</strong>
@@ -1299,7 +1384,7 @@
                         <div class="hero-meta">
                         <div class="meta-strip">
                             <span>Open-source author</span>
-                            <span>6 live public project sites</span>
+                            <span>8 MIT-licensed public repos</span>
                             <span>Ubiquiti Certified Networking Specialist</span>
                             <span>Python / C / Java / Kotlin</span>
                             <span>Android / Windows / WordPress</span>
@@ -1319,8 +1404,8 @@
                             <div class="metric-grid">
                                 <div class="metric">
                                     <div class="metric-label">Public projects</div>
-                                    <div class="metric-value">6</div>
-                                    <div class="metric-note">Live GitHub Pages sites tied to public repos I author.</div>
+                                    <div class="metric-value">8</div>
+                                    <div class="metric-note">MIT-licensed public repos and project sites I author.</div>
                                 </div>
                                 <div class="metric">
                                     <div class="metric-label">Languages</div>
@@ -1342,24 +1427,121 @@
             </div>
         </section>
 
-        <section id="services" class="strengths">
+        <section id="services" class="paid-services">
+            <div class="section-inner">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Services and pricing</span>
+                        <h2>Responsive web apps, business websites, SaaS applications, and neural networking tools.</h2>
+                    </div>
+                    <p>
+                        Clear starting prices make it easier to choose a path. Book a call, share the goal, and I will confirm scope before work begins.
+                    </p>
+                </div>
+                <div class="pricing-grid">
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-window-maximize"></i></div>
+                        <h3>Responsive Web Application</h3>
+                        <p>A customer-friendly web app with the core screens, workflow, and responsive experience your business needs to launch or improve a service.</p>
+                        <div class="price-line"><span>Starting at</span>$500</div>
+                        <div class="service-tags">
+                            <span>Web app</span><span>Responsive UI</span><span>Core workflow</span>
+                        </div>
+                        <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Book a quote call
+                        </a>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-store"></i></div>
+                        <h3>Business Website</h3>
+                        <p>A polished multi-page site for a local business, service company, product, or consultant with clear calls to action.</p>
+                        <div class="price-line"><span>Starting at</span>$1,500</div>
+                        <div class="service-tags">
+                            <span>Multi-page site</span><span>Contact flow</span><span>Launch support</span>
+                        </div>
+                        <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Book a quote call
+                        </a>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3>Landing Page / Service Page</h3>
+                        <p>A focused page for a specific offer, campaign, product launch, event, portfolio, or booking flow with polished responsive layout.</p>
+                        <div class="price-line"><span>Starting at</span>$300</div>
+                        <div class="service-tags">
+                            <span>Offer page</span><span>CTA setup</span><span>Basic SEO</span>
+                        </div>
+                        <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Book a quote call
+                        </a>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>Neural Networking Tools</h3>
+                        <p>Practical AI and neural networking support for data workflows, model-assisted features, business automation, and smarter internal tools.</p>
+                        <div class="price-line"><span>Rate</span>$125/hr</div>
+                        <div class="service-tags">
+                            <span>AI workflows</span><span>Models</span><span>Data tools</span>
+                        </div>
+                        <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Book a quote call
+                        </a>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-cubes"></i></div>
+                        <h3>Custom Web App or Prototype</h3>
+                        <p>A scoped web application, internal dashboard, product concept, or technical proof of concept built around a clear user workflow.</p>
+                        <div class="price-line"><span>Starting at</span>$2,500</div>
+                        <div class="service-tags">
+                            <span>Web workflow</span><span>Prototype</span><span>Product thinking</span>
+                        </div>
+                        <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Book a quote call
+                        </a>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3>Monthly Support / Improvements</h3>
+                        <p>Ongoing fixes, small improvements, content updates, troubleshooting, and practical technical help after launch.</p>
+                        <div class="price-line"><span>Starting at</span>$250/mo</div>
+                        <div class="service-tags">
+                            <span>Maintenance</span><span>Updates</span><span>Support</span>
+                        </div>
+                        <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Book a quote call
+                        </a>
+                    </article>
+                </div>
+                <p class="pricing-note reveal">
+                    Final scope is confirmed before work begins. Larger projects are quoted after a call, and prices are starting points unless hourly or monthly pricing is shown.
+                </p>
+            </div>
+        </section>
+
+        <section id="strengths" class="strengths">
             <div class="section-inner">
                 <div class="section-head reveal">
                     <div>
                         <span class="eyebrow">Developer strengths</span>
-                        <h2>Software capabilities backed by real projects, not just resume keywords.</h2>
+                        <h2>Web development capabilities backed by real projects, not just resume keywords.</h2>
                     </div>
                     <p>
-                        My background gives me range: I can build application features, write utilities, automate operational work, troubleshoot production problems, and explain the system clearly.
+                        My focus is responsive web apps, business websites, SaaS applications, neural networking tools, automation, and clear product presentation.
                     </p>
                 </div>
                 <div class="service-grid">
                     <article class="service-card reveal">
                         <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-                        <h3>Application development</h3>
-                        <p>Web, Android, Windows, API-driven tools, and project websites built with practical architecture and clean delivery habits.</p>
+                        <h3>Responsive web development</h3>
+                        <p>Business sites, web apps, SaaS features, API-driven tools, and project websites built with practical architecture and clean delivery habits.</p>
                         <div class="service-tags">
-                            <span>Web</span><span>Android</span><span>Windows</span><span>APIs</span>
+                            <span>Web apps</span><span>Business sites</span><span>SaaS</span><span>APIs</span>
                         </div>
                     </article>
                     <article class="service-card reveal">
@@ -1372,10 +1554,10 @@
                     </article>
                     <article class="service-card reveal">
                         <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
-                        <h3>Automation and tooling</h3>
-                        <p>Scripts, utilities, and workflow improvements that reduce manual steps, improve visibility, and make systems easier to operate.</p>
+                        <h3>Neural networking tools</h3>
+                        <p>AI-assisted tools, model workflows, data utilities, and experiments that turn neural networking ideas into usable software.</p>
                         <div class="service-tags">
-                            <span>Python</span><span>C</span><span>Java</span><span>Kotlin</span>
+                            <span>AI</span><span>Models</span><span>Python</span><span>Data</span>
                         </div>
                     </article>
                     <article class="service-card reveal">
@@ -1444,7 +1626,7 @@
                             </div>
                             <div class="stat">
                                 <strong>Software</strong>
-                                <span>Python, C/C++, Java, Kotlin, Swift/SwiftUI, REST APIs, and desktop/mobile apps.</span>
+                                <span>Responsive web apps, business websites, SaaS applications, REST APIs, Python tooling, and neural networking workflows.</span>
                             </div>
                             <div class="stat">
                                 <strong>Operations</strong>
@@ -1452,7 +1634,7 @@
                             </div>
                             <div class="stat">
                                 <strong>Delivery</strong>
-                                <span>WordPress builds, performance tuning, accessibility-minded implementation, and iterative improvement.</span>
+                                <span>Responsive builds, performance tuning, accessibility-minded implementation, SaaS launches, and iterative improvement.</span>
                             </div>
                         </div>
                     </div>
@@ -1465,20 +1647,20 @@
                 <div class="section-head reveal">
                     <div>
                         <span class="eyebrow">Open source work</span>
-                        <h2>Six live public repositories, each packaged as a project someone can actually evaluate.</h2>
+                        <h2>Eight public MIT-licensed repositories, each packaged so the work can be evaluated.</h2>
                     </div>
                     <p>
-                        This is the portfolio layer of the resume. These projects show that I do not just write code in isolation: I publish it, explain it, host it, and keep building a body of work that hiring teams can inspect.
+                        This is the portfolio layer of the resume. These projects show that I do not just write code in isolation: I publish it, license it openly, explain it, host it, and keep building a body of work that hiring teams can inspect.
                     </p>
                 </div>
                 <div class="oss-proof reveal">
                     <div class="oss-proof-item">
-                        <strong>6 live sites</strong>
-                        <span>Every public repo listed here has a dedicated GitHub Pages website.</span>
+                        <strong>8 MIT repos</strong>
+                        <span>Every public repo listed here is open source under the MIT license.</span>
                     </div>
                     <div class="oss-proof-item">
                         <strong>Tooling focus</strong>
-                        <span>Libraries, automation helpers, image processing, logging, network scanning, and data utilities.</span>
+                        <span>Libraries, automation helpers, image processing, logging, network scanning, pairing utilities, and simple networking tools.</span>
                     </div>
                     <div class="oss-proof-item">
                         <strong>Community signal</strong>
@@ -1588,6 +1770,40 @@
                             <span>Logging</span><span>Diagnostics</span><span>Library</span><span>GitHub Pages</span>
                         </div>
                     </a>
+                    <a class="site-card reveal" href="https://github.com/asparks1987/libpairgenerator" target="_blank" rel="noopener">
+                        <div class="project-mark">
+                            <div>
+                                <strong>libpairgenerator</strong>
+                                <span>MIT-licensed public repo</span>
+                            </div>
+                            <i class="fa-solid fa-link"></i>
+                        </div>
+                        <div class="work-top">
+                            <span>Open source library</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <p>A pairing utility library for generating useful combinations, test data, matching flows, and repeatable development experiments.</p>
+                        <div class="tech-tags">
+                            <span>Library</span><span>Pairing</span><span>Utilities</span><span>MIT License</span>
+                        </div>
+                    </a>
+                    <a class="site-card reveal" href="https://github.com/asparks1987/libsimplennet" target="_blank" rel="noopener">
+                        <div class="project-mark">
+                            <div>
+                                <strong>libsimplennet</strong>
+                                <span>MIT-licensed public repo</span>
+                            </div>
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <div class="work-top">
+                            <span>Open source library</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <p>A simple networking helper library that reflects my interest in practical network-aware software and developer-friendly utilities.</p>
+                        <div class="tech-tags">
+                            <span>Library</span><span>Networking</span><span>Utilities</span><span>MIT License</span>
+                        </div>
+                    </a>
                 </div>
                 <div class="project-index reveal">
                     <h3>Closed-source product work</h3>
@@ -1608,6 +1824,10 @@
                         <a class="index-item" href="https://my-wisp.com" target="_blank" rel="noopener">
                             <strong>myWISP</strong>
                             <span>WISP operations product work for customer visibility, support workflows, outage communication, and provider tooling.</span>
+                        </a>
+                        <a class="index-item" href="https://discord.gg/NTdcyyDH7" target="_blank" rel="noopener">
+                            <strong>LanScannerPro</strong>
+                            <span>LAN scanning app support and customer contact. Discord is the primary place to ask questions, report issues, and follow updates.</span>
                         </a>
                     </div>
                 </div>
