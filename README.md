@@ -1,80 +1,68 @@
-# Aryn Sparks Developer Portfolio
+# Aryn Sparks Consulting Site
 
-This repository powers my personal GitHub Pages portfolio at:
+This repository powers the static GitHub Pages site at:
 
 https://asparks1987.github.io/
 
-The site is built to function as a programming resume, open-source portfolio, and professional profile. It highlights public repositories I author, closed-source product work, network-aware software experience, and the practical engineering background I bring to programming roles.
+The site is positioned as an independent software consulting website for operational software services. It is intended to generate qualified conversations with businesses that depend on networks, data, and repeatable workflows.
 
 ## Positioning
 
-I am a software developer and network automation engineer with hands-on experience across:
+Aryn Sparks designs and builds operational software for businesses that depend on networks, data, and repeatable workflows.
 
-- Python libraries and developer tooling
-- Network utilities and operational software
-- Android, Windows, web, and API-driven applications
-- Automation, diagnostics, logging, and support workflows
-- GitHub Pages project sites and technical presentation
-- Infrastructure-aware application design
+The primary audience includes:
 
-The portfolio is intentionally built around proof of work. Public repos show code and community-facing output. Closed-source product sites show broader application thinking, branding, deployment, and entrepreneurial execution.
+- MSPs
+- WISPs
+- IT departments
+- Network operators
+- Infrastructure-heavy small and midsize businesses
+- Businesses with spreadsheet-driven or manual operational workflows
+- Companies needing custom internal software, automation, monitoring, or reporting
 
-## Open-Source Portfolio
+## Primary Services
 
-These are live public repository sites for projects I author and maintain:
+- Network monitoring and automation: device and service monitoring, alerts, network-health dashboards, inventory, topology visibility, reporting, and operational automation.
+- Custom internal business applications: staff portals, customer portals, tracking systems, approval workflows, scheduling tools, role-based administration, and API integrations.
+- Business dashboards and reporting: executive dashboards, service-health views, recurring reports, KPI trends, exportable reports, and data cleanup.
 
-| Project | Site | Focus |
-| --- | --- | --- |
-| img2numpy | https://asparks1987.github.io/img2Numpy/ | Python SDK for converting images into NumPy arrays for computer vision and data workflows |
-| Callsign | https://asparks1987.github.io/Callsign/ | Public project and brand site |
-| libRangeMap | https://asparks1987.github.io/libRangeMap/ | Utility library for mapping values into target numeric ranges |
-| wanScanner | https://asparks1987.github.io/wanScanner/ | Network scanning utility for WAN visibility and troubleshooting |
-| libRandomizer | https://asparks1987.github.io/libRandomizer/ | Randomization helper library for test data, simulations, and utilities |
-| libLogit | https://asparks1987.github.io/libLogit/ | Lightweight logging support for diagnostics and application visibility |
+## Selected Proof Projects
 
-## Closed-Source Product Work
+- LAN Scanner Pro: publicly released Android network-scanning application with local-first discovery, device history, topology-related workflows, reporting, and operator-focused tooling.
+- NOCWALL-CE: private alpha network-operations platform work around wallboards, telemetry, topology, edge-agent concepts, alerts, APIs, and deployment tooling.
+- AlphaRunner: anonymized commissioned analytics web application with FastAPI, scheduled workers, data pipelines, authentication, dashboards, databases, and deployment automation.
 
-Some larger projects are not open source, but they are still part of the portfolio because they show product direction, deployment, design, and entrepreneurial execution.
+## Site Structure
 
-| Project | Site | Focus |
-| --- | --- | --- |
-| NOCWALL | https://nocwall.com | Network operations wallboard and monitoring product work |
-| AlphaRunner | https://alpharunner.online | Finance analytics, market data, statistics, and decision-support tooling |
-| Stage-kit | https://stage-kit.com | Content automation and social publishing product work |
-| myWISP | https://my-wisp.com | WISP operations, customer visibility, support, and provider tooling |
+- `index.html` - main static homepage.
+- `SITE_POSITIONING.md` - source of truth for future positioning, proof claims, and prohibited claims.
+- `privacypolicy.html` - privacy policy page.
+- `resume/` - resume source and PDF.
+- `LanScannerPro.png`, `nocwall.png`, `alpharunner.png` - selected-work visuals.
 
-## Technical Strengths
+## Local Preview
 
-- Application development: web, Android, Windows, API-driven tools, and project websites
-- Open-source packaging: public repos, live docs, GitHub Pages sites, and portfolio presentation
-- Automation and tooling: Python, C/C++, Java, Kotlin, scripting, diagnostics, and workflow utilities
-- Network-aware software: troubleshooting, monitoring, supportability, observability, and operations context
-- Communication: documentation, public project pages, professional positioning, and stakeholder-friendly explanations
+From the repository root:
 
-## Repository Contents
+```powershell
+python -m http.server 8765 --bind 127.0.0.1
+```
 
-- `index.html` - main portfolio site
-- `resume/` - resume source and PDF
-- `privacypolicy.html` - privacy policy page
-- `alpharunner.png`, `LanScannerPro.png`, `nocwall.png` - project visual assets
+Then open:
+
+http://127.0.0.1:8765/index.html
+
+The page can also be opened directly as a static HTML file, but the local server is closer to how GitHub Pages serves assets.
+
+## Updating Content
+
+- Use `SITE_POSITIONING.md` before changing service, audience, or proof-project claims.
+- Keep the primary CTA focused on booking a discovery call.
+- Do not add pricing unless it has been explicitly approved by the site owner.
+- Do not add client names, revenue, testimonials, download counts, uptime, performance claims, ratings, or production-maturity claims without evidence and approval.
+- Keep open-source and R&D work secondary to the consulting message.
+- Keep private alpha and commissioned work clearly labeled.
 
 ## Design Direction
 
-The site uses a GitHub-inspired dark interface as the foundation, with LinkedIn-style professional profile cues:
-
-- Dark developer-focused surfaces
-- Blue professional action color
-- Compact profile and project cards
-- Portfolio-first content hierarchy
-- Strong emphasis on open-source work and public project links
-
-## Contact
-
-- GitHub: https://github.com/asparks1987
-- LinkedIn: https://www.linkedin.com/in/arynsparks
-- Email: aryn.sparks1987@gmail.com
-- Resume PDF: https://asparks1987.github.io/resume/resume.pdf
-
-## Goal
-
-This site exists to help hiring managers, recruiters, collaborators, and technical teams quickly understand what I build, how I think, and where my open-source work demonstrates programming capability.
+The site should remain dark, technical, and developer-focused while reading as a serious independent consultancy. Prefer clear operational language, credible proof, and concise service descriptions over generic agency language.

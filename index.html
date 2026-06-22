@@ -3,8 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aryn Sparks builds responsive web apps, business websites, SaaS applications, neural networking tools, automation, and practical software for real business needs.">
-    <title>Aryn Sparks | Software Developer & Open Source Portfolio</title>
+    <meta name="description" content="Independent software consultant and network engineer building monitoring, automation, internal applications, dashboards, and operational software for MSPs, WISPs, IT teams, and growing businesses.">
+    <title>Aryn Sparks | Network Automation & Custom Software Consultant</title>
+    <meta property="og:title" content="Aryn Sparks | Network Automation & Custom Software Consultant">
+    <meta property="og:description" content="Operational software consulting for businesses that depend on networks, data, and repeatable workflows.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asparks1987.github.io/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Aryn Sparks | Network Automation & Custom Software Consultant">
+    <meta name="twitter:description" content="Monitoring, automation, internal applications, dashboards, and infrastructure-aware software for operational teams.">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Aryn Sparks",
+            "url": "https://asparks1987.github.io/",
+            "email": "mailto:aryn.sparks1987@gmail.com",
+            "jobTitle": "Independent software consultant and network engineer",
+            "description": "Independent software consultant and network engineer building monitoring, automation, internal applications, dashboards, and operational software.",
+            "sameAs": [
+                "https://github.com/asparks1987",
+                "https://www.linkedin.com/in/arynsparks"
+            ],
+            "knowsAbout": [
+                "Network monitoring",
+                "Automation",
+                "Internal business applications",
+                "Operational dashboards",
+                "Infrastructure-aware software"
+            ]
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -455,28 +484,44 @@
             order: 1;
         }
 
-        .paid-services {
+        .problems {
             order: 2;
         }
 
-        .work {
+        .paid-services {
             order: 3;
         }
 
-        .strengths {
+        .selected-work {
             order: 4;
         }
 
+        .work {
+            order: 8;
+        }
+
+        .strengths {
+            order: 7;
+        }
+
         .capabilities {
-            order: 5;
+            order: 7;
         }
 
         .proof {
+            order: 5;
+        }
+
+        .engagement {
             order: 6;
         }
 
-        .contact {
+        .about {
             order: 7;
+        }
+
+        .contact {
+            order: 9;
         }
 
         .section-inner {
@@ -513,6 +558,12 @@
             background:
                 linear-gradient(180deg, rgba(10, 102, 194, 0.08), rgba(5, 12, 20, 0.55)),
                 rgba(5, 12, 20, 0.5);
+        }
+
+        .problems,
+        .engagement,
+        .about {
+            background: rgba(5, 12, 20, 0.46);
         }
 
         .service-grid {
@@ -774,6 +825,32 @@
             box-shadow: var(--shadow);
         }
 
+        .project-shot {
+            overflow: hidden;
+            border: 1px solid rgba(176, 194, 219, 0.12);
+            border-radius: var(--radius);
+            background: rgba(1, 4, 9, 0.45);
+            aspect-ratio: 16 / 9;
+        }
+
+        .project-shot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .selected-work .site-card {
+            align-content: start;
+        }
+
+        .service-card .bullet-list {
+            margin-top: 0.1rem;
+        }
+
+        .service-card .bullet-list li {
+            padding: 0.65rem;
+        }
+
         .featured-site {
             min-height: 100%;
             background: linear-gradient(180deg, rgba(22, 27, 34, 0.98), rgba(13, 17, 23, 0.98));
@@ -818,6 +895,7 @@
             margin-bottom: 0;
             color: var(--text-soft);
             font-size: 0.94rem;
+            overflow-wrap: anywhere;
         }
 
         .tech-tags {
@@ -859,11 +937,13 @@
             display: block;
             margin-bottom: 0.25rem;
             font-size: 0.98rem;
+            overflow-wrap: anywhere;
         }
 
         .index-item span {
             color: var(--text-soft);
             font-size: 0.9rem;
+            overflow-wrap: anywhere;
         }
 
         .process-grid {
@@ -1317,25 +1397,25 @@
                 <span class="brand-mark">AS</span>
                 <span class="brand-name">
                     <strong>Aryn Sparks</strong>
-                    <span>Developer Portfolio</span>
+                    <span>Software Consulting</span>
                 </span>
             </a>
             <div class="nav-links">
                 <a href="#services">Services</a>
-                <a href="#strengths">Strengths</a>
-                <a href="#capabilities">Capabilities</a>
-                <a href="#work">Projects</a>
+                <a href="#work">Selected Work</a>
                 <a href="#process">Process</a>
+                <a href="#about">About</a>
+                <a href="#open-source">Open Source &amp; R&amp;D</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="header-actions">
                 <a class="btn btn-secondary" href="/resume/resume.pdf" target="_blank" rel="noopener">
                     <i class="fa-solid fa-file-pdf"></i>
-                    Resume PDF
+                    Resume
                 </a>
                 <a class="btn btn-primary" href="#contact">
                     <i class="fa-solid fa-calendar-check"></i>
-                    Schedule a call
+                    Book a discovery call
                 </a>
             </div>
         </nav>
@@ -1346,19 +1426,19 @@
             <div class="hero-shell reveal">
                 <div class="hero-grid">
                     <div>
-                        <span class="eyebrow">Responsive web apps, business sites, and SaaS applications</span>
-                        <h1>Web development for businesses that need useful software, not just a pretty page.</h1>
+                        <span class="eyebrow">Independent software consultant and network engineer</span>
+                        <h1>Custom software for businesses that run on networks, data, and repeatable operations.</h1>
                         <p class="hero-copy">
-                            I build responsive web applications, business websites, SaaS products, customer portals, dashboards, and automation tools that help companies present their services clearly, capture leads, support users, and run more efficiently.
+                            I design and build network monitoring, automation, internal applications, and reporting systems for MSPs, WISPs, IT teams, and growing businesses.
                         </p>
                         <div class="hero-actions">
                             <a class="btn btn-primary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
                                 <i class="fa-solid fa-calendar-check"></i>
-                                Schedule a call
+                                Book a discovery call
                             </a>
-                            <a class="btn btn-primary" href="#work">
-                                <i class="fa-brands fa-github"></i>
-                                View open source
+                            <a class="btn btn-secondary" href="#work">
+                                <i class="fa-solid fa-diagram-project"></i>
+                                See selected work
                             </a>
                             <a class="btn btn-secondary" href="https://github.com/asparks1987" target="_blank" rel="noopener">
                                 <i class="fa-brands fa-github"></i>
@@ -1371,64 +1451,96 @@
                         </div>
                         <div class="hero-highlights">
                             <div class="highlight">
-                                <strong>Open-source proof</strong>
-                                <span>Eight public MIT-licensed repos show code, tooling, documentation, and follow-through.</span>
+                                <strong>Who I help</strong>
+                                <span>MSPs, WISPs, IT departments, network operators, and infrastructure-heavy businesses with operational software problems.</span>
                             </div>
                             <div class="highlight">
-                                <strong>Web applications</strong>
-                                <span>Responsive interfaces, business workflows, SaaS dashboards, landing pages, and customer-facing tools.</span>
+                                <strong>Problems I solve</strong>
+                                <span>Monitoring gaps, repetitive checks, manual reporting, spreadsheet-driven workflows, and software that almost fits.</span>
                             </div>
                             <div class="highlight">
-                                <strong>Neural networking</strong>
-                                <span>I connect software delivery with AI, data workflows, model-assisted tools, and practical automation.</span>
+                                <strong>Systems I build</strong>
+                                <span>Dashboards, portals, data systems, monitoring tools, automation workflows, integrations, APIs, and internal applications.</span>
                             </div>
                             <div class="highlight">
-                                <strong>Entrepreneurial product work</strong>
-                                <span>NOCWALL, AlphaRunner, Stage-kit, and myWISP show product thinking beyond public repos.</span>
+                                <strong>Credibility</strong>
+                                <span>Software development plus network engineering, systems administration, deployment, support, and product design.</span>
                             </div>
                         </div>
                         <div class="hero-meta">
                         <div class="meta-strip">
-                            <span>Open-source author</span>
-                            <span>8 MIT-licensed public repos</span>
+                            <span>Software development + network engineering</span>
+                            <span>Android, web, APIs, automation, Docker, and operational tooling</span>
                             <span>Ubiquiti Certified Networking Specialist</span>
-                            <span>Python / C / Java / Kotlin</span>
-                            <span>Android / Windows / WordPress</span>
-                            <span>GitHub Pages project sites</span>
                         </div>
                     </div>
                     </div>
                     <aside class="profile-card" aria-label="Developer snapshot">
                         <div class="profile-top">
                             <div>
-                                <div class="eyebrow">Current focus</div>
-                                <h2 style="margin: 0.35rem 0 0; font-size: 1.45rem;">Programming roles where shipping, debugging, and ownership matter.</h2>
+                                <div class="eyebrow">Consulting focus</div>
+                                <h2 style="margin: 0.35rem 0 0; font-size: 1.45rem;">Operational software for teams that need better visibility, workflow, and control.</h2>
                             </div>
-                            <span class="status-pill"><i class="fa-solid fa-circle"></i> Open to programming roles</span>
                         </div>
                         <div class="profile-grid">
                             <div class="metric-grid">
                                 <div class="metric">
-                                    <div class="metric-label">Public projects</div>
-                                    <div class="metric-value">8</div>
-                                    <div class="metric-note">MIT-licensed public repos and project sites I author.</div>
+                                    <div class="metric-label">Strongest fit</div>
+                                    <div class="metric-value">Ops</div>
+                                    <div class="metric-note">Monitoring, automation, internal tools, reporting, dashboards, and infrastructure-aware software.</div>
                                 </div>
                                 <div class="metric">
-                                    <div class="metric-label">Languages</div>
-                                    <div class="metric-value">5+</div>
-                                    <div class="metric-note">Python, C/C++, Java, Kotlin, SwiftUI, JavaScript, and web delivery.</div>
+                                    <div class="metric-label">Proof</div>
+                                    <div class="metric-value">22</div>
+                                    <div class="metric-note">Repos spanning released apps, private alpha products, commissioned systems, SDKs, and R&amp;D.</div>
                                 </div>
                             </div>
                             <div class="callout">
-                                <strong>What the repos show</strong>
-                                <span>I do more than write code locally. I package ideas, document them, publish public sites, and make projects easier for other people to understand.</span>
+                                <strong>Positioning</strong>
+                                <span>Aryn Sparks designs and builds operational software for businesses that depend on networks, data, and repeatable workflows.</span>
                             </div>
                             <div class="callout">
-                                <strong>Where I fit</strong>
-                                <span>Software teams that need a practical developer who understands automation, tooling, support, infrastructure, and user-facing delivery.</span>
+                                <strong>How projects start</strong>
+                                <span>We can start with a short conversation to decide whether the issue needs custom software, automation, better monitoring, or a clearer technical plan.</span>
                             </div>
                         </div>
                     </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="problems" class="problems">
+            <div class="section-inner">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Problems solved</span>
+                        <h2>Operational software work usually starts with a workflow that is too manual, too invisible, or too fragile.</h2>
+                    </div>
+                    <p>
+                        The goal is not to add software for its own sake. The goal is clearer operations, fewer blind spots, and tools that match how the business actually runs.
+                    </p>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <h3>Failures surface too late</h3>
+                        <p>You do not know something is down until a user, customer, or field tech complains.</p>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-table"></i></div>
+                        <h3>Work lives in spreadsheets</h3>
+                        <p>Staff copy information between sheets, email, chat, billing tools, and systems that do not share status clearly.</p>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Important data is hard to see</h3>
+                        <p>The data exists, but nobody has a reliable operational view of trends, bottlenecks, outages, or workload.</p>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+                        <h3>Off-the-shelf tools almost fit</h3>
+                        <p>The existing software solves part of the problem, but the missing integration or workflow creates extra work.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -1437,405 +1549,121 @@
             <div class="section-inner">
                 <div class="section-head reveal">
                     <div>
-                        <span class="eyebrow">Services and pricing</span>
-                        <h2>Responsive web apps, business websites, SaaS applications, and neural networking tools.</h2>
+                        <span class="eyebrow">Primary services</span>
+                        <h2>Operational software services for network-heavy and workflow-heavy businesses.</h2>
                     </div>
                     <p>
-                        Clear base pricing makes it easier to choose a path. Basic sites start with a simple setup fee, and continuing development or larger applications can be added as the project grows.
+                        Services are scoped around the business problem, existing systems, operational risk, integrations, and the support path required after launch.
                     </p>
                 </div>
                 <div class="pricing-grid">
                     <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-window-maximize"></i></div>
-                        <h3>Basic Business Website</h3>
-                        <p>A clean responsive website for a small business, service, portfolio, or local brand that needs a professional web presence.</p>
-                        <div class="price-line"><span>Base fee</span>$250</div>
-                        <div class="service-tags">
-                            <span>Responsive site</span><span>Contact path</span><span>Basic setup</span>
-                        </div>
-                        <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            Book a quote call
-                        </a>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-store"></i></div>
-                        <h3>Expanded Business Website</h3>
-                        <p>A larger business site with multiple pages, stronger service positioning, lead capture, launch support, and room to grow.</p>
-                        <div class="price-line"><span>Starting at</span>$500</div>
-                        <div class="service-tags">
-                            <span>Multi-page site</span><span>Contact flow</span><span>Launch support</span>
-                        </div>
-                        <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            Book a quote call
-                        </a>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
-                        <h3>Landing Page / Service Page</h3>
-                        <p>A focused page for a specific offer, campaign, product launch, event, portfolio, or booking flow with polished responsive layout.</p>
-                        <div class="price-line"><span>Base fee</span>$250</div>
-                        <div class="service-tags">
-                            <span>Offer page</span><span>CTA setup</span><span>Basic SEO</span>
-                        </div>
-                        <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            Book a quote call
-                        </a>
-                    </article>
-                    <article class="service-card reveal">
                         <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-                        <h3>Neural Networking Tools</h3>
-                        <p>Practical AI and neural networking support for data workflows, model-assisted features, business automation, and smarter internal tools.</p>
-                        <div class="price-line"><span>Rate</span>$125/hr</div>
+                        <h3>Network Monitoring and Automation</h3>
+                        <p>For teams that need fewer blind spots, faster incident response, and less repetitive checking across infrastructure.</p>
                         <div class="service-tags">
-                            <span>AI workflows</span><span>Models</span><span>Data tools</span>
+                            <span>Health dashboards</span><span>Alerts</span><span>Inventory</span><span>Topology visibility</span>
                         </div>
                         <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
                             <i class="fa-solid fa-calendar-check"></i>
-                            Book a quote call
+                            Discuss monitoring
                         </a>
                     </article>
                     <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-cubes"></i></div>
-                        <h3>SaaS or Full Web Application</h3>
-                        <p>A scoped SaaS application, customer portal, internal dashboard, or full web app built around a clear business workflow.</p>
-                        <div class="price-line"><span>Range</span>$500-$1,500+</div>
+                        <div class="service-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                        <h3>Custom Internal Business Applications</h3>
+                        <p>Replace spreadsheet-heavy, email-driven, or fragmented workflows with software that matches the company's real process.</p>
                         <div class="service-tags">
-                            <span>SaaS</span><span>Dashboards</span><span>Portals</span>
+                            <span>Staff portals</span><span>Asset tracking</span><span>Approvals</span><span>API integrations</span>
                         </div>
                         <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
                             <i class="fa-solid fa-calendar-check"></i>
-                            Book a quote call
+                            Discuss an internal app
                         </a>
                     </article>
                     <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                        <h3>Continuing Development</h3>
-                        <p>Ongoing features, fixes, content updates, integrations, troubleshooting, and steady improvements after the first launch.</p>
-                        <div class="price-line"><span>Add-on</span>Quoted</div>
+                        <div class="service-icon"><i class="fa-solid fa-chart-simple"></i></div>
+                        <h3>Business Dashboards and Reporting</h3>
+                        <p>Turn spreadsheets, databases, APIs, monitoring platforms, and business systems into views people can act on.</p>
                         <div class="service-tags">
-                            <span>New features</span><span>Updates</span><span>Support</span>
+                            <span>KPI views</span><span>Recurring reports</span><span>Exports</span><span>Data cleanup</span>
                         </div>
                         <a class="btn btn-primary service-cta" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
                             <i class="fa-solid fa-calendar-check"></i>
-                            Book a quote call
+                            Discuss reporting
                         </a>
                     </article>
                 </div>
                 <p class="pricing-note reveal">
-                    Final scope is confirmed before work begins. Basic websites start at a $250 base fee, continuing development is quoted by need, and larger SaaS or full app work scales with features, integrations, and support.
+                    Supporting capabilities include mobile development, integrations, advanced analytics, machine learning where it fits the actual problem, and small-business websites when they support the operational goal.
                 </p>
             </div>
         </section>
 
-        <section id="strengths" class="strengths">
+        <section id="work" class="selected-work work">
             <div class="section-inner">
                 <div class="section-head reveal">
                     <div>
-                        <span class="eyebrow">Developer strengths</span>
-                        <h2>Web development capabilities backed by real projects, not just resume keywords.</h2>
+                        <span class="eyebrow">Selected work</span>
+                        <h2>Proof projects across released apps, alpha platform work, and commissioned client systems.</h2>
                     </div>
                     <p>
-                        My focus is responsive web apps, business websites, SaaS applications, neural networking tools, automation, and clear product presentation.
+                        These examples are described by maturity: public release, private alpha product development, and anonymized commissioned client work.
                     </p>
-                </div>
-                <div class="service-grid">
-                    <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-                        <h3>Responsive web development</h3>
-                        <p>Business sites, web apps, SaaS features, API-driven tools, and project websites built with practical architecture and clean delivery habits.</p>
-                        <div class="service-tags">
-                            <span>Web apps</span><span>Business sites</span><span>SaaS</span><span>APIs</span>
-                        </div>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
-                        <h3>Open-source packaging</h3>
-                        <p>Public libraries and tools that include a repo, a usable story, and a live project page so the work can be evaluated quickly.</p>
-                        <div class="service-tags">
-                            <span>Libraries</span><span>Docs</span><span>GitHub Pages</span><span>Portfolio</span>
-                        </div>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
-                        <h3>Neural networking tools</h3>
-                        <p>AI-assisted tools, model workflows, data utilities, and experiments that turn neural networking ideas into usable software.</p>
-                        <div class="service-tags">
-                            <span>AI</span><span>Models</span><span>Python</span><span>Data</span>
-                        </div>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-                        <h3>Network-aware software</h3>
-                        <p>Tools and applications shaped by hands-on networking, observability, troubleshooting, and support experience.</p>
-                        <div class="service-tags">
-                            <span>Networking</span><span>Ops</span><span>Monitoring</span><span>Diagnostics</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="capabilities" class="capabilities">
-            <div class="section-inner">
-                <div class="section-head reveal">
-                    <div>
-                        <span class="eyebrow">Capabilities</span>
-                        <h2>Why the open-source work matters to hiring teams.</h2>
-                    </div>
-                    <p>
-                        The public repos are the portfolio: they show initiative, follow-through, technical curiosity, documentation effort, and the ability to publish work where other people can inspect it.
-                    </p>
-                </div>
-                <div class="capability-grid">
-                    <div class="capability-panel reveal">
-                        <h3>What employers can see</h3>
-                        <ul class="bullet-list">
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div>
-                                    <strong>I finish and publish work</strong>
-                                    <span>Each public project has a live page, so the work is visible, documented, and easier to evaluate than a private code sample.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div>
-                                    <strong>I build useful tools</strong>
-                                    <span>The portfolio includes image processing, logging, randomization, range mapping, network scanning, and project branding work.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div>
-                                    <strong>I bridge software and infrastructure</strong>
-                                    <span>That combination is valuable on teams building internal tools, automation, developer utilities, and operational platforms.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div>
-                                    <strong>I communicate the work</strong>
-                                    <span>The project sites show that I can present technical work clearly to developers, managers, recruiters, and non-specialists.</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="capability-panel reveal">
-                        <h3>Tools and environments</h3>
-                        <div class="stats-grid">
-                            <div class="stat">
-                                <strong>Network</strong>
-                                <span>Ubiquiti, RF planning, Layer 2/3, VPNs, hardening, and field troubleshooting.</span>
-                            </div>
-                            <div class="stat">
-                                <strong>Software</strong>
-                                <span>Responsive web apps, business websites, SaaS applications, REST APIs, Python tooling, and neural networking workflows.</span>
-                            </div>
-                            <div class="stat">
-                                <strong>Operations</strong>
-                                <span>Windows, Linux, documentation, incident response, customer success, and escalation support.</span>
-                            </div>
-                            <div class="stat">
-                                <strong>Delivery</strong>
-                                <span>Responsive builds, performance tuning, accessibility-minded implementation, SaaS launches, and iterative improvement.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="work" class="work">
-            <div class="section-inner">
-                <div class="section-head reveal">
-                    <div>
-                        <span class="eyebrow">Open source work</span>
-                        <h2>Eight public MIT-licensed repositories, each packaged so the work can be evaluated.</h2>
-                    </div>
-                    <p>
-                        This is the portfolio layer of the resume. These projects show that I do not just write code in isolation: I publish it, license it openly, explain it, host it, and keep building a body of work that hiring teams can inspect.
-                    </p>
-                </div>
-                <div class="oss-proof reveal">
-                    <div class="oss-proof-item">
-                        <strong>8 MIT repos</strong>
-                        <span>Every public repo listed here is open source under the MIT license.</span>
-                    </div>
-                    <div class="oss-proof-item">
-                        <strong>Tooling focus</strong>
-                        <span>Libraries, automation helpers, image processing, logging, network scanning, pairing utilities, and simple networking tools.</span>
-                    </div>
-                    <div class="oss-proof-item">
-                        <strong>Community signal</strong>
-                        <span>Open repos make the work reviewable, reusable, and easier for other developers to understand.</span>
-                    </div>
                 </div>
                 <div class="site-grid">
-                    <a class="site-card reveal featured-site" href="https://asparks1987.github.io/img2Numpy/" target="_blank" rel="noopener">
+                    <article class="site-card reveal featured-site">
+                        <div class="project-shot">
+                            <img src="LanScannerPro.png" alt="LanScannerPro Android network scanning app interface" loading="lazy">
+                        </div>
                         <div class="project-mark">
                             <div>
-                                <strong>img2numpy</strong>
-                                <span>Open-source Python SDK</span>
+                                <strong>LAN Scanner Pro</strong>
+                                <span>Publicly released Android network-scanning application</span>
                             </div>
-                            <i class="fa-solid fa-image"></i>
+                            <i class="fa-brands fa-android"></i>
                         </div>
-                        <div class="work-top">
-                            <span>Open source library</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <p>Local-first network discovery, device history, topology-related workflows, reporting, and operator-focused tooling.</p>
+                        <div class="service-tags">
+                            <span>Goal: LAN visibility</span><span>Built: Android app</span><span>Proof: released product</span>
                         </div>
-                        <p>A Python SDK that turns images into NumPy arrays for computer vision, ML preprocessing, notebooks, and batch pipelines.</p>
-                        <div class="tech-tags">
-                            <span>Python</span><span>NumPy</span><span>Computer vision</span><span>Data pipelines</span>
-                        </div>
-                    </a>
-                    <a class="site-card reveal" href="https://asparks1987.github.io/Callsign/" target="_blank" rel="noopener">
-                        <div class="project-mark">
-                            <div>
-                                <strong>Callsign</strong>
-                                <span>Public project site</span>
-                            </div>
-                            <i class="fa-solid fa-broadcast-tower"></i>
-                        </div>
-                        <div class="work-top">
-                            <span>Public project</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <p>A public project site that shows brand development, web presentation, and the ability to package a project for an outside audience.</p>
-                        <div class="tech-tags">
-                            <span>Brand</span><span>Website</span><span>Documentation</span><span>GitHub Pages</span>
-                        </div>
-                    </a>
-                    <a class="site-card reveal" href="https://asparks1987.github.io/libRangeMap/" target="_blank" rel="noopener">
-                        <div class="project-mark">
-                            <div>
-                                <strong>libRangeMap</strong>
-                                <span>Public library site</span>
-                            </div>
-                            <i class="fa-solid fa-ruler-horizontal"></i>
-                        </div>
-                        <div class="work-top">
-                            <span>Open source library</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <p>A reusable utility library for mapping input values into target numeric ranges, useful in data, graphics, and normalization workflows.</p>
-                        <div class="tech-tags">
-                            <span>Library</span><span>Utilities</span><span>Data mapping</span><span>Normalization</span>
-                        </div>
-                    </a>
-                    <a class="site-card reveal" href="https://asparks1987.github.io/wanScanner/" target="_blank" rel="noopener">
-                        <div class="project-mark">
-                            <div>
-                                <strong>wanScanner</strong>
-                                <span>Public network utility site</span>
-                            </div>
-                            <i class="fa-solid fa-network-wired"></i>
-                        </div>
-                        <div class="work-top">
-                            <span>Network utility</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <p>A public WAN scanning utility that connects my networking background with software tooling, visibility, and troubleshooting workflows.</p>
-                        <div class="tech-tags">
-                            <span>Network</span><span>Scanning</span><span>Diagnostics</span><span>Operations</span>
-                        </div>
-                    </a>
-                    <a class="site-card reveal" href="https://asparks1987.github.io/libRandomizer/" target="_blank" rel="noopener">
-                        <div class="project-mark">
-                            <div>
-                                <strong>libRandomizer</strong>
-                                <span>Public helper library site</span>
-                            </div>
-                            <i class="fa-solid fa-dice"></i>
-                        </div>
-                        <div class="work-top">
-                            <span>Open source library</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <p>A helper library for randomization workflows, useful for test data, simulations, small utilities, and repeatable development experiments.</p>
-                        <div class="tech-tags">
-                            <span>Library</span><span>Simulation</span><span>Testing</span><span>GitHub Pages</span>
-                        </div>
-                    </a>
-                    <a class="site-card reveal" href="https://asparks1987.github.io/libLogit/" target="_blank" rel="noopener">
-                        <div class="project-mark">
-                            <div>
-                                <strong>libLogit</strong>
-                                <span>Public logging library site</span>
-                            </div>
-                            <i class="fa-solid fa-clipboard-list"></i>
-                        </div>
-                        <div class="work-top">
-                            <span>Open source library</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <p>A lightweight logging library that reflects the operational side of software: diagnostics, visibility, and maintainable troubleshooting.</p>
-                        <div class="tech-tags">
-                            <span>Logging</span><span>Diagnostics</span><span>Library</span><span>GitHub Pages</span>
-                        </div>
-                    </a>
-                    <a class="site-card reveal" href="https://github.com/asparks1987/libpairgenerator" target="_blank" rel="noopener">
-                        <div class="project-mark">
-                            <div>
-                                <strong>libpairgenerator</strong>
-                                <span>MIT-licensed public repo</span>
-                            </div>
-                            <i class="fa-solid fa-link"></i>
-                        </div>
-                        <div class="work-top">
-                            <span>Open source library</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <p>A pairing utility library for generating useful combinations, test data, matching flows, and repeatable development experiments.</p>
-                        <div class="tech-tags">
-                            <span>Library</span><span>Pairing</span><span>Utilities</span><span>MIT License</span>
-                        </div>
-                    </a>
-                    <a class="site-card reveal" href="https://github.com/asparks1987/libsimplennet" target="_blank" rel="noopener">
-                        <div class="project-mark">
-                            <div>
-                                <strong>libsimplennet</strong>
-                                <span>MIT-licensed public repo</span>
-                            </div>
-                            <i class="fa-solid fa-diagram-project"></i>
-                        </div>
-                        <div class="work-top">
-                            <span>Open source library</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </div>
-                        <p>A simple networking helper library that reflects my interest in practical network-aware software and developer-friendly utilities.</p>
-                        <div class="tech-tags">
-                            <span>Library</span><span>Networking</span><span>Utilities</span><span>MIT License</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-index reveal">
-                    <h3>Closed-source product work</h3>
-                    <p>Not every serious project can expose its source code. These live sites point to larger closed-source products and product concepts that show application thinking, branding, deployment, and real product presentation alongside the public open-source portfolio.</p>
-                    <div class="index-grid">
-                        <a class="index-item" href="https://nocwall.com" target="_blank" rel="noopener">
-                            <strong>NOCWALL</strong>
-                            <span>Network operations wallboard and monitoring product work focused on visibility, alerts, uptime, and operational context.</span>
+                        <a class="btn btn-secondary service-cta" href="https://discord.gg/NTdcyyDH7" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-discord"></i>
+                            LAN Scanner Pro Discord
                         </a>
-                        <a class="index-item" href="https://alpharunner.online" target="_blank" rel="noopener">
-                            <strong>AlphaRunner</strong>
-                            <span>Finance analytics product work around market data, statistics, forecasting signals, and decision-support tooling.</span>
-                        </a>
-                        <a class="index-item" href="https://stage-kit.com" target="_blank" rel="noopener">
-                            <strong>Stage-kit</strong>
-                            <span>Content automation and publishing product work for generating, organizing, and distributing social media content.</span>
-                        </a>
-                        <a class="index-item" href="https://my-wisp.com" target="_blank" rel="noopener">
-                            <strong>myWISP</strong>
-                            <span>WISP operations product work for customer visibility, support workflows, outage communication, and provider tooling.</span>
-                        </a>
-                        <a class="index-item" href="https://discord.gg/NTdcyyDH7" target="_blank" rel="noopener">
-                            <strong>LanScannerPro</strong>
-                            <span>LAN scanning app support and customer contact. Discord is the primary place to ask questions, report issues, and follow updates.</span>
-                        </a>
-                    </div>
+                    </article>
+                    <article class="site-card reveal">
+                        <div class="project-shot">
+                            <img src="nocwall.png" alt="NOCWALL-CE network operations wallboard interface" loading="lazy">
+                        </div>
+                        <div class="project-mark">
+                            <div>
+                                <strong>NOCWALL-CE</strong>
+                                <span>Private alpha network-operations platform</span>
+                            </div>
+                            <i class="fa-solid fa-display"></i>
+                        </div>
+                        <p>Wallboards, telemetry, topology, edge-agent concepts, alerts, APIs, and deployment tooling for network-operations workflows.</p>
+                        <div class="service-tags">
+                            <span>Goal: NOC visibility</span><span>Built: platform concepts</span><span>Proof: full-stack network engineering</span>
+                        </div>
+                    </article>
+                    <article class="site-card reveal">
+                        <div class="project-shot">
+                            <img src="alpharunner.png" alt="AlphaRunner analytics dashboard interface" loading="lazy">
+                        </div>
+                        <div class="project-mark">
+                            <div>
+                                <strong>AlphaRunner</strong>
+                                <span>Anonymized commissioned analytics web application</span>
+                            </div>
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <p>FastAPI application with scheduled workers, data pipelines, authentication, dashboards, databases, and deployment automation for decision-support research.</p>
+                        <div class="service-tags">
+                            <span>Goal: analytics workflow</span><span>Built: deployed web app</span><span>Proof: private-client delivery</span>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -1844,81 +1672,139 @@
             <div class="section-inner">
                 <div class="section-head reveal">
                     <div>
-                        <span class="eyebrow">Developer workflow</span>
-                        <h2>How I approach software work when reliability and clarity matter.</h2>
+                        <span class="eyebrow">Engagement process</span>
+                        <h2>A practical path from operational problem to working software.</h2>
                     </div>
                     <p>
-                        The open-source projects show the same habits I bring to a team: understand the problem, choose a practical design, build in visible increments, and leave the work easier to support.
+                        Larger or uncertain projects may begin with a paid assessment or discovery engagement so scope, risk, and handoff are clear before implementation.
                     </p>
                 </div>
-                <div class="proof-grid">
-                    <div class="proof-panel reveal">
-                        <h3>Build process</h3>
-                        <div class="process-grid">
-                            <article class="process-step">
-                                <h3>Understand</h3>
-                                <p>I map the problem, inputs, users, constraints, and the behavior the software needs to support.</p>
-                            </article>
-                            <article class="process-step">
-                                <h3>Design</h3>
-                                <p>I choose a practical stack, define the data flow, identify operational risks, and keep the design understandable.</p>
-                            </article>
-                            <article class="process-step">
-                                <h3>Build</h3>
-                                <p>I implement in clear increments, with attention to debugging, usability, maintainability, and documentation.</p>
-                            </article>
-                            <article class="process-step">
-                                <h3>Improve</h3>
-                                <p>I treat iteration, cleanup, observability, and handoff as part of the engineering work.</p>
-                            </article>
-                        </div>
+                <div class="process-grid">
+                    <article class="process-step reveal">
+                        <h3>Assess</h3>
+                        <p>Understand the problem, users, systems, constraints, and desired business or operational outcome.</p>
+                    </article>
+                    <article class="process-step reveal">
+                        <h3>Scope</h3>
+                        <p>Define deliverables, boundaries, milestones, risks, cost, integrations, and support expectations.</p>
+                    </article>
+                    <article class="process-step reveal">
+                        <h3>Build</h3>
+                        <p>Implement in visible increments with demonstrations, documented decisions, and reviewable progress.</p>
+                    </article>
+                    <article class="process-step reveal">
+                        <h3>Launch and Support</h3>
+                        <p>Deploy, verify, document, hand off, and provide an appropriate support path after launch.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="engagement" class="engagement">
+            <div class="section-inner">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Engagement models</span>
+                        <h2>Start with the level of help the operational problem actually needs.</h2>
                     </div>
-                    <div class="proof-panel reveal">
-                        <h3>Why teams hire me</h3>
-                        <ul class="offer-list">
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div>
-                                    <strong>Open-source initiative</strong>
-                                    <span>I build projects outside assigned work because I like learning in public and turning ideas into usable artifacts.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div>
-                                    <strong>Practical engineering range</strong>
-                                    <span>I can work across libraries, tooling, web pages, automation, networking, support workflows, and user-facing applications.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div>
-                                    <strong>Operational instincts</strong>
-                                    <span>My network and support background makes me think about logs, failure modes, handoff, troubleshooting, and maintainability.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div>
-                                    <strong>Clear communication</strong>
-                                    <span>I explain technical work clearly enough for developers, managers, recruiters, and users to understand what the project does.</span>
-                                </div>
-                            </li>
+                    <p>
+                        Projects are scoped around the business problem, integrations, operational risk, and support requirements. A small business website is available when that is the right tool, but it is not the whole practice.
+                    </p>
+                </div>
+                <div class="pricing-grid">
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-map"></i></div>
+                        <h3>Assessment and Technical Roadmap</h3>
+                        <p>Clarify systems, users, risks, workflows, and options before committing to a build.</p>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-hammer"></i></div>
+                        <h3>Scoped Implementation Project</h3>
+                        <p>Build a defined internal app, monitoring workflow, dashboard, integration, automation, or reporting system.</p>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3>Ongoing Development and Operational Support</h3>
+                        <p>Continue improving the system after launch with fixes, features, documentation, and support paths.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="section-inner">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">About and credibility</span>
+                        <h2>Software development with network engineering, systems administration, deployment, and support instincts.</h2>
+                    </div>
+                    <p>
+                        Aryn Sparks is an independent software consultant and contract engineer focused on infrastructure-aware software for teams that need operational clarity.
+                    </p>
+                </div>
+                <div class="capability-grid">
+                    <div class="capability-panel reveal">
+                        <h3>What the work combines</h3>
+                        <ul class="bullet-list">
+                            <li><i class="fa-solid fa-circle-check"></i><div><strong>Software development</strong><span>Web apps, Android apps, APIs, dashboards, data flows, internal tools, and reusable libraries.</span></div></li>
+                            <li><i class="fa-solid fa-circle-check"></i><div><strong>Network and operations experience</strong><span>Monitoring, diagnostics, support workflows, field constraints, topology thinking, and infrastructure context.</span></div></li>
+                            <li><i class="fa-solid fa-circle-check"></i><div><strong>Deployment and support</strong><span>Packaging, documentation, handoff, support boundaries, release evidence, and maintainable operations.</span></div></li>
+                            <li><i class="fa-solid fa-circle-check"></i><div><strong>Security-conscious architecture</strong><span>Local-first designs, owner control, access boundaries, and careful handling of operational trust.</span></div></li>
                         </ul>
                     </div>
+                    <div class="capability-panel reveal">
+                        <h3>Relevant background</h3>
+                        <div class="stats-grid">
+                            <div class="stat"><strong>Credential</strong><span>Ubiquiti Certified Networking Specialist.</span></div>
+                            <div class="stat"><strong>Work style</strong><span>Independent consultant and contract engineer.</span></div>
+                            <div class="stat"><strong>Common clients</strong><span>MSPs, WISPs, IT teams, operators, and infrastructure-heavy businesses.</span></div>
+                            <div class="stat"><strong>Project evidence</strong><span>Released app work, alpha platforms, private-client systems, public libraries, and docs.</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="credentials reveal" style="margin-top: 1rem;">
-                    <div class="credential">
-                        <strong>Independent Consultant and Contract Engineer</strong>
-                        <span>Designing, deploying, and supporting systems for business clients with a mix of infrastructure and software needs.</span>
+            </div>
+        </section>
+
+        <section id="open-source" class="work">
+            <div class="section-inner">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Open source and R&amp;D</span>
+                        <h2>Public libraries and longer-term experiments support the consulting story without becoming the main offer.</h2>
                     </div>
-                    <div class="credential">
-                        <strong>C&J Cable, Office of Management and Enterprise Services, SparkNetUS</strong>
-                        <span>Experience spanning engineering, support, systems administration, and client-facing delivery across multiple environments.</span>
-                    </div>
-                    <div class="credential">
-                        <strong>Ubiquiti Certified Networking Specialist</strong>
-                        <span>Built on hands-on work with wireless, fiber, and operational tools that support real-world service delivery.</span>
+                    <p>
+                        Public work shows reusable library design, packaging, documentation, testing, deterministic behavior, developer tooling, networking knowledge, and follow-through.
+                    </p>
+                </div>
+                <div class="site-grid">
+                    <a class="site-card reveal featured-site" href="https://asparks1987.github.io/img2Numpy/" target="_blank" rel="noopener">
+                        <div class="project-mark"><div><strong>img2numpy</strong><span>Open-source Python SDK</span></div><i class="fa-solid fa-image"></i></div>
+                        <p>Image-to-NumPy conversion for computer vision, ML preprocessing, notebooks, and data pipelines.</p>
+                        <div class="tech-tags"><span>SDK</span><span>Packaging</span><span>Docs</span><span>Data workflows</span></div>
+                    </a>
+                    <a class="site-card reveal" href="https://asparks1987.github.io/libLogit/" target="_blank" rel="noopener">
+                        <div class="project-mark"><div><strong>libLogit</strong><span>Open-source logging library</span></div><i class="fa-solid fa-clipboard-list"></i></div>
+                        <p>Lightweight diagnostics work that reflects the operational side of software: visibility, supportability, and troubleshooting.</p>
+                        <div class="tech-tags"><span>Logging</span><span>Diagnostics</span><span>Library</span><span>Docs</span></div>
+                    </a>
+                    <a class="site-card reveal" href="https://asparks1987.github.io/libRangeMap/" target="_blank" rel="noopener">
+                        <div class="project-mark"><div><strong>libRangeMap</strong><span>Open-source utility library</span></div><i class="fa-solid fa-ruler-horizontal"></i></div>
+                        <p>Reusable value mapping and normalization utility for data, graphics, and deterministic transformation workflows.</p>
+                        <div class="tech-tags"><span>Library</span><span>Normalization</span><span>Deterministic behavior</span></div>
+                    </a>
+                    <a class="site-card reveal" href="https://github.com/asparks1987" target="_blank" rel="noopener">
+                        <div class="project-mark"><div><strong>Complete GitHub profile</strong><span>Public code and project history</span></div><i class="fa-brands fa-github"></i></div>
+                        <p>See the broader portfolio of public libraries, sites, experiments, and implementation notes.</p>
+                        <div class="tech-tags"><span>GitHub</span><span>Public follow-through</span><span>Documentation</span></div>
+                    </a>
+                </div>
+                <div class="project-index reveal">
+                    <h3>Research and long-term product work</h3>
+                    <p>These projects show curiosity and technical range, but they remain secondary to the consulting services above.</p>
+                    <div class="index-grid">
+                        <div class="index-item"><strong>OneOS / OS_One</strong><span>AI-native operating-system research with C, assembly, boot docs, kernel tests, and architecture notes.</span></div>
+                        <div class="index-item"><strong>HOME-A.I.</strong><span>Local-first smart-home appliance direction with backend, Android UI, onboarding, owner auth, automations, and access-boundary thinking.</span></div>
+                        <div class="index-item"><strong>ProjectTDIR</strong><span>Godot arena-combat game development with asset, configuration, and systems-design pipelines.</span></div>
                     </div>
                 </div>
             </div>
@@ -1927,19 +1813,19 @@
         <section id="contact" class="contact">
             <div class="section-inner contact-grid">
                 <div class="booking-panel reveal" aria-label="Appointment booking">
-                    <span class="eyebrow">Interview and project conversations</span>
-                    <h2>Schedule time to talk about programming roles, contract work, or the open-source portfolio.</h2>
+                    <span class="eyebrow">Start a conversation</span>
+                    <h2>Tell me what is slowing down your network, operations, or internal workflow.</h2>
                     <p>
-                        Choose an open time slot below. Google Calendar handles availability, booking confirmations, and change notifications automatically.
+                        We can start with a short conversation to determine whether the problem needs custom software, automation, better monitoring, or simply a clearer technical plan.
                     </p>
                     <div class="hero-actions" style="margin-top: 1rem;">
                         <a class="btn btn-primary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
                             <i class="fa-solid fa-calendar-check"></i>
-                            Open booking page
+                            Book a discovery call
                         </a>
-                        <a class="btn btn-secondary" href="https://calendar.app.google/kZMEh2chy1fspj8Z7" target="_blank" rel="noopener">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            Open in new tab
+                        <a class="btn btn-secondary" href="mailto:aryn.sparks1987@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                            Email Aryn
                         </a>
                     </div>
                     <div class="booking-frame" aria-label="Google Calendar booking embed">
@@ -1948,31 +1834,26 @@
                 </div>
                 <div class="contact-card reveal">
                     <span class="eyebrow">Contact</span>
-                    <h2 style="margin: 0.4rem 0 0.75rem; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.05;">If you are hiring for software, automation, tooling, or network-aware development, let's talk.</h2>
+                    <h2 style="margin: 0.4rem 0 0.75rem; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.05;">Operational software consulting for teams that need practical systems.</h2>
                     <p>
-                        I am especially interested in roles where practical programming, public project work, debugging, documentation, and operations experience all matter. The calendar above is the fastest way to set up a conversation.
+                        Best-fit conversations involve monitoring, automation, dashboards, internal tools, reporting, network-aware software, or systems that need a clearer plan before build-out.
                     </p>
                     <div class="contact-methods">
                         <a class="contact-method" href="mailto:aryn.sparks1987@gmail.com">
                             <i class="fa-solid fa-envelope"></i>
-                            <span>
-                                <strong>Email</strong>
-                                <span>aryn.sparks1987@gmail.com</span>
-                            </span>
+                            <span><strong>Email</strong><span>aryn.sparks1987@gmail.com</span></span>
                         </a>
                         <a class="contact-method" href="https://www.linkedin.com/in/arynsparks" target="_blank" rel="noopener">
                             <i class="fa-brands fa-linkedin"></i>
-                            <span>
-                                <strong>LinkedIn</strong>
-                                <span>linkedin.com/in/arynsparks</span>
-                            </span>
+                            <span><strong>LinkedIn</strong><span>linkedin.com/in/arynsparks</span></span>
                         </a>
                         <a class="contact-method" href="https://github.com/asparks1987" target="_blank" rel="noopener">
                             <i class="fa-brands fa-github"></i>
-                            <span>
-                                <strong>GitHub</strong>
-                                <span>github.com/asparks1987</span>
-                            </span>
+                            <span><strong>GitHub</strong><span>github.com/asparks1987</span></span>
+                        </a>
+                        <a class="contact-method" href="/resume/resume.pdf" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span><strong>Resume</strong><span>PDF background and experience summary</span></span>
                         </a>
                     </div>
                 </div>
@@ -1982,7 +1863,7 @@
 
     <footer>
         <div class="footer-inner">
-            <span>&copy; <span id="year"></span> Aryn Sparks Developer Portfolio. All rights reserved.</span>
+            <span>&copy; <span id="year"></span> Aryn Sparks Software Consulting. All rights reserved.</span>
             <div class="footer-links">
                 <a href="mailto:aryn.sparks1987@gmail.com">Email</a>
                 <a href="https://github.com/asparks1987" target="_blank" rel="noopener">GitHub</a>
